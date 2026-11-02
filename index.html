@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quillwork Studio — AI-assisted writing and digital services</title>
+<meta name="description" content="Fixed-price, AI-assisted writing and digital services for small businesses, creators and job seekers. Delivered in 48 hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{display:flex;align-items:center;gap:20px;padding:22px 0}
+.logo{font:600 20px Fraunces,serif;letter-spacing:-.01em}
+.logo span{color:var(--accent)}
+nav a{color:var(--mute);text-decoration:none;font-size:14px}
+nav .sp{flex:1}
+h1{font:600 clamp(36px,6vw,60px)/1.05 Fraunces,serif;letter-spacing:-.02em;margin:56px 0 18px;max-width:760px}
+.lead{font-size:19px;color:var(--mute);max-width:620px;margin:0 0 28px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600}
+.facts{display:flex;flex-wrap:wrap;gap:10px 26px;margin:28px 0 70px;color:var(--mute);font-size:14px}
+.facts b{color:var(--ink)}
+h2{font:600 30px Fraunces,serif;margin:0 0 8px}
+.sub{color:var(--mute);margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0 0 16px;color:var(--mute);font-size:14px;flex:1}
+.price{font:600 22px Fraunces,serif}
+.price small{font:400 13px Inter,sans-serif;color:var(--mute)}
+section{margin:0 0 76px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;counter-reset:s}
+.steps div{border-top:2px solid var(--ink);padding-top:12px}
+.steps div::before{counter-increment:s;content:"0" counter(s);font:600 13px Inter;color:var(--accent);display:block;margin-bottom:4px}
+.policy{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+.policy h3{margin:0 0 6px;font-size:16px}
+.policy p{margin:0;color:var(--mute);font-size:14.5px}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--mute);font-size:13px}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><div class="logo">Quillwork<span>.</span></div><div class="sp"></div><a href="#services">Services</a><a href="#how">How it works</a><a href="#policies">Policies</a><a href="#contact">Contact</a></nav>
+
+<h1>Small writing and digital jobs, done in 48 hours.</h1>
+<p class="lead">Fixed prices, clear deliverables, one free revision. Quillwork is an AI-assisted studio: the work is produced with AI tools, and we tell you that up front.</p>
+<a class="btn" href="#contact">Request a job</a>
+<div class="facts"><span><b>Fixed price</b>, no hourly billing</span><span><b>48h</b> delivery</span><span><b>1 revision</b> included</span><span><b>Refund</b> if we miss the brief</span></div>
+
+<section id="services">
+<h2>Services</h2>
+<p class="sub">Prices in USD. Need something close to these? Ask, and we'll quote before any payment.</p>
+<div class="grid">
+<div class="card"><h3>Resume tailoring</h3><p>Your resume rewritten to target one specific job posting, keywords included.</p><div class="price">$29</div></div>
+<div class="card"><h3>Product descriptions</h3><p>10 store product descriptions rewritten for clarity and search.</p><div class="price">$59</div></div>
+<div class="card"><h3>Podcast show notes</h3><p>Summary, timestamps and links for one episode, from your transcript or audio.</p><div class="price">$35 <small>/ episode</small></div></div>
+<div class="card"><h3>SEO content brief</h3><p>A keyword-led outline your writer can follow for one article.</p><div class="price">$39</div></div>
+<div class="card"><h3>CSV data cleaning</h3><p>Deduplicate and normalize one contact or product spreadsheet (up to 5,000 rows).</p><div class="price">$45</div></div>
+<div class="card"><h3>App Store keywords + captions</h3><p>Keyword set and screenshot captions for one app listing.</p><div class="price">$49</div></div>
+<div class="card"><h3>Pitch deck review</h3><p>Slide-by-slide written feedback on a deck of up to 20 slides.</p><div class="price">$59</div></div>
+<div class="card"><h3>Job post writing</h3><p>A clear, inclusive job post from your notes for one role.</p><div class="price">$35</div></div>
+</div>
+</section>
+
+<section id="how">
+<h2>How it works</h2>
+<p class="sub">No account needed.</p>
+<div class="steps">
+<div><b>Tell us the job</b><br><span style="color:var(--mute)">Email what you need and attach any files.</span></div>
+<div><b>Get a fixed quote</b><br><span style="color:var(--mute)">We confirm scope and price and send a secure Stripe payment link.</span></div>
+<div><b>Receive your files</b><br><span style="color:var(--mute)">Delivered by email within 48 hours of payment.</span></div>
+<div><b>One revision</b><br><span style="color:var(--mute)">Reply within 7 days and we'll revise once, free.</span></div>
+</div>
+</section>
+
+<section id="policies">
+<h2>Policies</h2>
+<p class="sub">Plain-language terms.</p>
+<div class="policy">
+<div><h3>Refunds</h3><p>If we don't deliver within 72 hours of payment, or the delivery doesn't match the agreed brief after the revision, email us within 14 days for a full refund. Payments are processed by Stripe and refunded to the original method.</p></div>
+<div><h3>Privacy</h3><p>We use your files only to do your job. We never sell or share your data. Files are deleted 30 days after delivery unless you ask us to keep them. We never see your card details; Stripe handles payment.</p></div>
+<div><h3>AI disclosure</h3><p>Work is produced with AI tools. We don't offer legal, medical, tax or financial advice, and we don't guarantee outcomes such as interviews, rankings or sales.</p></div>
+<div><h3>What we won't do</h3><p>No fake reviews, academic work submitted as your own, spam, impersonation, or anything that breaks a platform's rules.</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p class="sub">Email <a href="mailto:bluetrading17.fx@gmail.com">bluetrading17.fx@gmail.com</a> with what you need. We reply within one business day.</p>
+</section>
+
+<footer>© 2026 Quillwork Studio · Sole proprietorship, United States · Payments by Stripe</footer>
+</div>
+</body>
+</html>
