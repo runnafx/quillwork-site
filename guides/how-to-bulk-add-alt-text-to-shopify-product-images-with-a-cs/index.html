@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Bulk Add Alt Text to Shopify Product Images with a CSV | Quillwork Studio</title><meta name="description" content="A step-by-step guide to filling in missing alt text across your whole Shopify catalog using the product CSV export and import. It includes a writing formula, worked examples and a pre-import safety checklist.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/how-to-bulk-add-alt-text-to-shopify-product-images-with-a-cs/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>How to Bulk Add Alt Text to Shopify Product Images with a CSV</h1><p class="lead">A step-by-step guide to filling in missing alt text across your whole Shopify catalog using the product CSV export and import. It includes a writing formula, worked examples and a pre-import safety checklist.</p>
+<h2>How to Bulk Add Alt Text to Shopify Product Images with a CSV</h2>
+<p>If your store has dozens or hundreds of product photos with empty alt text, adding it one image at a time in the Shopify admin is slow. The faster route is Shopify&#x27;s own product CSV: export your products, fill in one column and import the file back.</p>
+<p>This page walks through the whole process. It also covers how to write alt text that actually helps shoppers who use screen readers, and the mistakes that can damage your product data.</p>
+<h3>First, check how big the gap is</h3>
+<p>Before you start, find out how many images need work.</p>
+<ul><li><strong>In the admin:</strong> open a product, click an image and look at the alt text field. This is fine for a quick spot check.</li><li><strong>In a CSV export:</strong> export all products (steps below), open the file and filter the <strong>Image Alt Text</strong> column for blanks. Every blank row that has an <strong>Image Src</strong> value is a product image with no alt text.</li></ul>
+<p>Counting the blanks tells you whether this is an afternoon job or a weekend job.</p>
+<h3>Step 1: Export a backup (do not skip this)</h3>
+<ol><li>In Shopify admin, go to <strong>Products</strong>.</li><li>Click <strong>Export</strong>.</li><li>Choose <strong>All products</strong> and <strong>CSV for Excel, Numbers, or other spreadsheet programs</strong>.</li><li>Save this file somewhere safe and name it something like <strong>backup-before-alt-text.csv</strong>.</li></ol>
+<p><strong>Never edit this backup.</strong> If anything goes wrong during the import, it is your way back.</p>
+<p>Then export a second copy. That second copy is the one you will edit.</p>
+<h3>Step 2: Understand the columns that matter</h3>
+<p>Shopify&#x27;s product CSV has many columns. For alt text, only four matter:</p>
+<ul><li><strong>Handle</strong>: the product&#x27;s unique ID in the CSV, such as <strong>speckled-stoneware-mug</strong>.</li><li><strong>Image Src</strong>: the URL of the image.</li><li><strong>Image Position</strong>: the image&#x27;s order on the product (1, 2, 3...).</li><li><strong>Image Alt Text</strong>: the description you are adding.</li></ul>
+<p>A product with several images takes up several rows. The first row holds the product details. The extra rows often contain only the Handle and the image columns. That layout is normal, so don&#x27;t &quot;fix&quot; it.</p>
+<h3>Step 3: Write the alt text</h3>
+<p>Fill in the <strong>Image Alt Text</strong> cell on every row that has an Image Src. Leave every other column exactly as exported.</p>
+<h3>A simple formula</h3>
+<p><strong>[What it is] + [key visible details: color, material, shape] + [what this particular photo shows]</strong></p>
+<p>The last part is what keeps several photos of the same product from all getting identical alt text. Image 1 might show the front, image 2 the back and image 3 the item being worn or used. The alt text should reflect that.</p>
+<h3>Writing guidelines</h3>
+<ul><li><strong>Describe what is in the photo</strong>, not what you wish it said for search engines.</li><li><strong>Keep it concise.</strong> A common guideline is roughly 125 characters or fewer, so the description is quick to listen to.</li><li><strong>Don&#x27;t start with &quot;image of&quot; or &quot;picture of.&quot;</strong> Screen readers already announce that it is an image.</li><li><strong>Use the product&#x27;s real attributes</strong>, such as the color name, material and finish, especially when variants differ.</li><li><strong>No keyword stuffing.</strong> &quot;Handmade mug ceramic mug pottery mug gift mug&quot; helps nobody and reads badly aloud.</li><li><strong>Skip prices, discounts and calls to action.</strong> &quot;Buy now, 20% off&quot; is not a description of a photo.</li></ul>
+<h3>Worked examples</h3>
+<p>Here is the same product described poorly and then well.</p>
+<p><strong>Product:</strong> Speckled Stoneware Mug, Oatmeal glaze, 12 oz</p>
+<ul><li>Weak: <strong>mug</strong></li><li>Weak: <strong>handmade ceramic mug pottery mug coffee mug gift</strong></li><li>Good (image 1): <strong>Oatmeal-glazed stoneware mug with brown speckles and a rounded handle, shown from the side</strong></li><li>Good (image 2): <strong>Bottom of the speckled stoneware mug showing the unglazed clay foot and stamped maker&#x27;s mark</strong></li><li>Good (image 3): <strong>Speckled oatmeal mug filled with coffee on a wooden table beside a folded linen napkin</strong></li></ul>
+<p><strong>Product:</strong> Sterling Silver Hammered Hoop Earrings, Small</p>
+<ul><li>Good (image 1): <strong>Pair of small sterling silver hoop earrings with a hammered texture, on a white background</strong></li><li>Good (image 2): <strong>Hammered silver hoop earring worn on an earlobe, shown close up for scale</strong></li></ul>
+<p><strong>Product:</strong> Linen Wrap Dress, Rust, variant image</p>
+<ul><li>Good: <strong>Rust-colored linen wrap dress with short sleeves and a tie waist, worn by a model, front view</strong></li></ul>
+<p>Notice that each description would still make sense if someone heard it without seeing the page.</p>
+<h3>Step 4: Fill-in templates</h3>
+<p>Copy these patterns and swap in your details.</p>
+<p><strong>Front or main shot</strong> [Color] [material] [product type] with [one or two distinctive features], [angle or background]</p>
+<p><strong>Detail shot</strong> Close-up of [part of product] on the [product name], showing [texture, stitching, mark, clasp]</p>
+<p><strong>In-use or lifestyle shot</strong> [Product] [being worn / in use / styled] [where or how], [one detail that shows scale or context]</p>
+<p><strong>Variant shot</strong> [Product name] in [variant color or finish], [angle]</p>
+<p><strong>Packaging or group shot</strong> [Number] [products] [arranged how], [in packaging / with matching items]</p>
+<h3>Step 5: Test with one or two products first</h3>
+<p>Don&#x27;t import the whole catalog on your first try.</p>
+<ol><li>Make a small copy of your edited CSV that contains only the rows for one or two products. Keep the header row.</li><li>Import it (steps below).</li><li>Open those products in the admin. Check that the alt text appears on the right images and that titles, prices, descriptions, variants and inventory look unchanged.</li></ol>
+<p>If the result looks right, import the full file.</p>
+<h3>Step 6: Import the file</h3>
+<ol><li>Go to <strong>Products</strong> and click <strong>Import</strong>.</li><li>Upload your edited CSV.</li><li>Select the option to <strong>overwrite products with matching handles</strong>. Without it, Shopify won&#x27;t update your existing products.</li><li>Review the preview and confirm.</li></ol>
+<p><strong>Read the wording next to the overwrite option carefully.</strong> With overwrite turned on, the values in your file replace what is in your store. If a column in your file is blank where your store has data, that data can be overwritten or cleared. This is the main reason to edit a full export rather than build a new file from scratch, and to change only the alt text column.</p>
+<p>Large imports can take a while. Shopify will notify you when the import finishes.</p>
+<h3>Pre-import checklist</h3>
+<p>Run through this before you click import:</p>
+<ul><li>[ ] I saved an untouched backup export.</li><li>[ ] I edited a fresh export, not a file built by hand.</li><li>[ ] I changed only the <strong>Image Alt Text</strong> column.</li><li>[ ] Handles, Image Src and Image Position values are unchanged.</li><li>[ ] My spreadsheet app did not reformat anything (watch for leading zeros dropped from SKUs or barcodes, and for long numbers turned into scientific notation).</li><li>[ ] I saved the file as CSV with UTF-8 encoding, so accented characters and symbols survive.</li><li>[ ] I tested the import on one or two products first.</li><li>[ ] The overwrite option is selected, and I understand that blank values can replace existing data.</li></ul>
+<h3>Common problems and fixes</h3>
+<ul><li><strong>Alt text didn&#x27;t appear.</strong> Check that the overwrite option was selected and that the Handle and Image Src values exactly match the export.</li><li><strong>Other product fields changed.</strong> Re-import the affected products from your backup file, then repeat with a cleaner edit.</li><li><strong>Strange characters in the descriptions.</strong> The file probably wasn&#x27;t saved as UTF-8. Re-save it and re-import.</li><li><strong>The same alt text is on every image of a product.</strong> Go back and describe what each photo specifically shows.</li></ul>
+<h3>When to do it by hand instead</h3>
+<p>If you only have a handful of images, editing in the admin is simpler and carries no import risk. Open the product, click each image and type the alt text. The CSV method pays off once you are dealing with dozens of images or more.</p>
+<h3>After it&#x27;s done</h3>
+<p>Make alt text part of your listing routine. Write it at the same moment you upload a new product photo, and the backlog never builds up again.</p>
+<div class="cta"><strong>More templates and kits</strong><br><a class="btn" href="https://blueflux6.gumroad.com" rel="noopener">Browse the Quillwork shop</a></div></article>
+<footer>Published by AltPass by Quillwork Studio. Written with AI assistance and checked against our publishing rules; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>

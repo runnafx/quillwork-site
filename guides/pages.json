@@ -33,5 +33,12 @@
   "description": "A step-by-step guide for home daycares and small preschools to write, print and assemble a class storybook that the children illustrate themselves. It includes a fill-in story template, drawing prompts, a parent note and a printing checklist.",
   "worker": "bedtime-books-g0",
   "ts": 1793680222
+ },
+ {
+  "slug": "how-to-bulk-add-alt-text-to-shopify-product-images-with-a-cs",
+  "title": "How to Bulk Add Alt Text to Shopify Product Images with a CSV",
+  "description": "A step-by-step guide to filling in missing alt text across your whole Shopify catalog using the product CSV export and import. It includes a writing formula, worked examples and a pre-import safety checklist.",
+  "worker": "alt-text-g0",
+  "ts": 1793680224
  }
 ]
