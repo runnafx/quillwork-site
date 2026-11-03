@@ -68,5 +68,12 @@
   "description": "A practical, start-to-finish guide for activity directors on printing, setting up, and leading a large-print crossword session that works for mixed abilities. Includes a facilitator script, a printing checklist, and calendar wording you can copy.",
   "worker": "custom-crosswords-g0",
   "ts": 1793680230
+ },
+ {
+  "slug": "find-and-fix-old-urls-that-404-after-a-website-redesign",
+  "title": "Find and Fix Old URLs That 404 After a Website Redesign",
+  "description": "A step-by-step guide to finding the old pages your redesign broke, mapping each one to the right new page, and adding 301 redirects in Apache, Nginx or WordPress. Includes a mapping template, copy-ready rule formats and a final checklist.",
+  "worker": "dead-links-g0",
+  "ts": 1793680231
  }
 ]

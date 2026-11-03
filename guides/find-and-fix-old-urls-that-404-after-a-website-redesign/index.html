@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Find and Fix Old URLs That 404 After a Website Redesign | Quillwork Studio</title><meta name="description" content="A step-by-step guide to finding the old pages your redesign broke, mapping each one to the right new page, and adding 301 redirects in Apache, Nginx or WordPress. Includes a mapping template, copy-ready rule formats and a final checklist.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/find-and-fix-old-urls-that-404-after-a-website-redesign/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>Find and Fix Old URLs That 404 After a Website Redesign</h1><p class="lead">A step-by-step guide to finding the old pages your redesign broke, mapping each one to the right new page, and adding 301 redirects in Apache, Nginx or WordPress. Includes a mapping template, copy-ready rule formats and a final checklist.</p>
+<h2>How to Find and Fix Old URLs That 404 After a Website Redesign</h2>
+<p>A new website usually brings new page addresses. The old &quot;/rooms.html&quot; becomes &quot;/accommodations/&quot;, or &quot;/services/roof-repair.php&quot; becomes &quot;/roof-repair/&quot;. The new site looks great, but every old address that people bookmarked, that other sites linked to, or that search engines indexed may now show a &quot;page not found&quot; error.</p>
+<p>The fix is a <strong>301 redirect</strong>. It is a permanent forwarding instruction that sends visitors and search engines from the old address to the new one. This guide walks you through finding the broken old addresses, choosing where each should go, and adding the redirects yourself.</p>
+<h3>What you need</h3>
+<ul><li>Access to your site&#x27;s hosting, server config, or WordPress admin. If you don&#x27;t have this access, ask your web person.</li><li>A spreadsheet.</li><li>About an hour or two for a typical small-business site.</li></ul>
+<h3>Step 1: Build a list of your old URLs</h3>
+<p>Your new site no longer knows about the old pages, so you need outside sources. Use as many of these as you can:</p>
+<ol><li><strong>The Wayback Machine (Internet Archive).</strong> Search for your domain there. Its results include a list of archived URLs for your site. If you are comfortable with a little technical work, search for &quot;Wayback CDX server API.&quot; It lets you download every archived URL for your domain as a plain list. Useful settings include matching your whole domain with a wildcard, keeping only pages that were archived with a 200 (OK) status, and collapsing duplicates.</li><li><strong>Google Search Console.</strong> If you have it set up, open the Pages report and look under &quot;Not found (404).&quot; These are old addresses Google is still trying to reach.</li><li><strong>Your old sitemap.</strong> If you or your developer kept a backup of the old site, its sitemap.xml file lists the old pages.</li><li><strong>Analytics.</strong> Look at landing pages from the months before the redesign.</li><li><strong>Your own materials.</strong> Check brochures, business cards, directory listings, social media bios and email signatures. These often point to specific old pages.</li></ol>
+<p>Paste everything into one spreadsheet column.</p>
+<h3>Step 2: Clean the list</h3>
+<p>Archive and crawl data is messy. Before you check anything, remove or merge these:</p>
+<ul><li><strong>Duplicates</strong> that differ only by &quot;http&quot; vs &quot;https&quot;, &quot;www&quot; vs no &quot;www&quot;, or a trailing slash. Keep one version of each path.</li><li><strong>Non-page files</strong> such as images, CSS, JavaScript and fonts. Keep PDFs if people might link to them, such as menus, price lists or brochures.</li><li><strong>Query-string variations</strong> such as &quot;?page=2&quot; or tracking tags. Keep these only if they were distinct pages.</li><li><strong>Admin and login pages</strong>, cart sessions and search-result pages.</li></ul>
+<p>You should end up with a list of old *paths*, like &quot;/rooms.html&quot; or &quot;/about-us.php&quot;.</p>
+<h3>Step 3: Check what each old URL does now</h3>
+<p>For each path, find out what your live site returns. A free desktop crawler can do this from an uploaded list. You can also use the command line. Put the full old URLs in a text file called old-urls.txt, one per line, and run:</p>
+<p>``` while read url; do printf &quot;%s  &quot; &quot;$url&quot; curl -s -o /dev/null -w &quot;%{http_code}  %{redirect_url}\n&quot; &quot;$url&quot; done &lt; old-urls.txt ```</p>
+<p>Record the result in your spreadsheet:</p>
+<ul><li><strong>200</strong>: the page still works. No action is needed.</li><li><strong>301 or 308</strong>: it already redirects permanently. Check that the destination is correct.</li><li><strong>302 or 307</strong>: it redirects temporarily. Usually you should change it to a 301.</li><li><strong>404 or 410</strong>: the page is gone. <strong>These are the ones to fix.</strong></li><li><strong>500s</strong>: this is a server error. Raise it with your developer.</li></ul>
+<p><strong>Watch for chains and loops.</strong> A chain is when A redirects to B, which redirects to C. A loop is when A redirects to B, which redirects back to A. To see every hop, run `curl -sIL &quot;$url&quot;` on one address and read each &quot;Location:&quot; line.</p>
+<h3>Step 4: Decide where each dead URL should go</h3>
+<p>This is the part that matters most. Follow these rules:</p>
+<ol><li><strong>Redirect to the closest equivalent page.</strong> For example, the old &quot;Garden Room&quot; page should go to the new Garden Room page, not to the general rooms page, if a specific page exists.</li><li><strong>Use the nearest parent page if there&#x27;s no exact match.</strong> A discontinued product can go to its category page.</li><li><strong>Don&#x27;t send everything to the homepage.</strong> Google&#x27;s own guidance says redirects to irrelevant pages may be treated as &quot;soft 404s.&quot; Visitors also find it confusing.</li><li><strong>Let some pages stay 404 (or 410).</strong> Old promotions, expired events and pages with no modern equivalent can simply be gone. That is a legitimate answer.</li><li><strong>Point straight to the final address.</strong> Never redirect to a URL that itself redirects.</li></ol>
+<h3>Fill-in mapping template</h3>
+<p>Set up your spreadsheet with these columns:</p>
+<p>| Old path | Current status | New target | Action | Reason | |---|---|---|---|---| | | | | 301 / leave 404 | |</p>
+<h3>Worked example (hypothetical B&amp;B)</h3>
+<p>| Old path | Current status | New target | Action | Reason | |---|---|---|---|---| | /rooms.html | 404 | /accommodations/ | 301 | Same content, renamed | | /garden-room.html | 404 | /accommodations/garden-room/ | 301 | Exact equivalent exists | | /directions.php | 404 | /contact/ | 301 | Map and directions now on contact page | | /breakfast-menu.pdf | 404 | /dining/ | 301 | Menu now shown on dining page | | /valentines-2021.html | 404 | — | Leave 404 | Expired offer, no equivalent | | /about-us.html | 301 to /about/ to /our-story/ | /our-story/ | Fix chain | Point directly to final page |</p>
+<h3>Step 5: Add the redirects</h3>
+<p>Use <strong>one</strong> method, the one that matches your setup. Adding the same redirect in two places can cause loops.</p>
+<h3>Apache (.htaccess)</h3>
+<p>Add these lines near the top of the .htaccess file in your site&#x27;s root folder. <strong>Back up the file first.</strong></p>
+<p>``` Redirect 301 /rooms.html /accommodations/ Redirect 301 /garden-room.html /accommodations/garden-room/ Redirect 301 /directions.php /contact/ Redirect 301 /breakfast-menu.pdf /dining/ ```</p>
+<p>&quot;Redirect&quot; matches the start of a path. That means &quot;/rooms.html&quot; would also catch &quot;/rooms.html-something.&quot; For exact-only matching, use RedirectMatch with an anchored pattern:</p>
+<p>``` RedirectMatch 301 ^/rooms\.html$ /accommodations/ ```</p>
+<h3>Nginx</h3>
+<p>Add these inside the relevant `server { }` block, then test and reload. Running `nginx -t` checks your config before you reload.</p>
+<p>``` location = /rooms.html { return 301 /accommodations/; } location = /garden-room.html { return 301 /accommodations/garden-room/; } location = /directions.php { return 301 /contact/; } location = /breakfast-menu.pdf { return 301 /dining/; } ```</p>
+<p>The `=` means an exact match, which is usually what you want for one-to-one redirects.</p>
+<h3>WordPress (Redirection plugin)</h3>
+<p>If you use the free Redirection plugin, you can import a CSV file instead of typing each rule. The basic format is the source path and the target path, one redirect per row:</p>
+<p>``` source,target /rooms.html,/accommodations/ /garden-room.html,/accommodations/garden-room/ /directions.php,/contact/ /breakfast-menu.pdf,/dining/ ```</p>
+<p>Import it from the plugin&#x27;s Import/Export area. Check the plugin&#x27;s own help text for optional columns, such as the redirect code or regex. Then confirm the imported rules are set to 301.</p>
+<p><strong>Note:</strong> if WordPress runs on Apache or Nginx, plugin redirects only fire when WordPress handles the request. Some static files, such as an old PDF path, may be served or blocked by the server before WordPress sees them. If a PDF redirect doesn&#x27;t work through the plugin, add it at the server level instead.</p>
+<h3>Step 6: Test everything</h3>
+<p>Run the Step 3 script again on your list of fixed URLs. Each one should now show <strong>301</strong> followed by the correct destination. That destination should itself return <strong>200</strong>. Also check:</p>
+<ul><li>That http, https, www and non-www versions of an old URL all end up in the right place, in as few hops as possible.</li><li>That no new page on your site accidentally got caught by a redirect rule.</li><li>Search Console&#x27;s 404 list over the following weeks. Entries should clear as Google re-crawls.</li></ul>
+<h3>Quick checklist</h3>
+<ul><li>[ ] Gathered old URLs from the Wayback Machine, Search Console, old sitemap, analytics and print materials</li><li>[ ] Removed duplicates, assets, query strings and admin pages</li><li>[ ] Checked the current status of every old path</li><li>[ ] Flagged 404s, temporary redirects, chains and loops</li><li>[ ] Mapped each dead URL to its closest equivalent, or chose to leave it 404</li><li>[ ] Avoided blanket redirects to the homepage</li><li>[ ] Backed up config files before editing</li><li>[ ] Added rules in one place only (.htaccess, Nginx or plugin)</li><li>[ ] Re-tested: every fixed URL returns 301 to a page that returns 200</li><li>[ ] Set a reminder to review Search Console&#x27;s 404 report in a few weeks</li></ul>
+<h3>A note on doing it yourself vs. getting help</h3>
+<p>Everything above can be done for free with the tools described. The time-consuming parts are usually pulling and cleaning the archive data and making the mapping decisions. If you&#x27;d rather have the dead-URL list, a suggested redirect map and paste-ready rules prepared for you, that&#x27;s what our paid kit below covers. It is AI-assisted, based on public archive data and a crawl of your site, and you still review and install the rules yourself.</p>
+<div class="cta"><strong>More templates and kits</strong><br><a class="btn" href="https://blueflux6.gumroad.com" rel="noopener">Browse the Quillwork shop</a></div></article>
+<footer>Published by LinkMend by Quillwork Studio. Written with AI assistance and checked against our publishing rules; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>
