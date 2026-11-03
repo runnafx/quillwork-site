@@ -54,5 +54,12 @@
   "description": "A practical guide for wedding DJs and emcees on running the toast segment smoothly. It includes a prep checklist, word-for-word introduction scripts, transition lines, and recovery lines for when things go sideways.",
   "worker": "toast-polish-g0",
   "ts": 1793680227
+ },
+ {
+  "slug": "how-to-run-a-beginner-d-d-night-at-your-game-store-checklist",
+  "title": "How to Run a Beginner D&D Night at Your Game Store: Checklist",
+  "description": "A practical checklist and set of fill-in templates for game stores hosting new-player D&D nights. It covers sign-ups, GMs, table kits, a 3-hour session timeline and follow-up.",
+  "worker": "rpg-oneshots-g0",
+  "ts": 1793680228
  }
 ]
