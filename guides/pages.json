@@ -61,5 +61,12 @@
   "description": "A practical checklist and set of fill-in templates for game stores hosting new-player D&D nights. It covers sign-ups, GMs, table kits, a 3-hour session timeline and follow-up.",
   "worker": "rpg-oneshots-g0",
   "ts": 1793680228
+ },
+ {
+  "slug": "how-to-run-a-group-crossword-activity-for-seniors-step-by-st",
+  "title": "How to Run a Group Crossword Activity for Seniors (Step-by-Step)",
+  "description": "A practical, start-to-finish guide for activity directors on printing, setting up, and leading a large-print crossword session that works for mixed abilities. Includes a facilitator script, a printing checklist, and calendar wording you can copy.",
+  "worker": "custom-crosswords-g0",
+  "ts": 1793680230
  }
 ]
