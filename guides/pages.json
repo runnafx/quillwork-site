@@ -75,5 +75,12 @@
   "description": "A step-by-step guide to finding the old pages your redesign broke, mapping each one to the right new page, and adding 301 redirects in Apache, Nginx or WordPress. Includes a mapping template, copy-ready rule formats and a final checklist.",
   "worker": "dead-links-g0",
   "ts": 1793680231
+ },
+ {
+  "slug": "how-to-make-a-round-robin-schedule-for-a-rec-league",
+  "title": "How to Make a Round Robin Schedule for a Rec League",
+  "description": "A step-by-step method for building a fair round-robin season schedule by hand, with a worked 6-team example, home/away balancing, odd-team byes and a pre-release checklist.",
+  "worker": "rec-league-kit-g0",
+  "ts": 1793680232
  }
 ]

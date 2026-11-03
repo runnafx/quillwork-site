@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Make a Round Robin Schedule for a Rec League | Quillwork Studio</title><meta name="description" content="A step-by-step method for building a fair round-robin season schedule by hand, with a worked 6-team example, home/away balancing, odd-team byes and a pre-release checklist.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/how-to-make-a-round-robin-schedule-for-a-rec-league/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>How to Make a Round Robin Schedule for a Rec League</h1><p class="lead">A step-by-step method for building a fair round-robin season schedule by hand, with a worked 6-team example, home/away balancing, odd-team byes and a pre-release checklist.</p>
+<h2>How to Make a Round Robin Schedule for a Rec League (Step by Step)</h2>
+<p>If you&#x27;re the volunteer stuck building this season&#x27;s schedule, you need three things. Every team plays every other team. Nobody gets stuck with all the early games. Nothing lands on a field you don&#x27;t have. This guide walks through a reliable pencil-and-paper method called the <strong>circle method</strong>. It works for any number of teams, and it includes a complete worked example you can copy.</p>
+<h3>Step 1: Do the math before you touch a calendar</h3>
+<p>Count your teams and your available game dates first. These numbers tell you whether a full round robin even fits.</p>
+<ul><li><strong>Even number of teams (N):</strong> you need <strong>N − 1 rounds</strong>. Each round has <strong>N ÷ 2 games</strong>.</li><li><strong>Odd number of teams:</strong> add a placeholder team called <strong>BYE</strong>. That makes N even, so you get <strong>N rounds</strong>. Each team sits out exactly once.</li><li><strong>Total games in a single round robin:</strong> N × (N − 1) ÷ 2.</li></ul>
+<p>Examples:</p>
+<ul><li>6 teams: 5 rounds, 3 games per round, 15 games total.</li><li>7 teams: add BYE to make 8 slots. That gives 7 rounds with 3 real games per round and 21 games total.</li><li>10 teams: 9 rounds, 5 games per round, 45 games total.</li></ul>
+<p>Now compare the rounds to your season. Say you have 10 Saturdays and 6 teams. Five rounds is one full round robin, and 10 weeks is exactly two, so a <strong>double round robin</strong> fits. You play everyone twice and flip home/away the second time. If your weeks don&#x27;t divide evenly, play one full cycle and repeat as many rounds as you can. Teams will then meet some opponents more than others, so tell parents that up front.</p>
+<p>Also check that you have enough <strong>field slots per week</strong>. Six teams need 3 games every week, so you need at least 3 slots on every game date.</p>
+<h3>Step 2: Generate the pairings with the circle method</h3>
+<ol><li>Number your teams 1 to N, adding BYE as the last number if N is odd.</li><li>Write them in a list: 1, 2, 3, 4, 5, 6.</li><li><strong>Round 1:</strong> pair the first team with the last, the second with the second-to-last, and so on.</li><li>For the next round, <strong>keep team 1 fixed</strong>. Move the last team into position 2 and shift everyone else one place right.</li><li>Pair them up again the same way. Repeat until you have N − 1 rounds.</li></ol>
+<h3>Worked example: 6 teams</h3>
+<ul><li><strong>Round 1</strong> (list 1,2,3,4,5,6): 1v6, 2v5, 3v4</li><li><strong>Round 2</strong> (list 1,6,2,3,4,5): 1v5, 6v4, 2v3</li><li><strong>Round 3</strong> (list 1,5,6,2,3,4): 1v4, 5v3, 6v2</li><li><strong>Round 4</strong> (list 1,4,5,6,2,3): 1v3, 4v2, 5v6</li><li><strong>Round 5</strong> (list 1,3,4,5,6,2): 1v2, 3v6, 4v5</li></ul>
+<p>Check it by reading one team&#x27;s line. Team 4 plays 3, 6, 1, 2 and 5, which is every other team exactly once. Do this check for every team. It takes two minutes and catches copying mistakes.</p>
+<p><strong>Odd teams:</strong> run the same method with BYE as a team. Whoever is paired with BYE has the week off. Because BYE appears once per round, every real team gets exactly one bye.</p>
+<h3>Step 3: Balance home and away</h3>
+<p>For a single round robin with an odd number of games per team, a perfect split is impossible. Aim for every team to be within one game of even. With 6 teams, each plays 5 games, so you want everyone at 3 home and 2 away, or 2 home and 3 away.</p>
+<p>The simplest approach is to assign home teams round by round while keeping a running tally. Give home to whichever team in each pair has fewer home games so far. Here is a balanced version of the example, with the <strong>home team listed first</strong>:</p>
+<ul><li><strong>Round 1:</strong> 1v6, 5v2, 3v4</li><li><strong>Round 2:</strong> 5v1, 6v4, 2v3</li><li><strong>Round 3:</strong> 1v4, 3v5, 2v6</li><li><strong>Round 4:</strong> 3v1, 4v2, 6v5</li><li><strong>Round 5:</strong> 1v2, 6v3, 4v5</li></ul>
+<p>Final home counts are Team 1: 3, Team 2: 2, Team 3: 3, Team 4: 2, Team 5: 2, Team 6: 3.</p>
+<p>Watch for long streaks too. Avoid any team having four or more home or away games in a row. To fix a streak, flip a game in the middle of the run. Then flip a different game for the opponent so their count stays balanced.</p>
+<p><strong>Double round robin:</strong> repeat all rounds and swap every home/away assignment. Each team then ends up exactly even.</p>
+<h3>Step 4: Assign time slots and fields fairly</h3>
+<p>This is where most complaints come from. Nobody wants every 8 a.m. game.</p>
+<ol><li>List your slots per game date, for example Field A 9:00, Field A 10:30 and Field B 9:00.</li><li>Rank them from least to most desirable. In most leagues the earliest and latest slots are least popular.</li><li>In each round, rotate which game gets the least desirable slot. A simple rule is to shift the order of games down one position each week.</li><li>Keep a tally table with one row per team and columns for early, middle and late. Update it after each round.</li><li>If a team falls more than one early game ahead of the others, swap two games <strong>within the same date</strong>. That changes the times without breaking the pairings.</li></ol>
+<p>If one field is worse than the others, track it the same way. Count games per team per field and spread them out.</p>
+<h3>Step 5: Apply your constraints</h3>
+<p>Now lay the rounds onto real dates and handle the exceptions.</p>
+<ul><li><strong>Blackout dates</strong> (holidays, school events, field closures): skip that date and push the remaining rounds back one week. Don&#x27;t drop a round, or the round robin breaks.</li><li><strong>Coach conflicts</strong> (one coach with two teams, or a coach only available early): place those teams&#x27; games in compatible slots first, then fill in the rest.</li><li><strong>Shared field limits</strong>: if a date has fewer slots than games, move whole games to a makeup date instead of splitting a round across weeks without noting it.</li><li><strong>Rainouts</strong>: leave one or two open makeup dates at the end of the season if you can.</li></ul>
+<p>Whenever you move a game, re-check the tally tables from Steps 3 and 4.</p>
+<h3>Step 6: Run the pre-release checklist</h3>
+<p>Before you send anything to parents, confirm each item:</p>
+<ul><li>[ ] Every team plays every other team the intended number of times.</li><li>[ ] No team is scheduled twice at the same time.</li><li>[ ] No game is on a blackout date or on a field you don&#x27;t have that day.</li><li>[ ] Every team is within one game of even on home/away.</li><li>[ ] Early and late slots are spread within one game per team.</li><li>[ ] Byes (if any) are spread across the season, not bunched at the start or end.</li><li>[ ] Coach conflicts are resolved.</li><li>[ ] Team names are spelled exactly as on registration.</li><li>[ ] Each team has its own one-page schedule it can print.</li><li>[ ] Your release email includes the date, time, field, home/away or jersey color, the rainout policy and who to contact.</li></ul>
+<h3>Fill-in template: master schedule columns</h3>
+<p>A spreadsheet with these columns imports cleanly into most league apps and is easy to filter by team:</p>
+<p>Date | Start Time | Field | Home Team | Away Team | Division | Round | Notes</p>
+<p>Keep one row per game. Filter by team to create each team&#x27;s printable schedule. Sort by date and field to spot double-booked slots.</p>
+<h3>A note on fixing complaints after release</h3>
+<p>Even a well-balanced schedule will get a &quot;why do we have three early games?&quot; email. Your tally tables answer it. You can show the parent that every team has two or three early slots, and the conversation usually ends there. Save your t</p>
+<div class="cta"><strong>Want the full done-for-you kit?</strong><br>Done-for-you balanced game schedule for one rec league season · $12.99<br><a class="btn" href="https://blueflux6.gumroad.com/l/zvobii" rel="noopener">Get it on Gumroad</a></div></article>
+<footer>Published by SeasonGrid by Quillwork Studio. Written with AI assistance and checked against our publishing rules; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>
