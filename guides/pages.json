@@ -40,5 +40,12 @@
   "description": "A step-by-step guide to filling in missing alt text across your whole Shopify catalog using the product CSV export and import. It includes a writing formula, worked examples and a pre-import safety checklist.",
   "worker": "alt-text-g0",
   "ts": 1793680224
+ },
+ {
+  "slug": "english-menu-descriptions-for-taqueria-dishes-templates-exam",
+  "title": "English Menu Descriptions for Taqueria Dishes: Templates + Examples",
+  "description": "A step-by-step guide for taqueria and pupuseria owners who want English-speaking and delivery-app customers to understand their menu. Includes a simple formula, fill-in templates and ready-to-adapt examples for common dishes.",
+  "worker": "menu-translate-g0",
+  "ts": 1793680225
  }
 ]
