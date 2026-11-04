@@ -145,5 +145,12 @@
   "description": "A step-by-step way for freelancers and small agencies to answer the \"did you use AI?\" question honestly and quickly. Includes copy-and-paste replies for common situations and a fill-in answer sheet for vendor forms.",
   "worker": "ai-policy-kit-r1",
   "ts": 1793766740
+ },
+ {
+  "slug": "wedding-reception-mc-script-every-announcement-in-order",
+  "title": "Wedding Reception MC Script: Every Announcement, In Order",
+  "description": "A fill-in script for every announcement a wedding MC or DJ makes, from grand entrance to send-off, in the order they usually happen. Copy it, add the names, and read it from the mic.",
+  "worker": "toast-polish-r1",
+  "ts": 1793766747
  }
 ]
