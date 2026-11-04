@@ -96,5 +96,12 @@
   "description": "A step-by-step setup for a makeup lesson tracker in Notion that shows each student's credits, expiry dates and unused balance. It includes the database fields, a formula, a policy template and a worked example.",
   "worker": "scout-4-g0",
   "ts": 1793766662
+ },
+ {
+  "slug": "what-to-write-in-an-airbnb-welcome-book-checklist-fill-in-te",
+  "title": "What to Write in an Airbnb Welcome Book: Checklist + Fill-In Text",
+  "description": "A section-by-section checklist for an Airbnb or VRBO welcome book, with fill-in-the-blank wording you can copy. Turn your rough notes into a guidebook guests will actually use.",
+  "worker": "scout-6-g0",
+  "ts": 1793766664
  }
 ]
