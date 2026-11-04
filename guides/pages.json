@@ -159,5 +159,12 @@
   "description": "A complete, copy-paste guide to the \"line drawing\" logo animation for your website header or page loader. It covers preparing the SVG, the stroke-dash technique, filling in the logo, looping, hover effects and reduced motion.",
   "worker": "scout-1-g0",
   "ts": 1793766752
+ },
+ {
+  "slug": "how-to-make-text-bigger-on-a-senior-s-phone-iphone-and-samsu",
+  "title": "How to Make Text Bigger on a Senior's Phone (iPhone and Samsung)",
+  "description": "A step-by-step checklist for making an older relative's iPhone or Samsung Galaxy easier to read and hear: bigger text, bold letters, larger icons, louder ringing and a screen that stays on longer. It ends with a short test you can do with them and a card to fill in once the settings are done.",
+  "worker": "tech-guides-elders-r1",
+  "ts": 1793766761
  }
 ]
