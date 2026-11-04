@@ -89,5 +89,12 @@
   "description": "A step-by-step checklist and fill-in template for agriculture and FFA teachers who need sub plans a non-ag substitute can run safely. Includes a sample one-day plan on soil science that you can copy and adapt.",
   "worker": "scout-10-g0",
   "ts": 1793766660
+ },
+ {
+  "slug": "how-to-track-makeup-lessons-for-a-piano-studio-in-notion",
+  "title": "How to Track Makeup Lessons for a Piano Studio in Notion",
+  "description": "A step-by-step setup for a makeup lesson tracker in Notion that shows each student's credits, expiry dates and unused balance. It includes the database fields, a formula, a policy template and a worked example.",
+  "worker": "scout-4-g0",
+  "ts": 1793766662
  }
 ]

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Track Makeup Lessons for a Piano Studio in Notion | Quillwork Studio</title><meta name="description" content="A step-by-step setup for a makeup lesson tracker in Notion that shows each student&#x27;s credits, expiry dates and unused balance. It includes the database fields, a formula, a policy template and a worked example.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/how-to-track-makeup-lessons-for-a-piano-studio-in-notion/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>How to Track Makeup Lessons for a Piano Studio in Notion</h1><p class="lead">A step-by-step setup for a makeup lesson tracker in Notion that shows each student&#x27;s credits, expiry dates and unused balance. It includes the database fields, a formula, a policy template and a worked example.</p>
+<p>Makeup lessons are hard to track in a private studio. A student misses a lesson, you offer a makeup, and three months later nobody can remember whether that credit was used, whether it expired or whether there were two of them. A tracker fixes this when it answers three questions quickly:</p>
+<ul><li><strong>Who has makeup credits right now, and how many?</strong></li><li><strong>When does each credit expire?</strong></li><li><strong>Which credits were used, and on what date?</strong></li></ul>
+<p>This guide builds that tracker in Notion with the free plan&#x27;s features: two databases, one relation, one rollup, one formula and a few filtered views. It takes about 30 minutes to set up. You&#x27;ll also find a fill-in makeup policy and a worked example at the end.</p>
+<h3>Before you build: decide your rules</h3>
+<p>The tracker can only enforce rules you&#x27;ve written down. Settle these four first:</p>
+<ol><li><strong>What earns a credit?</strong> For example, absences with 24 hours&#x27; notice, teacher cancellations or illness.</li><li><strong>What doesn&#x27;t earn a credit?</strong> For example, no-shows or same-day cancellations for non-illness reasons.</li><li><strong>How long is a credit valid?</strong> Common choices are 30 days, 60 days or the end of the current term.</li><li><strong>Is there a cap?</strong> For example, a maximum of 2 makeup credits per term.</li></ol>
+<p>Write your answers down. You&#x27;ll turn them into the policy template below and use them as field options.</p>
+<h3>Step 1: Create a Students database</h3>
+<p>If you already have a student list in Notion, use it and skip to Step 2.</p>
+<ol><li>Create a new page called <strong>Studio</strong>.</li><li>Add a database in full-page or inline view and name it <strong>Students</strong>.</li><li>Add these properties:</li></ol>
+<ul><li><strong>Name</strong> (Title)</li><li><strong>Parent/Guardian</strong> (Text)</li><li><strong>Instrument</strong> (Select: Piano, Voice, Violin, and so on)</li><li><strong>Lesson Day</strong> (Select: Mon to Sat)</li><li><strong>Status</strong> (Select: Active, Paused, Former)</li></ul>
+<p>Leave out anything you don&#x27;t actually use. Fewer fields means you&#x27;re more likely to keep it up to date.</p>
+<h3>Step 2: Create a Makeup Credits database</h3>
+<p>Each row is <strong>one credit</strong>, not one student. This is the most important design choice in the whole setup. A row per credit gives every credit its own reason, issue date, expiry date and outcome, so nothing gets lost in a running total.</p>
+<p>Create a second database called <strong>Makeup Credits</strong> with these properties:</p>
+<ul><li><strong>Credit</strong> (Title): a short label such as &quot;Missed 3/12 – sick&quot;</li><li><strong>Student</strong> (Relation → Students)</li><li><strong>Reason</strong> (Select: Student illness, Family conflict, Teacher cancelled, Weather, Other)</li><li><strong>Missed Lesson Date</strong> (Date)</li><li><strong>Issued</strong> (Date)</li><li><strong>Expires</strong> (Date)</li><li><strong>Status</strong> (Select: Available, Scheduled, Used, Expired, Forfeited)</li><li><strong>Makeup Date</strong> (Date): fill this in once the makeup is booked or done</li><li><strong>Notes</strong> (Text)</li></ul>
+<p>When you create the Student relation, Notion asks whether to show it on the related database too. <strong>Turn that on.</strong> Each student&#x27;s page then gets a &quot;Makeup Credits&quot; property that lists all their credits.</p>
+<p><strong>Optional: auto-calculate expiry.</strong> Instead of typing the Expires date, make <strong>Expires</strong> a Formula property:</p>
+<p>dateAdd(prop(&quot;Issued&quot;), 60, &quot;days&quot;)</p>
+<p>Change 60 to your validity period. If credits expire at the end of a term instead, keep Expires as a plain Date field and enter the term end date.</p>
+<h3>Step 3: Add an &quot;Available credits&quot; count to each student</h3>
+<p>You want each student&#x27;s page to show how many usable credits they have.</p>
+<ol><li>In <strong>Makeup Credits</strong>, add a Formula property called <strong>Is Available</strong> that returns 1 or 0:</li></ol>
+<p>if(prop(&quot;Status&quot;) == &quot;Available&quot;, 1, 0)</p>
+<ol><li>In <strong>Students</strong>, add a <strong>Rollup</strong> property called <strong>Credits Available</strong>:</li></ol>
+<ul><li>Relation: Makeup Credits</li><li>Property: Is Available</li><li>Calculate: <strong>Sum</strong></li></ul>
+<p>Every student row now shows a number, such as 0, 1 or 2. When you change a credit&#x27;s Status from Available to Used, the number updates by itself.</p>
+<p>If you also cap credits per term, add a second rollup called <strong>Credits This Term</strong>. It counts all credits with Calculate set to &quot;Count all&quot;. Then compare it to your cap by eye or with a simple formula.</p>
+<h3>Step 4: Build the views you&#x27;ll actually open</h3>
+<p>In the Makeup Credits database, create these views (use the &quot;+&quot; next to the view tabs):</p>
+<ol><li><strong>Open Credits</strong>: Table, filtered to Status is Available or Scheduled, sorted by Expires ascending. This is your main working view.</li><li><strong>Expiring Soon</strong>: Filter Status is Available AND Expires is within the next 2 weeks (use Notion&#x27;s relative date filter). Check it weekly so you can remind families before a credit lapses.</li><li><strong>Scheduled Makeups</strong>: Calendar view by Makeup Date, filtered to Status is Scheduled. It shows makeups next to your regular week.</li><li><strong>History</strong>: Filter Status is Used, Expired or Forfeited. This is your record if a family later asks about a past credit.</li><li><strong>By Student</strong>: Board view grouped by Student, or a table grouped by Student.</li></ol>
+<p>On your main Studio page, add a <strong>linked view</strong> of &quot;Open Credits&quot; (type /linked and pick the database). You&#x27;ll see open credits without opening the full database.</p>
+<h3>Step 5: The weekly 5-minute routine</h3>
+<p>A tracker is only as good as its habits. Once a week:</p>
+<ol><li><strong>Log new absences.</strong> Add one row per qualifying missed lesson with Status set to Available.</li><li><strong>Mark completed makeups.</strong> Change Status from Scheduled to Used and confirm the Makeup Date.</li><li><strong>Check Expiring Soon.</strong> Message those families with a reminder and a few open slots.</li><li><strong>Expire old credits.</strong> Anything past its Expires date that&#x27;s still Available becomes Expired. Don&#x27;t delete rows, because the history protects you.</li></ol>
+<p>If you&#x27;d rather expire credits automatically in the view instead of by hand, add a formula called <strong>Past Due</strong>:</p>
+<p>if(prop(&quot;Status&quot;) == &quot;Available&quot; and now() &gt; prop(&quot;Expires&quot;), &quot;Expired – update&quot;, &quot;&quot;)</p>
+<p>Filter a view on Past Due is not empty. It shows you which rows need their Status changed.</p>
+<h3>Fill-in template: makeup lesson policy</h3>
+<p>Paste this into your studio policy and fill in the blanks. It&#x27;s a plain-language starting point, not legal advice, so adjust it to your situation and local rules.</p>
+<p><strong>Makeup Lessons</strong></p>
+<ul><li>Lessons missed with at least [24/48] hours&#x27; notice for [illness / family emergency / school event] earn one makeup credit.</li><li>No-shows and cancellations with less than [24/48] hours&#x27; notice [do not earn a credit / earn a credit only for illness].</li><li>If I cancel a lesson, you will receive a makeup credit or a [refund / tuition credit].</li><li>Makeup credits are valid for [60 days / until the end of the current term] and are not refundable or transferable.</li><li>Each student may hold up to [2] makeup credits per [term / semester].</li><li>Makeups are scheduled from my open slots, which I share [monthly / on request]. Makeup times may differ from your regular lesson time.</li><li>If a scheduled makeup is missed, the credit is [used / forfeited].</li></ul>
+<p>Every bracket here matches a field or rule in your tracker, so what you promise families and what you record stay consistent.</p>
+<h3>Worked example</h3>
+<p>Suppose a studio uses 60-day credits with a cap of 2 per term.</p>
+<p><strong>Student: Maya (Piano, Tuesdays)</strong></p>
+<p>| Credit | Reason | Issued | Expires | Status | Makeup Date | |---|---|---|---|---|---| | Missed 2/4 – sick | Student illness | Feb 4 | Apr 5 | Used | Feb 15 | | Missed 3/11 – school trip | Family conflict | Mar 11 | May 10 | Available | |</p>
+<p>Maya&#x27;s <strong>Credits Available</strong> rollup shows <strong>1</strong>. In late April, the Expiring Soon view lists her Mar 11 credit, so the teacher sends a reminder with three open slots. Maya books one, the teacher sets Status to Scheduled and enters the Makeup Date, and it appears on the Scheduled Makeups calendar. After the lesson, Status becomes Used and her count drops to <strong>0</strong>.</p>
+<p>If Maya&#x27;s family asks in June how many makeups she had this term, the History view answers in seconds: two credits, both used, with dates.</p>
+<h3>Common mistakes to avoid</h3>
+<ul><li><strong>Keeping a single &quot;credits&quot; number on the student.</strong> You lose the reason and the dates, and you can&#x27;t settle disagreements.</li><li><strong>Deleting used or expired credits.</strong> Keep them all and filter them out of daily views instead.</li><li><strong>No expiry date.</strong> Without one, credits pile up and become a scheduling debt you can&#x27;t pay off.</li><li><strong>Tracking makeups separately from your lesson notes.</strong> If you also keep a Lesson Log in Notion, relate it to Students too. Then one student page shows notes, credits and history together.</li></ul>
+<h3>Quick setup checklist</h3>
+<ul><li>[ ] Makeup rules written down (what earns a credit, validity, cap)</li><li>[ ] Students database created</li><li>[ ] Makeup Credits database created, one row per credit</li><li>[ ] Two-way relation between Students and Makeup Credits</li><li>[ ] Is Available formula plus Credits Available rollup</li><li>[ ] Open Credits, Expiring Soon, Scheduled, History views</li><li>[ ] Linked Open Credits view on your Studio dashboard</li><li>[ ] Policy updated and shared with families</li><li>[ ] Weekly 5-minute review on your calendar</li></ul>
+<p>Once this is running, questions about makeup lessons take seconds to answer, and you don&#x27;t have to rebuild the record from memory each time a family asks.</p>
+<div class="cta"><strong>More templates and kits</strong><br><a class="btn" href="https://blueflux6.gumroad.com" rel="noopener">Browse the Quillwork shop</a></div></article>
+<footer>Published by StudioBook by Quillwork Studio. Written with AI assistance and not individually reviewed by a person; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>
