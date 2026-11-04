@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Make an SVG Logo Draw Itself With CSS (Step-by-Step) | Quillwork Studio</title><meta name="description" content="A complete, copy-paste guide to the &quot;line drawing&quot; logo animation for your website header or page loader. It covers preparing the SVG, the stroke-dash technique, filling in the logo, looping, hover effects and reduced motion.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/how-to-make-an-svg-logo-draw-itself-with-css-step-by-step/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>How to Make an SVG Logo Draw Itself With CSS (Step-by-Step)</h1><p class="lead">A complete, copy-paste guide to the &quot;line drawing&quot; logo animation for your website header or page loader. It covers preparing the SVG, the stroke-dash technique, filling in the logo, looping, hover effects and reduced motion.</p>
+<p>You have probably seen a logo appear as if an invisible pen were tracing it, with the colours fading in at the end. You don&#x27;t need After Effects, a video file or a JavaScript library for this. It takes a few lines of CSS on an SVG file you probably already have.</p>
+<p>This guide walks through the whole process. The finished file is usually a few kilobytes, stays sharp at any size and can be edited in a text editor.</p>
+<h3>What you need before you start</h3>
+<ul><li><strong>A vector version of your logo</strong> (SVG, AI, EPS or PDF). A PNG or JPG won&#x27;t work. You need the original vector file from your designer.</li><li><strong>A vector editor</strong> to clean up the file. Inkscape is free. Illustrator, Affinity Designer and Figma also work.</li><li><strong>A text editor</strong> and a browser.</li></ul>
+<h3>Step 1: Prepare the SVG file</h3>
+<p>Most export problems happen here, so don&#x27;t skip it.</p>
+<ol><li><strong>Convert all text to paths.</strong> Live text can&#x27;t be traced. In Illustrator use Type &gt; Create Outlines. In Inkscape use Path &gt; Object to Path. In Figma use Outline Stroke or Flatten.</li><li><strong>Remove hidden layers, guides and empty groups.</strong> Each one adds clutter to the code.</li><li><strong>Ungroup and simplify</strong> as much as you can, while keeping each letter or shape as its own path.</li><li><strong>Export as plain SVG.</strong> In Illustrator, choose &quot;Presentation Attributes&quot; or &quot;Inline Style&quot; for styling. In Inkscape, choose &quot;Plain SVG&quot; or &quot;Optimized SVG&quot; rather than &quot;Inkscape SVG&quot;.</li><li><strong>Open the file in a text editor.</strong> You should see a `viewBox` attribute and one or more `&lt;path d=&quot;...&quot;&gt;` elements. If you see `&lt;image&gt;` with a long base64 string, the &quot;vector&quot; file is really a picture inside a wrapper. Go back to the source file.</li></ol>
+<p><strong>A key fact:</strong> the draw-on effect animates <strong>strokes</strong> (outlines), not fills. Most logos are filled shapes. That&#x27;s fine. The standard approach is to trace the outline of each shape and then fade the fill in (Step 4).</p>
+<h3>Step 2: Add a stroke and give each path a known length</h3>
+<p>Here is a minimal example: one circle path, ready to animate. Paste it straight into an HTML page:</p>
+<p>&lt;svg class=&quot;logo&quot; viewBox=&quot;0 0 120 120&quot; role=&quot;img&quot; aria-labelledby=&quot;logo-title&quot;&gt; &lt;title id=&quot;logo-title&quot;&gt;Your Company&lt;/title&gt; &lt;path class=&quot;draw&quot; pathLength=&quot;1&quot; d=&quot;M10 60 a50 50 0 1 0 100 0 a50 50 0 1 0 -100 0&quot; fill=&quot;none&quot; stroke=&quot;#1a1a1a&quot; stroke-width=&quot;4&quot; /&gt; &lt;/svg&gt;</p>
+<p>The `pathLength=&quot;1&quot;` attribute tells the browser to treat the path as 1 unit long, whatever its real length is. That way you don&#x27;t have to measure each path.</p>
+<p>If a browser ever draws the dashes wrongly, measure the real lengths instead. Open the page, open the developer console and run:</p>
+<p>document.querySelectorAll(&#x27;.draw&#x27;).forEach(p =&gt; console.log(p.getTotalLength()))</p>
+<p>Then use those numbers in place of `1` in the CSS below. Remove `pathLength`.</p>
+<h3>Step 3: The draw-on CSS</h3>
+<p>.draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.6s ease-in-out forwards; }</p>
+<p>@keyframes draw { to { stroke-dashoffset: 0; } }</p>
+<p><strong>How it works:</strong> `stroke-dasharray: 1` turns the stroke into one dash as long as the whole path, followed by an equally long gap. `stroke-dashoffset: 1` shifts the pattern so only the gap shows, which means the path starts invisible. Animating the offset to 0 slides the dash into place, and the line looks like it is being drawn. `forwards` keeps the final frame visible after the animation ends.</p>
+<p><strong>Fixing a stray dot at the start:</strong> with `stroke-linecap=&quot;round&quot;` or `&quot;square&quot;`, a small cap can show before the animation begins. Use `stroke-linecap=&quot;butt&quot;`, or set both values to `1.01` instead of `1`.</p>
+<h3>Step 4: Fade in the fill after the line finishes</h3>
+<p>For a filled logo, use two copies of each shape: an outline that draws and a filled version that fades in. In practice you can often use one path with both properties:</p>
+<p>&lt;path class=&quot;draw fill-in&quot; pathLength=&quot;1&quot; d=&quot;...&quot; fill=&quot;#e85d2a&quot; stroke=&quot;#e85d2a&quot; stroke-width=&quot;2&quot; /&gt;</p>
+<p>.fill-in { fill-opacity: 0; animation: draw 1.6s ease-in-out forwards, fill-in 0.5s ease 1.4s forwards; }</p>
+<p>@keyframes fill-in { to { fill-opacity: 1; } }</p>
+<p>The fill starts at 1.4s, slightly before the line finishes at 1.6s. That overlap makes the change feel smooth rather than mechanical.</p>
+<h3>Step 5: Stagger multiple paths (letter by letter)</h3>
+<p>When a logo has several paths, starting them all at once looks busy. Give each path a number and calculate its delay:</p>
+<p>&lt;path class=&quot;draw&quot; style=&quot;--i:0&quot; pathLength=&quot;1&quot; d=&quot;...&quot; /&gt; &lt;path class=&quot;draw&quot; style=&quot;--i:1&quot; pathLength=&quot;1&quot; d=&quot;...&quot; /&gt; &lt;path class=&quot;draw&quot; style=&quot;--i:2&quot; pathLength=&quot;1&quot; d=&quot;...&quot; /&gt;</p>
+<p>.draw { animation-delay: calc(var(--i) * 0.15s); }</p>
+<p>Delays between 0.1s and 0.2s per path usually read as one continuous motion. Longer gaps feel like separate events.</p>
+<h3>Step 6: Turn it into a looping loader</h3>
+<p>For a page loader, let it draw and undraw forever:</p>
+<p>.loader .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.8s ease-in-out infinite alternate; }</p>
+<p>`alternate` plays the animation forward, then backward, so you avoid an abrupt jump back to empty. Keep loaders simple. One or two paths look better than a full wordmark redrawing on a loop.</p>
+<h3>Step 7: Add a hover state</h3>
+<p>A subtle hover effect works well for a header logo that links to your homepage:</p>
+<p>.logo .draw { transition: stroke 0.3s ease, transform 0.3s ease; transform-origin: center; transform-box: fill-box; }</p>
+<p>.logo:hover .draw { stroke: #e85d2a; transform: scale(1.04); }</p>
+<p>Hover only works when the SVG is inline in the page (see Step 9). Touch devices have no real hover, so don&#x27;t put anything important behind it.</p>
+<h3>Step 8: Respect reduced-motion settings</h3>
+<p>Some visitors set their device to reduce motion, for example because of vestibular disorders. Always include this:</p>
+<p>@media (prefers-reduced-motion: reduce) { .draw, .fill-in { animation: none; stroke-dashoffset: 0; fill-opacity: 1; } }</p>
+<p>Those visitors see the finished logo straight away. To test it, turn on &quot;Reduce motion&quot; in your operating system&#x27;s accessibility settings and reload the page.</p>
+<h3>Step 9: Choose how to embed it</h3>
+<p>How you place the SVG changes what works:</p>
+<ul><li><strong>Inline SVG</strong> (the `&lt;svg&gt;` code pasted into your HTML): every feature works, including hover and page CSS. This is the best choice for a header logo.</li><li><strong>`&lt;img src=&quot;logo.svg&quot;&gt;`</strong>: the animation still runs <strong>if the CSS is inside the SVG file</strong> in a `&lt;style&gt;` block. Your page&#x27;s stylesheet can&#x27;t reach inside it, and hover effects on inner paths won&#x27;t fire. Fine for a simple draw-on.</li><li><strong>CSS background image</strong>: same limits as `&lt;img&gt;`.</li><li><strong>Email signatures</strong>: many major email clients don&#x27;t display SVG at all. Use an animated GIF or a static PNG there.</li></ul>
+<p>For the `&lt;img&gt;` approach, put the styles inside the SVG file itself:</p>
+<p>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 120 120&quot;&gt; &lt;style&gt; .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.6s ease-in-out forwards; } @keyframes draw { to { stroke-dashoffset: 0; } } @media (prefers-reduced-motion: reduce) { .draw { animation: none; stroke-dashoffset: 0; } } &lt;/style&gt; &lt;path class=&quot;draw&quot; pathLength=&quot;1&quot; d=&quot;...&quot; fill=&quot;none&quot; stroke=&quot;#1a1a1a&quot; stroke-width=&quot;4&quot;/&gt; &lt;/svg&gt;</p>
+<p>(The `xmlns` value is a required namespace identifier, not a link. The browser needs it to read the file as SVG.)</p>
+<h3>Timing cheat sheet</h3>
+<ul><li><strong>Header draw-on:</strong> 1.2s to 2s in total. Longer than that makes visitors wait for your navigation.</li><li><strong>Fill fade:</strong> 0.3s to 0.6s, starting just before the stroke finishes.</li><li><strong>Loader cycle:</strong> 1.5s to 2.5s per direction.</li><li><strong>Hover:</strong> 0.2s to 0.3s.</li><li><strong>Easing:</strong> `ease-in-out` feels like a hand drawing. `linear` looks robotic on curves.</li></ul>
+<h3>Pre-launch checklist</h3>
+<ul><li>[ ] All text converted to paths; no embedded raster images</li><li>[ ] `viewBox` present; fixed `width`/`height` removed or set by CSS so the logo scales</li><li>[ ] Every animated path has `pathLength=&quot;1&quot;` or a measured length</li><li>[ ] No stray dot or flash of the full logo before the animation starts</li><li>[ ] Fill fades in before or as the stroke finishes</li><li>[ ] Reduced-motion rule included and tested</li><li>[ ] `&lt;title&gt;` or `aria-label` set so screen readers announce your company name</li><li>[ ] Tested in Chrome, Firefox and Safari, on desktop and on a phone</li><li>[ ] File size checked (a cleaned logo SVG is usually a few KB; if yours is hundreds of KB, simplify the paths)</li><li>[ ] GIF or PNG fallback ready for email and other places that don&#x27;t support SVG</li></ul>
+<h3>Common problems and fixes</h3>
+<ul><li><strong>Nothing animates:</strong> the path probably has `fill` but no `stroke`. Add a stroke colour and width.</li><li><strong>The line appears all at once:</strong> `stroke-dasharray` doesn&#x27;t match the path length. Check `pathLength` or measure the length.</li><li><strong>Parts draw in a strange direction:</strong> each path draws from its starting point. Reverse the path direction in your editor (Inkscape: Path &gt; Reverse; Illustrator: click the start point with the Pen tool, or use the path-direction buttons in the Attributes panel).</li><li><strong>The animation runs once, then never again on navigation:</strong> that is normal browser caching behaviour for `&lt;img&gt;` SVGs in some cases. Use inline SVG if it must replay.</li><li><strong>Double outlines on letters:</strong> outlined text traces both the inner and outer edges. That often looks good. If it doesn&#x27;t, have a single centre-line path drawn for the stroke and keep the outlined version for the fill.</li></ul>
+<p>Once you&#x27;ve built one, the same structure works for every logo. Only the paths and the timing change.</p>
+<div class="cta"><strong>More templates and kits</strong><br><a class="btn" href="https://blueflux6.gumroad.com" rel="noopener">Browse the Quillwork shop</a></div></article>
+<footer>Published by LoopMark Studio by Quillwork Studio. Written with AI assistance and not individually reviewed by a person; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>
