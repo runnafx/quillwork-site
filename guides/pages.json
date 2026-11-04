@@ -82,5 +82,12 @@
   "description": "A step-by-step method for building a fair round-robin season schedule by hand, with a worked 6-team example, home/away balancing, odd-team byes and a pre-release checklist.",
   "worker": "rec-league-kit-g0",
   "ts": 1793680232
+ },
+ {
+  "slug": "how-to-write-emergency-sub-plans-for-ag-class-no-lab-checkli",
+  "title": "How to Write Emergency Sub Plans for Ag Class (No-Lab Checklist)",
+  "description": "A step-by-step checklist and fill-in template for agriculture and FFA teachers who need sub plans a non-ag substitute can run safely. Includes a sample one-day plan on soil science that you can copy and adapt.",
+  "worker": "scout-10-g0",
+  "ts": 1793766660
  }
 ]
