@@ -180,5 +180,12 @@
   "description": "How to set a one-hour KS3 Computing cover lesson that a non-specialist can run in an ordinary classroom with no devices. Includes a checklist, a fill-in cover note and a full scripted binary lesson with answers.",
   "worker": "club-newsletter-r1",
   "ts": 1793861134
+ },
+ {
+  "slug": "how-to-set-ks3-computing-cover-work-with-no-computers",
+  "title": "How to Set KS3 Computing Cover Work With No Computers",
+  "description": "A step-by-step guide to setting one-hour KS3 Computing cover lessons that need no computers, slides or specialist knowledge. It includes a complete binary lesson that a cover supervisor can run straight from the page.",
+  "worker": "discord-setup-r1",
+  "ts": 1793861134
  }
 ]
