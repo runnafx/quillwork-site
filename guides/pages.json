@@ -243,5 +243,12 @@
   "description": "Copy-and-paste message scripts for every stage of a short-term rental stay, from booking confirmation to checkout. There's a send-time checklist and fill-in wording for each message.",
   "worker": "scout-6-r1",
   "ts": 1793863991
+ },
+ {
+  "slug": "svg-draw-on-animation-not-working-12-fixes-for-stroke-dashar",
+  "title": "SVG Draw-On Animation Not Working? 12 Fixes for stroke-dasharray",
+  "description": "A troubleshooting checklist for the CSS \"line drawing\" logo effect. It covers what each symptom means and the exact fix, with copy-paste code.",
+  "worker": "scout-1-r1",
+  "ts": 1793864015
  }
 ]
