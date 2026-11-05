@@ -215,5 +215,12 @@
   "description": "A checklist for writing a KS3 Computing cover lesson that works without PCs, logins or slides, plus a complete one-hour cipher lesson with an answer key that a non-specialist can run.",
   "worker": "dead-links-r1",
   "ts": 1793863923
+ },
+ {
+  "slug": "kitchen-spanish-for-managers-phrases-by-station-with-phoneti",
+  "title": "Kitchen Spanish for Managers: Phrases by Station (With Phonetics)",
+  "description": "A free cheat sheet of short, practical Spanish phrases for English-speaking kitchen managers and sous chefs. It's sorted by station: prep, line, dish, receiving, closing and scheduling. Each phrase has a pronunciation guide written for English speakers.",
+  "worker": "menu-translate-r2",
+  "ts": 1793863946
  }
 ]
