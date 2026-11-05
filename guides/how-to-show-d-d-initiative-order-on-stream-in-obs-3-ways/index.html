@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Show D&amp;D Initiative Order on Stream in OBS (3 Ways) | Quillwork Studio</title><meta name="description" content="A step-by-step guide for DMs and actual-play streamers who want turn order on screen in OBS or Streamlabs. It covers a free text-file method, a browser-source method and a checklist you can run before every session.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/how-to-show-d-d-initiative-order-on-stream-in-obs-3-ways/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>How to Show D&amp;D Initiative Order on Stream in OBS (3 Ways)</h1><p class="lead">A step-by-step guide for DMs and actual-play streamers who want turn order on screen in OBS or Streamlabs. It covers a free text-file method, a browser-source method and a checklist you can run before every session.</p>
+<p>Viewers who join partway through combat want to know three things: whose turn it is, who&#x27;s next, and which round it is. If initiative only lives on your DM screen, you end up repeating it out loud. This guide shows three ways to put it on screen in OBS Studio (most steps work the same in Streamlabs Desktop), from a free setup that takes five minutes to a full tracker you can click through.</p>
+<h3>Before you start: decide what viewers need to see</h3>
+<p>Keep it short. A tracker that fits on screen usually shows:</p>
+<ul><li><strong>Name</strong> of each creature or player character, in turn order</li><li><strong>Initiative number</strong> (optional, but it helps viewers follow the sort order)</li><li><strong>Whose turn it is</strong>, highlighted</li><li><strong>Round number</strong></li><li><strong>Foes marked differently</strong> from the party, by color or a symbol</li></ul>
+<p>You don&#x27;t need to show monster HP or AC. Many DMs hide those on purpose. Group identical monsters into one line (&quot;Goblins&quot;) so the list doesn&#x27;t grow past what fits on screen.</p>
+<h3>Method 1: Free text-file tracker (works on any setup)</h3>
+<p>This method uses OBS&#x27;s built-in Text source, which can read from a file. When you edit and save the file, the text on stream updates.</p>
+<ol><li>Make a plain text file, for example `initiative.txt`, in a folder you&#x27;ll remember.</li><li>Type your order, one line per combatant. Mark the current turn with a symbol:</li></ol>
+<p>``` ROUND 1 &gt; 18  Aria 15  Borin 12  Goblins (foe) 9  Mira ```</p>
+<ol><li>In OBS, click <strong>+</strong> under Sources and add <strong>Text (GDI+)</strong> on Windows or <strong>Text (FreeType 2)</strong> on Mac/Linux.</li><li>Tick <strong>Read from file</strong> and pick `initiative.txt`.</li><li>Choose a monospaced font (Consolas, Courier New or similar) so the numbers line up. Set the size to about 40–48 for 1080p.</li><li>Turn on a background or outline in the source settings so the text stays readable over game footage or a VTT map.</li><li>Drag it to a corner where it won&#x27;t cover faces or the map.</li></ol>
+<p><strong>To advance a turn:</strong> move the `&gt;` down one line in your text editor and save. The display updates shortly after.</p>
+<p><strong>Pros:</strong> free, nothing to install, works offline. <strong>Cons:</strong> you alt-tab to an editor on every turn, there&#x27;s no automatic sorting, and it looks plain.</p>
+<p><strong>Tip:</strong> keep the text file open in a small editor window on a second monitor. Advancing a turn then takes one edit and Ctrl+S.</p>
+<h3>Method 2: Browser-source tracker (clickable, auto-sorted)</h3>
+<p>A browser source is a small web page that OBS draws as a layer with a transparent background. An HTML tracker can sort initiative for you, highlight the active turn and count rounds. You can also control it from inside OBS without leaving your scene.</p>
+<h3>Adding a browser source</h3>
+<ol><li>Under Sources, click <strong>+</strong> and choose <strong>Browser</strong>.</li><li>Tick <strong>Local file</strong> and choose the `.html` file. If the tracker takes settings in its address (like `?party=Aria:18,Borin:15`), untick Local file and paste the full `file:///` address into the URL box instead.</li><li>Set <strong>Width 1920</strong> and <strong>Height 1080</strong> if the page is built for a full 1080p canvas, then position it with the transform handles.</li><li>Leave the default custom CSS alone unless the page tells you otherwise. The usual default keeps the background transparent.</li></ol>
+<h3>Controlling it during play</h3>
+<p>This is the step most guides leave out. A browser source can&#x27;t hear your keyboard while OBS&#x27;s main window has focus. To click or press keys on it:</p>
+<ul><li><strong>OBS Studio:</strong> right-click the source and choose <strong>Interact</strong>. A window opens where you can click names or press keys, and the changes show on stream.</li><li><strong>Streamlabs Desktop:</strong> browser sources have a similar <strong>Interact</strong> option in the source&#x27;s right-click menu.</li></ul>
+<p>Keep that Interact window open on your second monitor through combat.</p>
+<h3>Things that catch people out</h3>
+<ul><li><strong>Changing the URL reloads the page.</strong> That resets the turn and round to their starting values. Change the party list between encounters, not partway through a round.</li><li><strong>&quot;Refresh browser when scene becomes active&quot;</strong> in the source properties resets the tracker when you switch scenes. Leave it unticked if you cut away to a BRB scene during combat.</li><li><strong>&quot;Shutdown source when not visible&quot;</strong> has the same effect when you hide the source. Leave it unticked too.</li><li><strong>Fonts:</strong> a page that asks for a font you don&#x27;t have installed falls back to another one, so check how it looks before you go live.</li></ul>
+<h3>Method 3: Capture your VTT&#x27;s own tracker</h3>
+<p>If you play on a virtual tabletop that has a built-in combat tracker, you can show it directly:</p>
+<ol><li>Pop the tracker out into its own window if the VTT allows it.</li><li>Add a <strong>Window Capture</strong> source pointed at that window.</li><li>Crop it with Alt+drag (Option+drag on Mac) on the source edges.</li></ol>
+<p><strong>Pros:</strong> no double entry, because your VTT is already the source of truth. <strong>Cons:</strong> it often shows things you&#x27;d rather hide (monster HP, hidden enemies, GM-only notes), it doesn&#x27;t match your overlay style, and it can be hard to read at stream resolution. Check exactly what&#x27;s visible before going live.</p>
+<h3>Comparison at a glance</h3>
+<ul><li><strong>Text file:</strong> free, offline, manual. Best if you stream occasionally and want zero setup.</li><li><strong>Browser source:</strong> auto-sort, highlights and round counter, controlled through Interact. Best if combat is a regular part of your stream.</li><li><strong>VTT capture:</strong> no extra data entry. Best if you already run everything in a VTT and are careful about hidden information.</li></ul>
+<h3>Fill-in template: your encounter card</h3>
+<p>Fill this in during session prep for each planned fight. Then you only have to type the rolled numbers at the table.</p>
+<p>``` ENCOUNTER: ______________________ Party (always in):  ______, ______, ______, ______ Foes (group by type): ______ x__,  ______ x__ Display names for foes (spoiler-safe): ______________ Show initiative numbers?  Yes / No Corner of screen:  Top-left / Top-right Scene to switch to when combat starts: ______________ ```</p>
+<p><strong>Spoiler-safe names</strong> matter. If &quot;Vampire Lord&quot; appears on screen, viewers find out before the reveal. Use &quot;Pale Stranger&quot; until the players know.</p>
+<h3>Worked example</h3>
+<p>Say a four-player party meets goblins and their boss. Rolls come out as Aria 18, Borin 15, Goblins 12, Mira 9, Hooded Figure 7.</p>
+<ul><li>In the <strong>text-file</strong> method, you type those five lines in that order, put `&gt;` on Aria and set `ROUND 1`. After Hooded Figure acts, move `&gt;` back to Aria and change it to `ROUND 2`.</li><li>In a <strong>browser-source</strong> tracker that sorts automatically, you enter the names and numbers in any order. It puts them in order and marks the foes. In the Interact window you press a key or click to advance, and the round goes up when the order wraps back to the top.</li></ul>
+<p>If a goblin group dies off, take that line out between rounds, not partway through a turn.</p>
+<h3>Pre-session checklist</h3>
+<ul><li>[ ] Tracker source is in your combat scene, positioned away from the webcam and map focus</li><li>[ ] Text is readable at 1080p. Check it in a recording or on your phone, not just the preview</li><li>[ ] Foe names are spoiler-safe</li><li>[ ] Browser source: &quot;Refresh when scene becomes active&quot; and &quot;Shutdown when not visible&quot; are unticked</li><li>[ ] Interact window (or text editor) is open on your second screen</li><li>[ ] You&#x27;ve done a test: advance through a full round and watch the round counter go up</li><li>[ ] Party HP display, if you use one, matches your current character sheets</li><li>[ ] Hotkey or scene ready to hide the tracker when combat ends</li></ul>
+<h3>Common questions</h3>
+<p><strong>Will a local HTML overlay slow my stream?</strong> A simple static page uses very little compared with games or VTTs. Pages with heavy animation use more, so watch OBS&#x27;s stats panel during your test.</p>
+<p><strong>Can my players see it?</strong> Only on stream. If players at the table need it too, put the same page or text file in a window they can see.</p>
+<p><strong>Does it work offline?</strong> The text-file method always works offline. A browser source works offline only if the HTML file makes no web requests, so check this for any overlay you download.</p>
+<p>If you&#x27;d like the browser-source version without building it yourself, the LiveText Overlays pack ($5) includes an initiative tracker. It sorts automatically, marks foes, counts rounds, highlights the current turn and has an optional turn timer. The pack also has a party HP display, a session card and Starting Soon, BRB and Ending scenes. Every overlay runs offline and is set up through a URL builder with a live preview.</p>
+<div class="cta"><strong>Want the full done-for-you kit?</strong><br>LiveText Overlays: Editable HTML Stream Overlay Pack + D&amp;D/TTRPG Table Kit for OBS &amp; Streamlabs (initiative tracker, par · $5.00<br><a class="btn" href="https://blueflux6.gumroad.com/l/yczygz" rel="noopener">Get it on Gumroad</a></div></article>
+<footer>Published by LiveText Overlays by Quillwork Studio. Written with AI assistance and not individually reviewed by a person; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>

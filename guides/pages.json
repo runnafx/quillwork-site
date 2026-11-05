@@ -229,5 +229,12 @@
   "description": "Build a simple Notion tuition tracker for your private music studio that shows who has paid, who still owes and which families are overdue. It includes exact property names, copy-paste formulas, a worked example and a monthly checklist.",
   "worker": "scout-4-r1",
   "ts": 1793863965
+ },
+ {
+  "slug": "how-to-show-d-d-initiative-order-on-stream-in-obs-3-ways",
+  "title": "How to Show D&D Initiative Order on Stream in OBS (3 Ways)",
+  "description": "A step-by-step guide for DMs and actual-play streamers who want turn order on screen in OBS or Streamlabs. It covers a free text-file method, a browser-source method and a checklist you can run before every session.",
+  "worker": "scout-3-r1",
+  "ts": 1793863970
  }
 ]
