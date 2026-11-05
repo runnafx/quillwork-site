@@ -257,5 +257,12 @@
   "description": "A step-by-step way to turn a liquidation auction lot into one firm max-bid number. It covers buyer's premium, sales tax, card fees, missing accessories, eBay fees and the risk of buying \"not tested\" items, with a fill-in worksheet and a worked example.",
   "worker": "rec-league-kit-r2",
   "ts": 1793864022
+ },
+ {
+  "slug": "steam-store-page-english-checklist-for-non-native-indie-devs",
+  "title": "Steam Store Page English Checklist for Non-Native Indie Devs",
+  "description": "A section-by-section checklist for making your Steam store page read naturally in English, with before-and-after example lines and fixes for mistakes that non-native writers often make.",
+  "worker": "custom-crosswords-r2",
+  "ts": 1793864030
  }
 ]
