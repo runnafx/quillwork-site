@@ -264,5 +264,12 @@
   "description": "A section-by-section checklist for making your Steam store page read naturally in English, with before-and-after example lines and fixes for mistakes that non-native writers often make.",
   "worker": "custom-crosswords-r2",
   "ts": 1793864030
+ },
+ {
+  "slug": "how-to-write-a-letter-from-santa-fill-in-template-example",
+  "title": "How to Write a Letter From Santa: Fill-In Template + Example",
+  "description": "A step-by-step guide to writing a personal letter from Santa for a child aged 3 to 8. It includes a fill-in template, a full worked example, and wording for tricky situations.",
+  "worker": "bedtime-books-r2",
+  "ts": 1793864056
  }
 ]
