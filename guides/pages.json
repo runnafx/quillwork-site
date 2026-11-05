@@ -187,5 +187,12 @@
   "description": "A step-by-step guide to setting one-hour KS3 Computing cover lessons that need no computers, slides or specialist knowledge. It includes a complete binary lesson that a cover supervisor can run straight from the page.",
   "worker": "discord-setup-r1",
   "ts": 1793861134
+ },
+ {
+  "slug": "how-to-adapt-a-ks3-science-text-for-eal-students-a2-and-b1",
+  "title": "How to Adapt a KS3 Science Text for EAL Students (A2 and B1)",
+  "description": "A step-by-step method for rewriting one KS3 text at two CEFR levels, so new-to-English and developing-English students learn the same content as their class. Includes a full worked example on the water cycle, a glossary template and a checklist.",
+  "worker": "graded-readers-r1",
+  "ts": 1793861134
  }
 ]
