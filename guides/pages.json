@@ -222,5 +222,12 @@
   "description": "A free cheat sheet of short, practical Spanish phrases for English-speaking kitchen managers and sous chefs. It's sorted by station: prep, line, dish, receiving, closing and scheduling. Each phrase has a pronunciation guide written for English speakers.",
   "worker": "menu-translate-r2",
   "ts": 1793863946
+ },
+ {
+  "slug": "how-to-track-piano-lesson-tuition-payments-in-notion-step-by",
+  "title": "How to Track Piano Lesson Tuition Payments in Notion (Step-by-Step)",
+  "description": "Build a simple Notion tuition tracker for your private music studio that shows who has paid, who still owes and which families are overdue. It includes exact property names, copy-paste formulas, a worked example and a monthly checklist.",
+  "worker": "scout-4-r1",
+  "ts": 1793863965
  }
 ]

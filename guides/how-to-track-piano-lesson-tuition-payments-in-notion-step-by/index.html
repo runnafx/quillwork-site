@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Track Piano Lesson Tuition Payments in Notion (Step-by-Step) | Quillwork Studio</title><meta name="description" content="Build a simple Notion tuition tracker for your private music studio that shows who has paid, who still owes and which families are overdue. It includes exact property names, copy-paste formulas, a worked example and a monthly checklist.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/how-to-track-piano-lesson-tuition-payments-in-notion-step-by/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>How to Track Piano Lesson Tuition Payments in Notion (Step-by-Step)</h1><p class="lead">Build a simple Notion tuition tracker for your private music studio that shows who has paid, who still owes and which families are overdue. It includes exact property names, copy-paste formulas, a worked example and a monthly checklist.</p>
+<p>If you teach privately, you probably know this question well: &quot;Did the Martins pay for October?&quot; The answer ends up spread across a banking app, a text thread and a sticky note. Notion can hold all of it in one place for free, but only if you set it up so it answers that question in a few seconds.</p>
+<p>This guide walks you through a tuition tracker with two linked databases. One holds families. The other holds charges and payments. At the end you&#x27;ll have a view of every unpaid charge, a running balance for each family and a 15-minute monthly routine.</p>
+<p>One note first: this tracker <strong>records</strong> what was billed and paid. It&#x27;s not accounting software, and it gives no tax advice. If you need records for tax purposes, ask an accountant what they need from you.</p>
+<h3>What you&#x27;ll build</h3>
+<ul><li><strong>Families</strong>: one row per paying household. Siblings share a row, because one parent usually pays for all of them.</li><li><strong>Tuition</strong>: one row per charge, such as &quot;October tuition, Ava&quot; or &quot;Recital fee, Leo&quot;. You record payment details on the same row.</li><li>A <strong>relation</strong> between the two, so every family row shows its total balance automatically.</li><li>Three <strong>saved views</strong>: Unpaid, By Family and This Month.</li></ul>
+<h3>Step 1: Create the Families database</h3>
+<p>Make a new page called &quot;Studio Tuition&quot;, type /database, and pick a full-page table. Name it <strong>Families</strong> and add these properties:</p>
+<ul><li><strong>Family name</strong> (Title), for example &quot;Martin family&quot;</li><li><strong>Billing contact</strong> (Text), the parent who pays</li><li><strong>Email</strong> (Email) and <strong>Phone</strong> (Phone)</li><li><strong>Students</strong> (Text), first names, for example &quot;Ava, Leo&quot;</li><li><strong>Usual method</strong> (Select) with options such as Bank transfer, Card, Cash, Cheque or Check, and Payment app</li><li><strong>Notes</strong> (Text), for things like &quot;pays on the 1st&quot; or &quot;prefers email reminders&quot;</li></ul>
+<p>Use the parent&#x27;s details, not the child&#x27;s. You&#x27;ll contact parents about money, so keep the child&#x27;s information in your student records instead.</p>
+<h3>Step 2: Create the Tuition database</h3>
+<p>Make a second full-page table called <strong>Tuition</strong> with these properties:</p>
+<ul><li><strong>Charge</strong> (Title), for example &quot;Oct 2026 – Ava&quot;</li><li><strong>Family</strong> (Relation to Families). When Notion asks, turn on <strong>Show on Families</strong>, which makes the link two-way.</li><li><strong>Type</strong> (Select): Monthly tuition, Term tuition, Single lesson, Registration fee, Recital fee, Books/materials, Late fee</li><li><strong>Period</strong> (Text), for example &quot;Oct 2026&quot; or &quot;Autumn term&quot;</li><li><strong>Amount due</strong> (Number, formatted as your currency)</li><li><strong>Amount paid</strong> (Number, same format)</li><li><strong>Due date</strong> (Date)</li><li><strong>Paid date</strong> (Date)</li><li><strong>Method</strong> (Select, with the same options as Usual method)</li><li><strong>Reference</strong> (Text), a transfer reference, cheque number or receipt number</li></ul>
+<p>Why two amount fields instead of one &quot;Paid&quot; checkbox? Partial payments happen. A family pays half now and half on Friday, and a checkbox can&#x27;t show that.</p>
+<h3>Step 3: Add the formulas</h3>
+<p>In the Tuition database, add a property called <strong>Balance</strong> and set its type to Formula. Paste this in:</p>
+<p>prop(&quot;Amount due&quot;) - prop(&quot;Amount paid&quot;)</p>
+<p>Then add a second formula property called <strong>Status</strong>:</p>
+<p>if(prop(&quot;Balance&quot;) &lt;= 0, &quot;Paid&quot;, if(dateBefore(prop(&quot;Due date&quot;), now()), &quot;Overdue&quot;, &quot;Open&quot;))</p>
+<p>Status now updates by itself. A charge reads &quot;Open&quot; until its due date passes, &quot;Overdue&quot; after that if money is still owed, and &quot;Paid&quot; once Amount paid matches Amount due. If someone overpays, Balance goes negative and Status still shows &quot;Paid&quot;. The negative number tells you there&#x27;s a credit to carry forward.</p>
+<h3>Step 4: Show each family&#x27;s balance</h3>
+<p>Open the Families database. You&#x27;ll see a <strong>Tuition</strong> column that the two-way relation created. Now add a property called <strong>Owed</strong> and set its type to <strong>Rollup</strong>:</p>
+<ul><li>Relation: Tuition</li><li>Property: Balance</li><li>Calculate: Sum</li></ul>
+<p>Each family row now shows the total it owes across all charges. Sort Families by Owed, highest first, and the families you need to follow up with sit at the top.</p>
+<h3>Step 5: Set up three views</h3>
+<p>Views are saved filters. You set them up once and click between them.</p>
+<ol><li><strong>Unpaid</strong>: a table view of Tuition with the filter &quot;Status is not Paid&quot;, sorted by Due date ascending. You&#x27;ll check this one most often.</li><li><strong>By Family</strong>: a table view of Tuition grouped by Family, so each household&#x27;s history sits together. It&#x27;s handy when a parent asks, &quot;What have we paid this year?&quot;</li><li><strong>This Month</strong>: a calendar view of Tuition by Due date. It shows what&#x27;s coming in and when.</li></ol>
+<p>Optional: add a <strong>board view</strong> grouped by Status, with columns for Open, Overdue and Paid. Some teachers find a board easier to scan than a table.</p>
+<h3>Step 6: Your monthly routine (about 15 minutes)</h3>
+<p>Use this checklist each billing cycle.</p>
+<ul><li><strong>Create the charges.</strong> Add one Tuition row per student. Tip: in a view grouped by Family, duplicate last month&#x27;s rows and change Period, Due date and Charge name. Clear Amount paid, Paid date, Method and Reference on the copies.</li><li><strong>Send invoices or reminders</strong> however you normally do. Notion won&#x27;t email anyone for you.</li><li><strong>Record payments as they arrive.</strong> Fill in Amount paid, Paid date, Method and Reference. Enter the amount actually received, not the amount you expected.</li><li><strong>Check the Unpaid view</strong> a few days after the due date. Anything marked Overdue gets one polite reminder.</li><li><strong>Note any credits.</strong> If Balance is negative, add a row next month with a negative Amount due (for example, -20) and the Type &quot;Credit&quot;, or simply lower the next charge. Pick one method and stick with it.</li><li><strong>Lock the past.</strong> Once a month is fully paid, leave it alone. Fixing old records is how mistakes creep in.</li></ul>
+<h3>Worked example</h3>
+<p>Here&#x27;s a made-up family to show how the rows work. The Martin family has two students, Ava and Leo, and tuition is billed monthly.</p>
+<p><strong>October tuition, due 1 Oct:</strong></p>
+<ul><li>&quot;Oct 2026 – Ava&quot;: Amount due 140, Amount paid 140. Balance 0, Status Paid.</li><li>&quot;Oct 2026 – Leo&quot;: Amount due 140, Amount paid 70. Balance 70, Status Overdue once 1 Oct has passed.</li><li>&quot;Recital fee – Leo&quot;: Amount due 25, Amount paid 0. Due 15 Oct, so Status stays Open until then.</li></ul>
+<p>On the Families page, the Martin family&#x27;s <strong>Owed</strong> rollup shows <strong>95</strong>, which is 70 + 25 + 0. You can see what&#x27;s outstanding without opening a single payment app.</p>
+<p>When the second 70 for Leo arrives, change his Amount paid to 140. Don&#x27;t add a new row. Status switches to Paid and Owed drops to 25.</p>
+<h3>Common mistakes to avoid</h3>
+<ul><li><strong>One row per family per month.</strong> It seems simpler, but you lose track when one sibling stops lessons or starts halfway through a term. Use one row per student per charge.</li><li><strong>Typing the family name instead of using the relation.</strong> Typed names don&#x27;t roll up, and a typo like &quot;Martin&quot; against &quot;Martins&quot; splits the record in two.</li><li><strong>Deleting paid rows to tidy up.</strong> Hide them with the Unpaid filter instead. Your history is your proof if a payment is ever disputed.</li><li><strong>Mixing makeup-lesson credits into tuition.</strong> A missed lesson owed back is a lesson credit, not money. Track it separately from tuition unless your written policy says credits turn into refunds.</li><li><strong>No written payment policy.</strong> The tracker shows who is late, but your studio policy says what happens next. Put your due date and late-fee rules in writing so families see them before they enrol.</li></ul>
+<h3>Quick setup checklist</h3>
+<ul><li>Families database with Billing contact, Students and Usual method</li><li>Tuition database with Amount due, Amount paid, Due date, Paid date, Method and Reference</li><li>Two-way relation between Tuition and Families</li><li>Balance and Status formulas pasted in</li><li>Owed rollup (Sum of Balance) on Families</li><li>Unpaid, By Family and This Month views saved</li><li>Monthly routine added to your calendar</li></ul>
+<p>Once it&#x27;s built, you can answer &quot;Did they pay?&quot; in a few seconds. It costs nothing beyond your Notion account, and you don&#x27;t need a monthly studio-software subscription.</p>
+<div class="cta"><strong>Want the full done-for-you kit?</strong><br>StudioBook: Notion Studio Manager for Private Piano and Music Teachers · $14.00<br><a class="btn" href="https://blueflux6.gumroad.com/l/leddj" rel="noopener">Get it on Gumroad</a></div></article>
+<footer>Published by StudioBook by Quillwork Studio. Written with AI assistance and not individually reviewed by a person; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>
