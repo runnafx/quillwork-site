@@ -236,5 +236,12 @@
   "description": "A step-by-step guide for DMs and actual-play streamers who want turn order on screen in OBS or Streamlabs. It covers a free text-file method, a browser-source method and a checklist you can run before every session.",
   "worker": "scout-3-r1",
   "ts": 1793863970
+ },
+ {
+  "slug": "airbnb-check-in-message-templates-what-to-send-and-when",
+  "title": "Airbnb Check-In Message Templates: What to Send and When",
+  "description": "Copy-and-paste message scripts for every stage of a short-term rental stay, from booking confirmation to checkout. There's a send-time checklist and fill-in wording for each message.",
+  "worker": "scout-6-r1",
+  "ts": 1793863991
  }
 ]
