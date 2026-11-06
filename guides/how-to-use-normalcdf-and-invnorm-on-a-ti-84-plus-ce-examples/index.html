@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Use normalcdf and invNorm on a TI-84 Plus CE (Examples) | Quillwork Studio</title><meta name="description" content="Exact keystrokes for normalcdf and invNorm on the TI-84 Plus CE, with worked examples you can check yourself and the mistakes that cost points on finals and AP Statistics. Covers &quot;between,&quot; &quot;less than,&quot; &quot;greater than,&quot; sample means and percentile cutoffs.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/how-to-use-normalcdf-and-invnorm-on-a-ti-84-plus-ce-examples/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>How to Use normalcdf and invNorm on a TI-84 Plus CE (Examples)</h1><p class="lead">Exact keystrokes for normalcdf and invNorm on the TI-84 Plus CE, with worked examples you can check yourself and the mistakes that cost points on finals and AP Statistics. Covers &quot;between,&quot; &quot;less than,&quot; &quot;greater than,&quot; sample means and percentile cutoffs.</p>
+<p>Most normal-distribution questions on a stats final come down to two calculator commands. <strong>normalcdf</strong> gives you a probability, which is an area under the curve. <strong>invNorm</strong> goes the other way: you give it an area and it returns a cutoff value. This page covers the exact keystrokes, five worked examples with answers you can check, and the errors students run into most often.</p>
+<p>Keys are written in brackets. [2nd] [VARS] means press the blue 2nd key, then the VARS key. That opens the <strong>DISTR</strong> menu printed above VARS.</p>
+<h3>Before you start: check two settings</h3>
+<p><strong>1. Stat Wizards on or off.</strong> Press [MODE] and scroll down to <strong>STAT WIZARDS</strong>.</p>
+<ul><li><strong>ON</strong> means choosing normalcdf opens a fill-in screen with the labels lower, upper, μ and σ. This is the easiest way to work, and the rest of this page assumes it.</li><li><strong>OFF</strong> means the calculator pastes a bare `normalcdf(` and you type the numbers yourself, separated by commas, in this order: lower, upper, μ, σ.</li></ul>
+<p><strong>2. The negative key.</strong> Negative numbers need the <strong>[(-)]</strong> key at the bottom of the keypad, next to [ENTER]. The [−] subtraction key will not work and gives <strong>ERR: SYNTAX</strong>.</p>
+<h3>The keystrokes</h3>
+<p><strong>normalcdf (finding a probability)</strong></p>
+<ol><li>Press [2nd] [VARS] to open DISTR.</li><li>Choose <strong>2: normalcdf(</strong>. Either arrow down and press [ENTER], or press [2].</li><li>Enter <strong>lower</strong>, <strong>upper</strong>, <strong>μ</strong> (the mean) and <strong>σ</strong> (the standard deviation). Use the down arrow to move between fields.</li><li>Highlight <strong>Paste</strong> and press [ENTER], then press [ENTER] again to calculate.</li></ol>
+<p><strong>invNorm (finding a cutoff from an area)</strong></p>
+<ol><li>Press [2nd] [VARS], then choose <strong>3: invNorm(</strong>.</li><li>Enter <strong>area</strong>, <strong>μ</strong> and <strong>σ</strong>.</li><li>On current CE operating systems there&#x27;s also a <strong>Tail</strong> option: LEFT, CENTER or RIGHT. LEFT is the default. With LEFT, &quot;area&quot; means the area to the <strong>left</strong> of the cutoff.</li><li>Highlight <strong>Paste</strong>, then press [ENTER] twice.</li></ol>
+<p><strong>How to type &quot;infinity.&quot;</strong> The calculator has no infinity key, so use a huge number: <strong>1E99</strong>.</p>
+<ul><li>Positive: [1] [2nd] [,] [9] [9]. The &quot;E&quot; is EE, printed above the comma key.</li><li>Negative: [(-)] [1] [2nd] [,] [9] [9]</li></ul>
+<h3>Worked examples</h3>
+<p>All five examples use the same setup: <strong>adult heights are normally distributed with mean 170 cm and standard deviation 8 cm.</strong></p>
+<h3>Example 1: &quot;Between&quot; (P(160 &lt; X &lt; 180))</h3>
+<ul><li>lower: <strong>160</strong></li><li>upper: <strong>180</strong></li><li>μ: <strong>170</strong></li><li>σ: <strong>8</strong></li></ul>
+<p>Screen after pasting: `normalcdf(160,180,170,8)` <strong>Answer: about 0.7887</strong>, meaning about 78.9% of adults are between 160 and 180 cm.</p>
+<h3>Example 2: &quot;Greater than&quot; (P(X &gt; 185))</h3>
+<p>There&#x27;s no upper limit, so use 1E99.</p>
+<ul><li>lower: <strong>185</strong></li><li>upper: <strong>1E99</strong></li><li>μ: <strong>170</strong></li><li>σ: <strong>8</strong></li></ul>
+<p>Screen: `normalcdf(185,1E99,170,8)` <strong>Answer: about 0.0304</strong></p>
+<h3>Example 3: &quot;Less than&quot; (P(X &lt; 150))</h3>
+<p>There&#x27;s no lower limit, so use −1E99, typed with the [(-)] key.</p>
+<ul><li>lower: <strong>−1E99</strong></li><li>upper: <strong>150</strong></li><li>μ: <strong>170</strong></li><li>σ: <strong>8</strong></li></ul>
+<p>Screen: `normalcdf(-1E99,150,170,8)` <strong>Answer: about 0.0062</strong></p>
+<h3>Example 4: Percentile cutoff with invNorm (&quot;How tall to be in the top 10%?&quot;)</h3>
+<p>Top 10% means 90% of the area lies to the <strong>left</strong> of the cutoff.</p>
+<ul><li>area: <strong>0.90</strong></li><li>μ: <strong>170</strong></li><li>σ: <strong>8</strong></li><li>Tail: <strong>LEFT</strong></li></ul>
+<p>Screen: `invNorm(0.9,170,8)` <strong>Answer: about 180.25 cm</strong></p>
+<p>If your OS shows the Tail option, you can also enter area 0.10 with Tail set to <strong>RIGHT</strong> and get the same answer.</p>
+<p><strong>Middle 50% (the quartiles):</strong> use invNorm(0.25,170,8) ≈ <strong>164.60</strong> and invNorm(0.75,170,8) ≈ <strong>175.40</strong>. Alternatively, set Tail to CENTER with area 0.5 and the calculator returns both cutoffs.</p>
+<h3>Example 5: Sample means (&quot;A random sample of 16 adults. P(x̄ &gt; 173)?&quot;)</h3>
+<p>When the question asks about a <strong>sample mean</strong>, the spread is the standard error, σ/√n, not σ.</p>
+<ul><li>Standard error = 8 / √16 = <strong>2</strong></li><li>lower: <strong>173</strong></li><li>upper: <strong>1E99</strong></li><li>μ: <strong>170</strong></li><li>σ: <strong>2</strong> (you can also type 8/√(16) straight into the σ field)</li></ul>
+<p>Screen: `normalcdf(173,1E99,170,2)` <strong>Answer: about 0.0668</strong></p>
+<h3>Using z-scores (standard normal)</h3>
+<p>If you leave out μ and σ, the calculator assumes the standard normal (μ = 0, σ = 1).</p>
+<ul><li>`normalcdf(-1.96,1.96)` → about <strong>0.9500</strong></li><li>`invNorm(0.975)` → about <strong>1.96</strong></li></ul>
+<p>This is a quick way to check critical values from a z-table.</p>
+<h3>Common mistakes</h3>
+<ol><li><strong>Using normalpdf to get a probability.</strong> normalpdf (option 1) gives the height of the curve, not an area. For &quot;what proportion&quot; or &quot;what probability&quot; questions, use normalcdf.</li><li><strong>Entering the variance instead of the standard deviation.</strong> If the problem says &quot;variance 64,&quot; then σ = 8.</li><li><strong>Forgetting σ/√n for sample means.</strong> If the question mentions a sample of size n and asks about x̄, divide σ by √n.</li><li><strong>Typing the minus key for negatives.</strong> This gives ERR: SYNTAX. Use [(-)].</li><li><strong>Writing 1E99 as &quot;1 × 10^99&quot; by hand on the calculator.</strong> That can work, but it&#x27;s slow and easy to mistype. Use the EE key.</li><li><strong>Mixing up left and right area in invNorm.</strong> With Tail set to LEFT, a &quot;top 5%&quot; question needs area 0.95, not 0.05.</li><li><strong>Entering an area of 0 or 1 or more in invNorm.</strong> This gives ERR: DOMAIN. The area must be strictly between 0 and 1. If you typed a percentage like 90, change it to 0.90.</li><li><strong>Lower bound bigger than upper bound.</strong> normalcdf(180,160,170,8) returns a negative number. If you get a negative probability, swap the two bounds.</li></ol>
+<h3>Getting full credit on written answers</h3>
+<p>Teachers and AP Statistics free-response scoring usually expect more than bare calculator syntax. A line like &quot;normalcdf(160,180,170,8)&quot; alone may not get full credit. To be safe, write three things:</p>
+<ol><li><strong>Name the distribution and its parameters</strong>, for example &quot;X ~ Normal(μ = 170, σ = 8).&quot;</li><li><strong>State the probability you&#x27;re finding</strong>, for example &quot;P(160 &lt; X &lt; 180).&quot;</li><li><strong>Give the answer in context</strong>, for example &quot;About 78.9% of adults are between 160 and 180 cm tall.&quot;</li></ol>
+<p>If your teacher wants it, add the z-scores: z = (160 − 170)/8 = −1.25 and z = (180 − 170)/8 = 1.25.</p>
+<h3>Speed tips for exam day</h3>
+<ul><li><strong>Edit instead of retyping.</strong> Press [2nd] [ENTER] (ENTRY) to bring back your last command, arrow to the number you want to change, and press [ENTER].</li><li><strong>Leaving wizards on is fine.</strong> If you know the argument order, typing directly with wizards off can be faster, but the labeled fields help you avoid mixing up the order.</li><li><strong>Do a sanity check.</strong> A probability must be between 0 and 1. A cutoff for the &quot;top 10%&quot; has to be above the mean. If your answer breaks either rule, check your tail and your bounds.</li><li><strong>Check your OS.</strong> If your screen doesn&#x27;t show a Tail option for invNorm, your operating system is older. Use the left-area method shown in Example 4, which works on every version.</li></ul>
+<h3>Quick reference card</h3>
+<ul><li>P(a &lt; X &lt; b): normalcdf(a, b, μ, σ)</li><li>P(X &gt; a): normalcdf(a, 1E99, μ, σ)</li><li>P(X &lt; b): normalcdf(−1E99, b, μ, σ)</li><li>Cutoff with left area p: invNorm(p, μ, σ)</li><li>Top p cutoff: invNorm(1 − p, μ, σ)</li><li>Sample mean: replace σ with σ/√n</li></ul>
+<p>*This is an independent guide and is not affiliated with or endorsed by Texas Instruments. Menu wording can vary slightly by operating system version.*</p>
+<div class="cta"><strong>Want the full done-for-you kit?</strong><br>CalcFlip DIY Kit: Find, Test and Flip One Used TI-84 Plus CE Graphing Calculator on eBay · $15.99<br><a class="btn" href="https://blueflux6.gumroad.com/l/tuwbbo" rel="noopener">Get it on Gumroad</a></div></article>
+<footer>Published by KeyPath Guides by Quillwork Studio. Written with AI assistance and not individually reviewed by a person; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>

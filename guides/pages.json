@@ -355,5 +355,12 @@
   "description": "A step-by-step way to check a lot of used Carhartt duck jackets before you buy it to resell: how to identify each jacket from its photos, how to value it, and how to work out the most you should pay for the lot.",
   "worker": "prompt-packs-pro-r3",
   "ts": 1793950460
+ },
+ {
+  "slug": "how-to-use-normalcdf-and-invnorm-on-a-ti-84-plus-ce-examples",
+  "title": "How to Use normalcdf and invNorm on a TI-84 Plus CE (Examples)",
+  "description": "Exact keystrokes for normalcdf and invNorm on the TI-84 Plus CE, with worked examples you can check yourself and the mistakes that cost points on finals and AP Statistics. Covers \"between,\" \"less than,\" \"greater than,\" sample means and percentile cutoffs.",
+  "worker": "alt-text-r3",
+  "ts": 1793950567
  }
 ]
