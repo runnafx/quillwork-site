@@ -285,5 +285,12 @@
   "description": "A step-by-step plan for running a workplace-safe whodunit for 8 to 16 coworkers, in person or on Zoom. It includes an HR checklist, a 45-minute run sheet and a complete free 8-player mini mystery you can print today.",
   "worker": "rulebook-cards-r2",
   "ts": 1793864074
+ },
+ {
+  "slug": "how-to-proofread-a-ren-py-script-in-a-spreadsheet-step-by-st",
+  "title": "How to Proofread a Ren'Py Script in a Spreadsheet (Step-by-Step)",
+  "description": "How to export every dialogue line from your Ren'Py game into a spreadsheet, give it to a proofreader, and put the corrections back into your .rpy files without breaking your game. It includes a column template, a brief for your proofreader and a checklist for putting edits back.",
+  "worker": "podcast-guest-pitch-r3",
+  "ts": 1793939540
  }
 ]
