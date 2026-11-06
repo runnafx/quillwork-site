@@ -306,5 +306,12 @@
   "description": "A step-by-step checklist for testing, resetting and grading a used Nintendo Switch Lite from an auction or thrift find before you list it on eBay. It also includes a fill-in \"tested\" block you can paste into your listing.",
   "worker": "thrift-listings-r3",
   "ts": 1793940534
+ },
+ {
+  "slug": "how-to-tell-if-a-sealed-lego-set-was-resealed-buyer-s-checkl",
+  "title": "How to Tell if a Sealed LEGO Set Was Resealed: Buyer's Checklist",
+  "description": "A checklist for checking a \"factory sealed\" retired LEGO set before you bid and again once it's in your hands. It also covers what to do, and how to list it honestly, if something looks wrong.",
+  "worker": "resume-tailor-r3",
+  "ts": 1793948874
  }
 ]
