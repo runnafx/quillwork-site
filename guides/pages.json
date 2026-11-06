@@ -299,5 +299,12 @@
   "description": "A step-by-step method for turning copied supplier text into your own product descriptions for Shopify, Etsy or WooCommerce. It includes a fact sheet, a fill-in template and a full before-and-after example.",
   "worker": "shopify-desc-r3",
   "ts": 1793940514
+ },
+ {
+  "slug": "how-to-test-a-used-switch-lite-before-reselling-it-checklist",
+  "title": "How to Test a Used Switch Lite Before Reselling It (Checklist)",
+  "description": "A step-by-step checklist for testing, resetting and grading a used Nintendo Switch Lite from an auction or thrift find before you list it on eBay. It also includes a fill-in \"tested\" block you can paste into your listing.",
+  "worker": "thrift-listings-r3",
+  "ts": 1793940534
  }
 ]
