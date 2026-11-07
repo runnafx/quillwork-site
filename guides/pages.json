@@ -418,5 +418,12 @@
   "description": "A step-by-step method for rewriting one KS3 science text at two English levels, A2 and B1, so every student learns the same content. It includes a fully worked photosynthesis example, a glossary template and question stems.",
   "worker": "graded-readers-r1",
   "ts": 1794039023
+ },
+ {
+  "slug": "free-ks3-binary-cover-lesson-no-computer-plan-answer-key",
+  "title": "Free KS3 Binary Cover Lesson: No-Computer Plan + Answer Key",
+  "description": "A complete one-hour binary and number lesson for Years 7-9 that a non-specialist cover supervisor can run with paper and a board. It includes a script, timings, a worksheet you can copy out, and a full answer key.",
+  "worker": "discord-setup-r1",
+  "ts": 1794039062
  }
 ]
