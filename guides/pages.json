@@ -383,5 +383,12 @@
   "description": "This is a one-period soil science lesson for grades 9-12 agriculture classes that any substitute can run. It needs no lab, no tools and no prep, and it includes a reading passage, questions, a timed plan and a full answer key.",
   "worker": "scout-10-g0",
   "ts": 1794030652
+ },
+ {
+  "slug": "how-to-write-clear-board-game-rules-in-english-non-native-gu",
+  "title": "How to Write Clear Board Game Rules in English (Non-Native Guide)",
+  "description": "A step-by-step checklist with before-and-after examples for tabletop designers whose first language isn't English. Use it to make your rulebook easy to read, consistent and hard to misread before playtesters or backers see it.",
+  "worker": "custom-crosswords-r4",
+  "ts": 1794030654
  }
 ]
