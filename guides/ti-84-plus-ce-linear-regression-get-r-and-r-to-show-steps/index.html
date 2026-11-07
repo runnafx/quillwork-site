@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TI-84 Plus CE Linear Regression: Get r and r² to Show (Steps) | Quillwork Studio</title><meta name="description" content="How to run a linear regression on a TI-84 Plus CE, key by key, and get r and r² on screen. Also covers saving the line to Y1, making predictions, drawing a residual plot and fixing the usual errors.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/ti-84-plus-ce-linear-regression-get-r-and-r-to-show-steps/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>TI-84 Plus CE Linear Regression: Get r and r² to Show (Steps)</h1><p class="lead">How to run a linear regression on a TI-84 Plus CE, key by key, and get r and r² on screen. Also covers saving the line to Y1, making predictions, drawing a residual plot and fixing the usual errors.</p>
+<p>You run LinReg and the calculator gives you a and b, but no r or r². That&#x27;s the most common TI-84 regression problem in statistics and algebra classes. It isn&#x27;t broken. One setting is off.</p>
+<p>This page takes you through the whole job key by key: entering data, turning on r and r², running the regression, saving the equation, predicting a value, and checking the residual plot. A worked example with real numbers lets you check your screen against ours.</p>
+<p>Keys are written in brackets, like [STAT] or [2nd]. Menu items are shown as they appear on screen, like 4:LinReg(ax+b).</p>
+<h3>The worked example we&#x27;ll use</h3>
+<p>A student records hours studied (x) and test score (y):</p>
+<ul><li>Hours (x): 1, 2, 3, 4, 5, 6</li><li>Score (y): 62, 66, 71, 74, 80, 83</li></ul>
+<p>Type these numbers in as you read. Your screen should match the answers below.</p>
+<h3>Step 1: Clear old data and enter your lists</h3>
+<ol><li>Press [STAT], then choose <strong>1:Edit...</strong> and press [ENTER].</li><li>If L1 already has numbers in it, arrow <strong>up</strong> until the L1 heading is highlighted. Press [CLEAR], then [ENTER]. That empties the whole list. (Don&#x27;t press [DEL] on the heading. That removes the list from the editor.)</li><li>Do the same for L2.</li><li>Arrow into L1 and type each x value, pressing [ENTER] after each one: 1, 2, 3, 4, 5, 6.</li><li>Arrow right to L2 and type the y values: 62, 66, 71, 74, 80, 83.</li></ol>
+<p><strong>Check:</strong> L1 and L2 must have the same number of entries. If they don&#x27;t, you&#x27;ll get ERR:DIM MISMATCH later.</p>
+<p><strong>If L1 or L2 is missing from the editor:</strong> press [STAT], choose <strong>5:SetUpEditor</strong>, press [ENTER] and [ENTER] again. That puts L1 through L6 back.</p>
+<h3>Step 2: Turn on r and r² (Stat Diagnostics)</h3>
+<p>You only have to do this once. The setting stays on until a RAM reset.</p>
+<p><strong>Method A (most TI-84 Plus CE calculators with recent OS versions):</strong></p>
+<ol><li>Press [MODE].</li><li>Arrow down to <strong>STAT DIAGNOSTICS</strong>.</li><li>Highlight <strong>ON</strong> and press [ENTER].</li><li>Press [2nd] [MODE] (QUIT) to go back to the home screen.</li></ol>
+<p><strong>Method B (works on any TI-84 model):</strong></p>
+<ol><li>Press [2nd] [0] to open the CATALOG.</li><li>Press [x⁻¹]. Alpha-lock is already on in the catalog, and that key types D, so you jump to the D section.</li><li>Scroll down to <strong>DiagnosticOn</strong> and press [ENTER].</li><li>Press [ENTER] again. The screen should say <strong>Done</strong>.</li></ol>
+<p>Turning diagnostics on doesn&#x27;t change any results you already have. Run the regression again to see r and r².</p>
+<h3>Step 3: Run the regression</h3>
+<p><strong>Pick the right form.</strong> Under [STAT] then CALC, there are two linear regressions:</p>
+<ul><li><strong>4:LinReg(ax+b)</strong> gives y = ax + b, where a is the slope.</li><li><strong>8:LinReg(a+bx)</strong> gives y = a + bx, where b is the slope. AP Statistics usually writes the line this way.</li></ul>
+<p>Both give the same line. Only the letters change. Watch which letter is the slope when you write your answer.</p>
+<p><strong>With Stat Wizards on (the default on most CE calculators):</strong></p>
+<ol><li>Press [STAT], arrow right to <strong>CALC</strong>, and choose <strong>4:LinReg(ax+b)</strong>.</li><li>A wizard screen opens. Set it up like this:</li></ol>
+<ul><li><strong>Xlist:</strong> L1 (type [2nd] [1] if it isn&#x27;t already there)</li><li><strong>Ylist:</strong> L2 ([2nd] [2])</li><li><strong>FreqList:</strong> leave blank</li><li><strong>Store RegEQ:</strong> put your cursor here, press [VARS], arrow right to <strong>Y-VARS</strong>, choose <strong>1:Function</strong>, then <strong>1:Y1</strong>. This saves the line in Y1 so you can graph it and use it to predict.</li></ul>
+<ol><li>Arrow down to <strong>Calculate</strong> and press [ENTER].</li></ol>
+<p><strong>With Stat Wizards off (you only see &quot;LinReg(ax+b)&quot; on the home screen):</strong></p>
+<p>Type the arguments yourself, then press [ENTER]: LinReg(ax+b) L1, L2, Y1</p>
+<p>To get them: L1 is [2nd] [1], the comma is the [,] key, L2 is [2nd] [2], and Y1 is [VARS], then Y-VARS, then 1:Function, then 1:Y1. To turn the wizards on or off, go to [MODE] and find <strong>STAT WIZARDS</strong>.</p>
+<h3>Step 4: Read the output</h3>
+<p>For our example, the screen shows:</p>
+<ul><li>y=ax+b</li><li>a=4.285714286</li><li>b=57.66666667</li><li>r²=.9941089838</li><li>r=.9970501411</li></ul>
+<p><strong>How to write the answer:</strong> predicted score = 57.67 + 4.29(hours), with r ≈ 0.997 and r² ≈ 0.994.</p>
+<p><strong>What the numbers mean in context:</strong></p>
+<ul><li><strong>Slope (a = 4.29):</strong> for each extra hour studied, the predicted score goes up by about 4.29 points.</li><li><strong>Intercept (b = 57.67):</strong> the predicted score for 0 hours of study. That value is outside our data range, so be careful reading too much into it.</li><li><strong>r = 0.997:</strong> a very strong, positive linear relationship.</li><li><strong>r² = 0.994:</strong> about 99.4% of the variation in score is explained by the linear relationship with hours studied.</li></ul>
+<p><strong>Sign check:</strong> r always has the same sign as the slope. If your slope is negative and r is positive, you&#x27;ve mixed up your lists.</p>
+<h3>Step 5: Predict a value using Y1</h3>
+<p>You stored the line in Y1, so you don&#x27;t need to retype the equation.</p>
+<ol><li>On the home screen, press [VARS], arrow right to <strong>Y-VARS</strong>, choose <strong>1:Function</strong>, then <strong>1:Y1</strong>.</li><li>Type ( 7 ) so the screen reads <strong>Y1(7)</strong>.</li><li>Press [ENTER].</li></ol>
+<p>Result: <strong>87.66666667</strong>. A student who studies 7 hours is predicted to score about 87.7.</p>
+<p>Seven hours is just past the data (1 to 6 hours). Predicting far outside the data range is extrapolation, and teachers often ask you to say so.</p>
+<h3>Step 6: Graph the scatter plot and the line</h3>
+<ol><li>Press [2nd] [Y=] (STAT PLOT) and choose <strong>1:Plot1</strong>.</li><li>Highlight <strong>On</strong> and press [ENTER].</li><li>Type: choose the first icon (scatter plot).</li><li>Xlist: L1. Ylist: L2.</li><li>Press [ZOOM] and choose <strong>9:ZoomStat</strong>. The window fits your data, and Y1 is drawn through the points.</li></ol>
+<p>Use [TRACE] and the up/down arrows to move between the points and the line.</p>
+<h3>Step 7: Make a residual plot (to check whether linear fits)</h3>
+<p>The calculator saves residuals in a list called <strong>RESID</strong> every time you run a regression. Run the regression first, then:</p>
+<ol><li>Press [2nd] [Y=] and choose <strong>1:Plot1</strong>.</li><li>Keep Xlist as L1. Move to <strong>Ylist</strong>, clear it, then press [2nd] [STAT] (LIST). Under <strong>NAMES</strong>, scroll to <strong>RESID</strong> and press [ENTER].</li><li>Press [Y=] and turn Y1 off so the line doesn&#x27;t cover the plot. Arrow onto the = sign next to Y1 and press [ENTER] to unhighlight it.</li><li>Press [ZOOM] then <strong>9:ZoomStat</strong>.</li></ol>
+<p>For our example, the residuals are roughly 0.05, −0.24, 0.48, −0.81, 0.90 and −0.38. They bounce above and below zero with no curve, so a linear model fits.</p>
+<p><strong>What to look for:</strong> random scatter around zero means linear is reasonable. A clear U shape or curve means a linear model isn&#x27;t a good fit.</p>
+<p>To see the residual numbers, go to [STAT], 1:Edit, arrow to an empty list heading, and type the name RESID.</p>
+<h3>Fixing the most common problems</h3>
+<ul><li><strong>No r or r² on screen:</strong> Stat Diagnostics is off. Do Step 2, then run the regression again.</li><li><strong>ERR:DIM MISMATCH:</strong> L1 and L2 have different numbers of entries. Check the bottom of each list in the editor.</li><li><strong>ERR:INVALID DIM when graphing:</strong> a stat plot is pointing to an empty or mismatched list. Turn off any plots you aren&#x27;t using: [2nd] [Y=], <strong>4:PlotsOff</strong>, [ENTER].</li><li><strong>Weird answers from an old problem:</strong> old numbers are still in the lists. Clear them from the heading as in Step 1.</li><li><strong>Line doesn&#x27;t appear on the graph:</strong> you didn&#x27;t fill in Store RegEQ, or Y1 is turned off in [Y=].</li><li><strong>Slope and intercept seem swapped:</strong> you used 8:LinReg(a+bx) and read it as ax+b, or the other way around.</li><li><strong>QuadReg shows R² but no r:</strong> that&#x27;s normal. For non-linear models the calculator gives R² (the coefficient of determination) instead of r.</li></ul>
+<h3>Quick-reference card (copy this into your notes)</h3>
+<ol><li>[STAT] 1:Edit: x values in L1, y values in L2</li><li>Diagnostics on (once): [MODE] then STAT DIAGNOSTICS ON, or CATALOG then DiagnosticOn</li><li>[STAT] then CALC then 4:LinReg(ax+b): Xlist L1, Ylist L2, Store RegEQ Y1 ([VARS] Y-VARS 1 1), Calculate</li><li>Read a, b, r², r and write the equation in context</li><li>Predict: Y1(value) [ENTER]</li><li>Scatter plot: [2nd] [Y=] Plot1 On, then [ZOOM] 9</li><li>Residuals: Plot1 Ylist = RESID, then [ZOOM] 9</li></ol>
+<p>This is an independent guide. It isn&#x27;t affiliated with or endorsed by Texas Instruments. Menu wording can vary a little between OS versions. If a menu item looks different on your calculator, look for the closest match on the same menu.</p>
+<div class="cta"><strong>Want the full done-for-you kit?</strong><br>CalcFlip DIY Kit: Find, Test and Flip One Used TI-84 Plus CE Graphing Calculator on eBay · $15.99<br><a class="btn" href="https://blueflux6.gumroad.com/l/tuwbbo" rel="noopener">Get it on Gumroad</a></div></article>
+<footer>Published by KeyPath Guides by Quillwork Studio. Written with AI assistance and not individually reviewed by a person; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>

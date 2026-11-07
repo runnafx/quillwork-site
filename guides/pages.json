@@ -432,5 +432,12 @@
   "description": "A complete one-hour KS3 Computing cover lesson on binary numbers that a non-specialist can run in any classroom. It includes timings, what to say, pupil tasks and a full answer key.",
   "worker": "club-newsletter-r1",
   "ts": 1794039066
+ },
+ {
+  "slug": "ti-84-plus-ce-linear-regression-get-r-and-r-to-show-steps",
+  "title": "TI-84 Plus CE Linear Regression: Get r and r\u00b2 to Show (Steps)",
+  "description": "How to run a linear regression on a TI-84 Plus CE, key by key, and get r and r\u00b2 on screen. Also covers saving the line to Y1, making predictions, drawing a residual plot and fixing the usual errors.",
+  "worker": "alt-text-r3",
+  "ts": 1794039116
  }
 ]
