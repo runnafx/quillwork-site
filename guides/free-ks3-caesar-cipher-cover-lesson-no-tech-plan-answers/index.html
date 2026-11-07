@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free KS3 Caesar Cipher Cover Lesson: No-Tech Plan + Answers | Quillwork Studio</title><meta name="description" content="A complete 60-minute KS3 Computing cover lesson on Caesar ciphers and code-breaking. It needs only paper and pens, comes with a script for the supervisor, and has every answer checked.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/free-ks3-caesar-cipher-cover-lesson-no-tech-plan-answers/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>Free KS3 Caesar Cipher Cover Lesson: No-Tech Plan + Answers</h1><p class="lead">A complete 60-minute KS3 Computing cover lesson on Caesar ciphers and code-breaking. It needs only paper and pens, comes with a script for the supervisor, and has every answer checked.</p>
+<p>This is a one-hour cryptography lesson for Years 7–9 that any cover supervisor can run. It needs no computers, logins, slides or internet. Pupils need a pen and paper. You can copy every puzzle onto the board or print this page. A full answer key is at the bottom, so the supervisor never has to work out a cipher on the spot.</p>
+<p><strong>Topic links:</strong> encryption, keys, algorithms and why weak encryption can be broken. These ideas come up throughout KS3 Computing and lead into GCSE work on security.</p>
+<h3>What you need</h3>
+<ul><li>This page, printed or on one device for the supervisor only</li><li>Lined paper or exercise books</li><li>Pens and pencils</li><li>Optional: scissors and a strip of card per pupil for an alphabet slider</li></ul>
+<h3>Lesson at a glance</h3>
+<ol><li>Starter: crack the board message (5 minutes)</li><li>Explain the Caesar cipher (5 minutes)</li><li>Build an alphabet slider (5 minutes)</li><li>Task A: encrypt and decrypt (15 minutes)</li><li>Task B: brute force, trying every key (10 minutes)</li><li>Task C: frequency analysis (15 minutes)</li><li>Plenary: why this cipher is weak (5 minutes)</li></ol>
+<h3>Supervisor script</h3>
+<p>You don&#x27;t need any computing knowledge. Read the bold lines aloud as written.</p>
+<h3>1. Starter (5 minutes)</h3>
+<p>Write this on the board before pupils come in:</p>
+<p><strong>PHHW PH DW WKH OLEUDUB</strong></p>
+<p>Say: <strong>&quot;This is a secret message. Each letter has been swapped for the letter three places further along the alphabet. To read it, move each letter three places back. A becomes X, B becomes Y, C becomes Z. You have five minutes.&quot;</strong></p>
+<p>Answer: MEET ME AT THE LIBRARY</p>
+<h3>2. Explain the idea (5 minutes)</h3>
+<p>Say: <strong>&quot;This is called a Caesar cipher. Julius Caesar is said to have used it for military messages. Turning a normal message, the plaintext, into a secret one, the ciphertext, is called encryption. Turning it back is decryption. The number of places you shift is the key. Anyone who knows the key can read the message.&quot;</strong></p>
+<p>Write these four words on the board for pupils to copy with a definition each: <strong>plaintext, ciphertext, encryption, key</strong>.</p>
+<h3>3. Build an alphabet slider (5 minutes)</h3>
+<p>Pupils write the alphabet in a row across the top of a page:</p>
+<p>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+<p>Underneath, they write it again, starting from the letter the key points to. For a key of 3 the second row starts at D and wraps round:</p>
+<p>D E F G H I J K L M N O P Q R S T U V W X Y Z A B C</p>
+<p>To encrypt, find a letter in the top row and write the letter below it. To decrypt, go the other way. If you have card and scissors, pupils can make two strips and slide one along the other to change the key.</p>
+<p>Say: <strong>&quot;Write the letters neatly and evenly spaced. Most mistakes in this lesson come from a messy alphabet.&quot;</strong></p>
+<h3>4. Task A: encrypt and decrypt (15 minutes)</h3>
+<p>Copy these onto the board. Pupils show their working.</p>
+<p><strong>Encrypt these (turn plaintext into ciphertext):</strong></p>
+<ol><li>ALGORITHM, key 1</li><li>COMPUTERS FOLLOW INSTRUCTIONS, key 3</li><li>THE KEY IS SECRET, key 5</li></ol>
+<p><strong>Decrypt these (turn ciphertext into plaintext):</strong></p>
+<ol><li>RIZIV WLEVI CSYV TEWWASVH, key 4</li><li>OXMBIZDSYX UOOZC NKDK CKPO, key 10</li><li>FDHVDU XVHG D VKLIW RI WKUHH, key 3</li></ol>
+<p><strong>Extension:</strong> Pupils write their own message with a key of their choice, swap with a partner without telling them the key, and save it for Task B.</p>
+<h3>5. Task B: brute force (10 minutes)</h3>
+<p>Say: <strong>&quot;Now you are the code-breaker. You&#x27;ve caught a message but you don&#x27;t know the key. There are only 25 possible keys, so you can try them all. This is called a brute-force attack.&quot;</strong></p>
+<p>Write on the board:</p>
+<p><strong>IPUHYF PZ IHZL ADV</strong></p>
+<p>Tips for pupils:</p>
+<ul><li>Take only the first word, IPUHYF, and shift it back by 1, then 2, then 3, and so on</li><li>Stop when you get a real English word, then use that key on the rest of the message</li><li>Record the key you found</li></ul>
+<p>Then pupils try to brute-force the partner message from the Task A extension.</p>
+<p>Say: <strong>&quot;How many tries did it take? A computer could try all 25 keys in a fraction of a second. What does that tell you about this cipher?&quot;</strong></p>
+<h3>6. Task C: frequency analysis (15 minutes)</h3>
+<p>Say: <strong>&quot;In English, E is the most common letter. If we count which letter appears most in a secret message, it is probably standing in for E. That gives us the key without trying every option. This is called frequency analysis.&quot;</strong></p>
+<p>Write this longer message on the board:</p>
+<p><strong>CQN NWNVH FRUU JCCJLT JC MJFW BX BNWM CQN VNBBJPN CX CQN PNWNAJU JC XWLN</strong></p>
+<p>Steps for pupils:</p>
+<ol><li>Make a tally chart of every letter in the message</li><li>Find the most common letter</li><li>Assume it stands for E. Count how many places it is from E. That is the key.</li><li>Decrypt the whole message with that key</li><li>Write two sentences: did it work, and why does this method work better on long messages than short ones?</li></ol>
+<h3>7. Plenary (5 minutes)</h3>
+<p>Ask the class these questions aloud and take answers:</p>
+<ul><li><strong>&quot;Why is the Caesar cipher easy to break?&quot;</strong> Only 25 keys, and letter patterns stay the same.</li><li><strong>&quot;What would make a cipher harder to break?&quot;</strong> Many more possible keys, and letters that don&#x27;t always encrypt to the same thing.</li><li><strong>&quot;Where do we use encryption today?&quot;</strong> Online banking, messaging apps, passwords, websites that show a padlock. Modern encryption uses keys far too large to brute-force by hand.</li></ul>
+<p>Exit ticket: pupils write the definition of <strong>key</strong> and one reason the Caesar cipher is weak.</p>
+<h3>Answer key</h3>
+<p><strong>Starter:</strong> MEET ME AT THE LIBRARY (key 3)</p>
+<p><strong>Task A:</strong></p>
+<ol><li>ALGORITHM, key 1 → <strong>BMHPSJUIN</strong></li><li>COMPUTERS FOLLOW INSTRUCTIONS, key 3 → <strong>FRPSXWHUV IROORZ LQVWUXFWLRQV</strong></li><li>THE KEY IS SECRET, key 5 → <strong>YMJ PJD NX XJHWJY</strong></li><li>RIZIV WLEVI CSYV TEWWASVH, key 4 → <strong>NEVER SHARE YOUR PASSWORD</strong></li><li>OXMBIZDSYX UOOZC NKDK CKPO, key 10 → <strong>ENCRYPTION KEEPS DATA SAFE</strong></li><li>FDHVDU XVHG D VKLIW RI WKUHH, key 3 → <strong>CAESAR USED A SHIFT OF THREE</strong></li></ol>
+<p><strong>Task B:</strong> IPUHYF PZ IHZL ADV uses <strong>key 7</strong> and decrypts to <strong>BINARY IS BASE TWO</strong>. Pupils find it by shifting the first word back 7 places.</p>
+<p><strong>Task C:</strong></p>
+<ul><li>The most common letter is <strong>N</strong>, which appears 11 times. The next most common are C (8) and J (7).</li><li>From E to N is 9 places, so the <strong>key is 9</strong>.</li><li>Decrypted: <strong>THE ENEMY WILL ATTACK AT DAWN SO SEND THE MESSAGE TO THE GENERAL AT ONCE</strong></li><li>Good written answer: frequency analysis works better on long messages because there are enough letters for the real patterns of English to show. In a short message the most common letter might not be E.</li></ul>
+<h3>Common problems and quick fixes</h3>
+<ul><li><strong>&quot;I keep getting nonsense.&quot;</strong> Check the alphabet rows line up. Usually one letter has been skipped or doubled.</li><li><strong>&quot;What happens after Z?&quot;</strong> Go back to A. The alphabet wraps round like a clock.</li><li><strong>Pupils finish early:</strong> Ask them to encrypt a message with a key of 13, then encrypt the result again with 13. They should find they get the original message back. Ask them why: 13 + 13 = 26, a full trip round the alphabet.</li><li><strong>Pupils struggle with Task C:</strong> Give them the hint that N stands for E and let them work out the key from there.</li><li><strong>Spaces and punctuation:</strong> Leave them as they are. Only letters are shifted.</li></ul>
+<h3>Adapting for different year groups</h3>
+<ul><li><strong>Year 7:</strong> Spend longer on Task A and use only keys 1–5. Treat Task C as a whole-class activity on the board.</li><li><strong>Year 8:</strong> Run the lesson as written.</li><li><strong>Year 9:</strong> Ask pupils to write the Caesar cipher as an algorithm in numbered steps or pseudocode, for example &quot;for each letter in the message, move it forward by the key, wrapping from Z to A&quot;.</li></ul>
+<h3>Notes for the teacher who set the work</h3>
+<p>Ask the supervisor to collect the exit tickets and the Task C written answers. These show quickly who understood keys and code-breaking. In the next lesson you can build on this with substitution ciphers that don&#x27;t use a fixed shift, or with a discussion of why modern encryption uses huge keys.</p>
+<div class="cta"><strong>More templates and kits</strong><br><a class="btn" href="https://blueflux6.gumroad.com" rel="noopener">Browse the Quillwork shop</a></div></article>
+<footer>Published by Unplugged Cover Co. by Quillwork Studio. Written with AI assistance and not individually reviewed by a person; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>
