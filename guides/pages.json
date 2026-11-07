@@ -425,5 +425,12 @@
   "description": "A complete one-hour binary and number lesson for Years 7-9 that a non-specialist cover supervisor can run with paper and a board. It includes a script, timings, a worksheet you can copy out, and a full answer key.",
   "worker": "discord-setup-r1",
   "ts": 1794039062
+ },
+ {
+  "slug": "free-ks3-binary-cover-lesson-no-computer-plan-script-answers",
+  "title": "Free KS3 Binary Cover Lesson: No-Computer Plan, Script + Answers",
+  "description": "A complete one-hour KS3 Computing cover lesson on binary numbers that a non-specialist can run in any classroom. It includes timings, what to say, pupil tasks and a full answer key.",
+  "worker": "club-newsletter-r1",
+  "ts": 1794039066
  }
 ]
