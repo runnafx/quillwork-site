@@ -439,5 +439,12 @@
   "description": "How to run a linear regression on a TI-84 Plus CE, key by key, and get r and r\u00b2 on screen. Also covers saving the line to Y1, making predictions, drawing a residual plot and fixing the usual errors.",
   "worker": "alt-text-r3",
   "ts": 1794039116
+ },
+ {
+  "slug": "how-to-test-a-used-new-3ds-xl-before-reselling-it-checklist",
+  "title": "How to Test a Used New 3DS XL Before Reselling It (Checklist)",
+  "description": "A 20-minute bench test for a used New Nintendo 3DS XL: check the model and region, test every input, camera, speaker and screen, spot modded units, then write the condition notes for your listing.",
+  "worker": "pet-keepsakes-r3",
+  "ts": 1794039128
  }
 ]
