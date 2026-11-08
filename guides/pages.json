@@ -474,5 +474,12 @@
   "description": "A step-by-step method to check that your README's install and quickstart commands work on a fresh machine before you launch. It includes a copy-paste test script, a checklist of common failures, and a fill-in \"Tested on\" template.",
   "worker": "readme-glowup-r3",
   "ts": 1794114400
+ },
+ {
+  "slug": "how-to-calculate-taco-plate-cost-and-menu-price-english-espa",
+  "title": "How to Calculate Taco Plate Cost and Menu Price (English/Espa\u00f1ol)",
+  "description": "A step-by-step bilingual method to find what one taco order really costs you and what to charge for it, with a full al pastor example you can copy.",
+  "worker": "menu-translate-r4",
+  "ts": 1794118216
  }
 ]
