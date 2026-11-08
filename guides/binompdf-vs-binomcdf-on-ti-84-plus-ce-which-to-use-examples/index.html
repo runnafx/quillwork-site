@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>binompdf vs binomcdf on TI-84 Plus CE: Which to Use (Examples) | Quillwork Studio</title><meta name="description" content="How to choose binompdf or binomcdf on a TI-84 Plus CE, with a table for &quot;at least,&quot; &quot;at most,&quot; &quot;more than&quot; and &quot;between.&quot; Includes key-by-key steps, worked answers and practice problems.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/binompdf-vs-binomcdf-on-ti-84-plus-ce-which-to-use-examples/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>binompdf vs binomcdf on TI-84 Plus CE: Which to Use (Examples)</h1><p class="lead">How to choose binompdf or binomcdf on a TI-84 Plus CE, with a table for &quot;at least,&quot; &quot;at most,&quot; &quot;more than&quot; and &quot;between.&quot; Includes key-by-key steps, worked answers and practice problems.</p>
+<p><strong>binompdf</strong> gives the probability of <strong>exactly</strong> one count. <strong>binomcdf</strong> gives the probability of <strong>that count or fewer</strong>, added up from 0.</p>
+<p>Most wrong answers come from the wording of the question, not from the calculator. &quot;At least 6&quot; and &quot;more than 6&quot; need different numbers typed in. The table below covers every common phrase, followed by keystrokes and practice problems you can check against the answers.</p>
+<p>Keys are written in brackets, like [2nd]. This is an independent guide, not affiliated with or endorsed by Texas Instruments.</p>
+<h3>First, check that the problem is binomial</h3>
+<p>Use these functions only if all four are true:</p>
+<ul><li>There is a <strong>fixed number of trials</strong> (n).</li><li>Each trial has <strong>two outcomes</strong>, success or failure.</li><li>The <strong>probability of success (p) is the same</strong> on every trial.</li><li>The trials are <strong>independent</strong>.</li></ul>
+<p>If you are counting trials until the first success, that is geometric, not binomial. If you sample without replacement from a small group, the trials aren&#x27;t independent. Classes commonly accept binomial as an approximation when the sample is no more than 10% of the population.</p>
+<h3>The translation table</h3>
+<p>X is the number of successes, and k is the number in the question. The third column shows what to type.</p>
+<p>| The question says | Probability | Type this | |---|---|---| | exactly k | P(X = k) | binompdf(n, p, k) | | at most k, no more than k, k or fewer | P(X ≤ k) | binomcdf(n, p, k) | | fewer than k, less than k | P(X &lt; k) | binomcdf(n, p, k−1) | | at least k, no fewer than k, k or more | P(X ≥ k) | 1 − binomcdf(n, p, k−1) | | more than k, greater than k | P(X &gt; k) | 1 − binomcdf(n, p, k) | | from a to b, including both | P(a ≤ X ≤ b) | binomcdf(n, p, b) − binomcdf(n, p, a−1) | | between a and b, not including either | P(a &lt; X &lt; b) | binomcdf(n, p, b−1) − binomcdf(n, p, a) |</p>
+<p><strong>Why the k−1 appears:</strong> binomcdf only adds from 0 up to a number. To get &quot;at least 6,&quot; find everything you don&#x27;t want, which is 0 through 5, and subtract it from 1. The excluded group stops at 5, so you type 5.</p>
+<p><strong>Quick check:</strong> write out the counts on a number line and circle the ones the question wants. If you are subtracting, the number you type is the last count that is <strong>not</strong> circled.</p>
+<h3>Step-by-step: binompdf with Stat Wizards on</h3>
+<p>Example: A player makes 30% of her three-point shots and takes 20 independent shots. What is the probability she makes exactly 6?</p>
+<p>Here, n = 20, p = 0.3 and k = 6.</p>
+<ol><li>Press [2nd] [VARS] to open the DISTR menu.</li><li>Press [ALPHA] [MATH] to jump to <strong>A:binompdf(</strong>. You can also scroll to it and press [ENTER].</li><li>Fill in the wizard, pressing [ENTER] or the down arrow after each entry:</li></ol>
+<ul><li>trials: <strong>20</strong></li><li>p: <strong>.3</strong></li><li>x value: <strong>6</strong></li></ul>
+<ol><li>Highlight <strong>Paste</strong> and press [ENTER]. The command appears on the home screen.</li><li>Press [ENTER] again to calculate.</li></ol>
+<p><strong>Answer: 0.1916</strong> (your screen shows more digits).</p>
+<h3>Step-by-step: binomcdf</h3>
+<p>Same player: what is the probability she makes at most 6?</p>
+<ol><li>Press [2nd] [VARS].</li><li>Press [ALPHA] [APPS] to jump to <strong>B:binomcdf(</strong>.</li><li>Enter trials <strong>20</strong>, p <strong>.3</strong>, x value <strong>6</strong>.</li><li>Highlight <strong>Paste</strong>, then press [ENTER] twice.</li></ol>
+<p><strong>Answer: 0.6080</strong></p>
+<p>The letter shortcuts work because the green letter above [MATH] is A and the one above [APPS] is B. Before pressing [ENTER], make sure the top of the wizard says the function you meant to choose.</p>
+<h3>With Stat Wizards off</h3>
+<p>If the menu drops a bare binompdf( on the home screen instead of opening a form, type the values in order, separated by commas:</p>
+<p>binompdf(20,.3,6)</p>
+<p>The order is always <strong>n, p, k</strong>. To switch the forms back on, press [MODE] and find <strong>STAT WIZARDS</strong>.</p>
+<h3>How to do &quot;at least&quot; and &quot;more than&quot;</h3>
+<p>Same player: what is the probability she makes <strong>at least 6</strong>?</p>
+<p>From the table, P(X ≥ 6) = 1 − binomcdf(20, .3, 5).</p>
+<ol><li>On the home screen, press [1], then the subtraction key [−]. Do not use the negative key [(-)].</li><li>Press [2nd] [VARS] [ALPHA] [APPS].</li><li>Enter trials <strong>20</strong>, p <strong>.3</strong>, x value <strong>5</strong>.</li><li>Paste, then press [ENTER].</li></ol>
+<p><strong>Answer: 0.5836</strong></p>
+<p><strong>Backup method:</strong> calculate binomcdf(20,.3,5) by itself, then press [1] [−] [2nd] [(-)] [ENTER]. [2nd] [(-)] is <strong>Ans</strong>, so this works out 1 − Ans. Press the 1 first. If you start with [−], the calculator writes Ans − at the start and you&#x27;ll get the wrong expression.</p>
+<h3>How to do a range</h3>
+<p>What is the probability she makes <strong>from 4 to 8</strong> shots, including both?</p>
+<p>Type: binomcdf(20,.3,8) − binomcdf(20,.3,3)</p>
+<p>The first part covers 0 through 8. The second removes 0 through 3, which leaves 4 through 8. Use the wizard twice with [−] pressed between the two pastes, or type the whole line with the wizards off.</p>
+<p><strong>Answer: 0.7796</strong></p>
+<h3>All the answers for this example</h3>
+<p>n = 20, p = 0.3:</p>
+<ul><li>P(X = 6) = <strong>0.1916</strong></li><li>P(X ≤ 6) = <strong>0.6080</strong></li><li>P(X &lt; 6) = <strong>0.4164</strong></li><li>P(X ≥ 6) = <strong>0.5836</strong></li><li>P(X &gt; 6) = <strong>0.3920</strong></li><li>P(4 ≤ X ≤ 8) = <strong>0.7796</strong></li></ul>
+<p>Two checks you can run. P(X &lt; 6) plus P(X = 6) should equal P(X ≤ 6), and 0.4164 + 0.1916 = 0.6080. Also, P(X ≥ 6) and P(X &lt; 6) should add up to 1.</p>
+<h3>Common mistakes and error messages</h3>
+<ul><li><strong>Used 6 instead of 5 for &quot;at least 6.&quot;</strong> This drops 6 from the answer. It&#x27;s the most common error with these functions, so use the table.</li><li><strong>Typed the percent as a whole number.</strong> A p of 30 instead of .3 usually gives <strong>ERR:DOMAIN</strong>, because p has to be between 0 and 1.</li><li><strong>Pressed [(-)] instead of [−].</strong> &quot;1 (-) binomcdf(&quot; gives <strong>ERR:SYNTAX</strong>. The negative key is the small one next to [ENTER]. Subtraction is the blue-side key above [+].</li><li><strong>Rounded a repeating p.</strong> If p is 1/3, type <strong>1/3</strong> in the p field rather than .33. Your answer will be more accurate.</li><li><strong>Mixed up n and k.</strong> In a &quot;20 shots, 6 makes&quot; problem, 20 is trials and 6 is the x value.</li><li><strong>Used the wrong success.</strong> If the question counts misses, p must be the probability of a miss, 0.7 here, not 0.3.</li><li><strong>Got an answer with E in it, such as 1.2E-5.</strong> That&#x27;s scientific notation for 0.000012, not an error. The event is just very unlikely.</li><li><strong>Got the wrong number after menu scrolling.</strong> Scrolling past B lands on the Poisson functions. Read the title at the top of the wizard.</li></ul>
+<h3>What to write on a test or AP free-response</h3>
+<p>Calculator syntax on its own is usually not enough. Your teacher or an AP Statistics reader needs the setup, not just &quot;binomcdf(20,.3,5).&quot; Name the distribution, its parameters and the event, then give the answer:</p>
+<p><strong>Let X = the number of shots made. X is binomial with n = 20 and p = 0.3. P(X ≥ 6) = 1 − P(X ≤ 5) = 0.5836.</strong></p>
+<p>Check your own teacher&#x27;s rules, because expectations on showing work and rounding differ.</p>
+<h3>Practice problems</h3>
+<p>Choose the function and the number to type before you press any keys.</p>
+<ol><li>n = 12, p = 0.25. Exactly 3 successes.</li><li>n = 15, p = 0.6. At most 8 successes.</li><li>n = 10, p = 0.9. Fewer than 8 successes.</li><li>n = 25, p = 0.2. At least 7 successes.</li><li>n = 18, p = 0.5. From 7 to 11 successes, inclusive.</li><li>n = 8, p = 0.4. More than 5 successes.</li></ol>
+<p><strong>Answers</strong></p>
+<ol><li>binompdf(12,.25,3) = <strong>0.2581</strong></li><li>binomcdf(15,.6,8) = <strong>0.3902</strong></li><li>binomcdf(10,.9,7) = <strong>0.0702</strong></li><li>1 − binomcdf(25,.2,6) = <strong>0.2200</strong></li><li>binomcdf(18,.5,11) − binomcdf(18,.5,6) = <strong>0.7621</strong></li><li>1 − binomcdf(8,.4,5) = <strong>0.0498</strong></li></ol>
+<div class="cta"><strong>Want the full done-for-you kit?</strong><br>CalcFlip DIY Kit: Find, Test and Flip One Used TI-84 Plus CE Graphing Calculator on eBay · $15.99<br><a class="btn" href="https://blueflux6.gumroad.com/l/tuwbbo" rel="noopener">Get it on Gumroad</a></div></article>
+<footer>Published by KeyPath Guides by Quillwork Studio. Written with AI assistance and not individually reviewed by a person; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>

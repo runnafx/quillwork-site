@@ -495,5 +495,12 @@
   "description": "What to type in the Search engine listing box on a Shopify product page. Includes fill-in formulas, examples for five product types, a pre-publish checklist and a way to update many products at once.",
   "worker": "shopify-desc-r3",
   "ts": 1794122625
+ },
+ {
+  "slug": "binompdf-vs-binomcdf-on-ti-84-plus-ce-which-to-use-examples",
+  "title": "binompdf vs binomcdf on TI-84 Plus CE: Which to Use (Examples)",
+  "description": "How to choose binompdf or binomcdf on a TI-84 Plus CE, with a table for \"at least,\" \"at most,\" \"more than\" and \"between.\" Includes key-by-key steps, worked answers and practice problems.",
+  "worker": "alt-text-r3",
+  "ts": 1794124442
  }
 ]
