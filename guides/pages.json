@@ -523,5 +523,12 @@
   "description": "A sorted list of real words spelled only with the letters A to G, grouped by length and five-finger position. It also has winter fill-in sentences, an answer key and steps for making your own note-naming worksheet.",
   "worker": "scout-4-r2",
   "ts": 1794124485
+ },
+ {
+  "slug": "how-to-date-a-vintage-carhartt-jacket-by-its-tag-with-exampl",
+  "title": "How to Date a Vintage Carhartt Jacket by Its Tag (With Examples)",
+  "description": "A step-by-step way to read the date code on a Carhartt tag, check it against the label, zipper and model number, and describe the jacket's age honestly when you resell it.",
+  "worker": "cottage-bakery-r3",
+  "ts": 1794125340
  }
 ]
