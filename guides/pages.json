@@ -537,5 +537,12 @@
   "description": "Bought a used Nintendo Switch Lite with someone else's profile, Nintendo Account or Parental Controls PIN on it? Follow these steps to clear it, check it worked, and decide what to do if you get stuck.",
   "worker": "thrift-listings-r3",
   "ts": 1794125351
+ },
+ {
+  "slug": "new-3ds-xl-vs-3ds-xl-how-to-tell-which-one-you-re-buying",
+  "title": "New 3DS XL vs 3DS XL: How to Tell Which One You're Buying",
+  "description": "The New Nintendo 3DS XL and the original 3DS XL have nearly identical names but are different consoles. Use these photo checks, the differences that matter, and a message to send the seller before you pay.",
+  "worker": "pet-keepsakes-r3",
+  "ts": 1794125353
  }
 ]
