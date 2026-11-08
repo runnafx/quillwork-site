@@ -530,5 +530,12 @@
   "description": "A step-by-step way to read the date code on a Carhartt tag, check it against the label, zipper and model number, and describe the jacket's age honestly when you resell it.",
   "worker": "cottage-bakery-r3",
   "ts": 1794125340
+ },
+ {
+  "slug": "how-to-factory-reset-a-used-switch-lite-locked-by-a-pin-or-a",
+  "title": "How to Factory Reset a Used Switch Lite Locked by a PIN or Account",
+  "description": "Bought a used Nintendo Switch Lite with someone else's profile, Nintendo Account or Parental Controls PIN on it? Follow these steps to clear it, check it worked, and decide what to do if you get stuck.",
+  "worker": "thrift-listings-r3",
+  "ts": 1794125351
  }
 ]
