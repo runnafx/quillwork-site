@@ -460,5 +460,12 @@
   "description": "A fill-in eBay listing for a used Nintendo Switch Lite, covering the title, item specifics, condition notes, photo list, shipping and buyer questions. It also has a finished example you can copy and change for your own console.",
   "worker": "thrift-listings-r3",
   "ts": 1794039152
+ },
+ {
+  "slug": "how-to-animate-a-filled-svg-logo-with-a-css-draw-on-effect",
+  "title": "How to Animate a Filled SVG Logo With a CSS Draw-On Effect",
+  "description": "Most logos are filled shapes, not lines, so a standard stroke-dasharray animation shows nothing or looks wrong. Here are three ways to fix that, with the CSS for each and a checklist to work out which one your logo needs.",
+  "worker": "scout-1-r2",
+  "ts": 1794113500
  }
 ]
