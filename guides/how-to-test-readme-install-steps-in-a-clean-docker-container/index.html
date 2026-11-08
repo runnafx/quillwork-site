@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Test README Install Steps in a Clean Docker Container | Quillwork Studio</title><meta name="description" content="A step-by-step method to check that your README&#x27;s install and quickstart commands work on a fresh machine before you launch. It includes a copy-paste test script, a checklist of common failures, and a fill-in &quot;Tested on&quot; template.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/how-to-test-readme-install-steps-in-a-clean-docker-container/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>How to Test README Install Steps in a Clean Docker Container</h1><p class="lead">A step-by-step method to check that your README&#x27;s install and quickstart commands work on a fresh machine before you launch. It includes a copy-paste test script, a checklist of common failures, and a fill-in &quot;Tested on&quot; template.</p>
+<p>Your install steps work on your laptop, but your laptop is a poor test machine. It already has your global packages, cached dependencies, environment variables, the right language version, and files git doesn&#x27;t track. A new visitor from Show HN or Product Hunt has none of that. If their first command fails, many will leave without filing an issue.</p>
+<p>This guide shows how to run your README&#x27;s install and quickstart commands in a fresh container, keep a log of what happened, and fix the gaps before launch. You need Docker installed and a git repo. Setup takes about 15 minutes.</p>
+<h3>Step 1: Copy your README commands into a script, exactly as written</h3>
+<p>Open your README and copy every command from the Install and Quickstart sections into a new file called `readme-steps.sh` at the root of your repo. Copy them <strong>exactly as written</strong>. Don&#x27;t fix typos and don&#x27;t add steps you &quot;know&quot; are needed. The point is to test the README, not your memory.</p>
+<p>``` #!/usr/bin/env bash</p>
+<h2>readme-steps.sh: commands copied verbatim from README</h2>
+<p>set -euxo pipefail</p>
+<h2>--- Install (from README) ---</h2>
+<p>pip install .</p>
+<h2>--- Quickstart (from README) ---</h2>
+<p>mytool --version mytool init demo mytool run demo</p>
+<p>echo &quot;ALL README STEPS PASSED&quot; ```</p>
+<p>What the flags do:</p>
+<ul><li><strong>-e</strong> stops at the first failing command, so you see the real error and not a pile of later failures.</li><li><strong>-u</strong> fails on unset variables, which catches &quot;you need to export API_KEY first&quot; steps the README never mentions.</li><li><strong>-x</strong> prints each command before it runs, so the log reads like a transcript.</li><li><strong>-o pipefail</strong> catches failures hidden inside piped commands such as `curl ... | sh`.</li></ul>
+<p>If your README shows commands with a `$ ` prompt in front, delete the prompt in the script. Then fix the README too, because readers who copy the line will paste the `$` along with it.</p>
+<h3>Step 2: Pick a base image that matches what your README promises</h3>
+<p>Choose the image based on what your README says users need, not what you have installed:</p>
+<ul><li><strong>Python project that says &quot;Python 3.10+&quot;:</strong> test on `python:3.10-slim` (the oldest version you claim) and on the newest one.</li><li><strong>Node project:</strong> use `node:&lt;version&gt;-slim` for each major version you support.</li><li><strong>&quot;Works on any Linux&quot; or installs system packages:</strong> use `ubuntu:24.04` or `debian:stable-slim`.</li><li><strong>Go or Rust binary install:</strong> use a plain `debian:stable-slim`, so you&#x27;re testing the binary and not the toolchain.</li></ul>
+<p>Slim images are good for this because they leave out things like `git`, `curl`, `make` and C compilers. If your install needs any of these, the slim image will tell you, and your README should say so too.</p>
+<h3>Step 3: Send only committed files into the container</h3>
+<p>If you mount your working folder into the container, you&#x27;ll bring along untracked files, build caches and your local `.env`. That hides exactly the problems you&#x27;re looking for. Use `git archive` instead, so the container only gets what a fresh `git clone` would get, plus your test script:</p>
+<p>``` git archive --format=tar --add-file=readme-steps.sh HEAD \ | docker run --rm -i python:3.12-slim \ bash -c &#x27;mkdir -p /src &amp;&amp; cd /src &amp;&amp; tar -xf - &amp;&amp; bash readme-steps.sh&#x27; \ 2&gt;&amp;1 | tee install-log.txt ```</p>
+<p>Notes:</p>
+<ul><li>`--add-file` needs git 2.31 or newer. On older git, commit `readme-steps.sh` on a throwaway branch.</li><li>Commit your latest changes first. `git archive HEAD` ignores uncommitted edits.</li><li>`--rm` deletes the container afterwards, so each run starts from zero.</li><li>If your README tells users to install from a package registry (for example `pip install mytool` or `npm install -g mytool`), you can skip the archive step and run the script directly. Just make sure the version you&#x27;re testing has been published.</li></ul>
+<h3>Step 4: Read the log from the bottom up</h3>
+<p>Open `install-log.txt`. If the last line is `ALL README STEPS PASSED`, the README works on that image. If not, the last `+` line shows the command that failed, and the lines below it show the error.</p>
+<p>Fix the README, not just the script. Then copy the corrected commands into the script again and rerun until it passes. Keep the passing log. You can attach it to your launch PR or link to it in the README as proof that the steps were tested.</p>
+<h3>Step 5: Run the extra checks most people skip</h3>
+<p><strong>Test as a non-root user.</strong> Docker runs as root by default, which hides permission problems. If your README never says `sudo`, add `--user 1000:1000 -e HOME=/tmp` to the `docker run` command and run again.</p>
+<p><strong>Test the other CPU architecture.</strong> On an Apple Silicon Mac, add `--platform linux/amd64` to test as an Intel/AMD Linux user would. If you&#x27;re on x86, try `--platform linux/arm64`. This only works if Docker has emulation set up, which Docker Desktop does by default.</p>
+<p><strong>Test with no config.</strong> Don&#x27;t pass any `-e` environment variables on the first run. If the tool needs a key or a config file, the README should say where to get it and show the exact line to set it.</p>
+<p><strong>Test the oldest supported version.</strong> If the README says &quot;Node 18+&quot;, run the test on `node:18-slim`, not just your current version.</p>
+<h3>Checklist: the failures this test usually catches</h3>
+<p>Go through this list after each run:</p>
+<ul><li>[ ] A system package is needed but not listed (compiler, `git`, `libssl-dev`, `libffi-dev`, `ffmpeg`, `pkg-config`)</li><li>[ ] The minimum language or runtime version isn&#x27;t stated, or is wrong</li><li>[ ] An environment variable or API key is used before the README mentions it</li><li>[ ] The README references a `.env.example` or config file that isn&#x27;t committed</li><li>[ ] The package name in the install command doesn&#x27;t match the published name</li><li>[ ] The command name after install doesn&#x27;t match what the quickstart uses</li><li>[ ] The installed command isn&#x27;t on PATH (common with `pip install --user` and global npm installs). The README should say how to fix it.</li><li>[ ] A step depends on a file from an earlier step that the README skipped (e.g. `cd` into a folder that was never created)</li><li>[ ] The quickstart starts a server, but the README doesn&#x27;t give the port or the URL to open</li><li>[ ] Code blocks include prompts (`$ `, `&gt; `) or output lines mixed in with commands</li><li>[ ] A `curl | sh` installer fails because `curl` isn&#x27;t installed</li><li>[ ] The steps only work on macOS (e.g. `brew`, `sed -i &#x27;&#x27;`), but the README doesn&#x27;t say so</li></ul>
+<h3>Fill-in template: a &quot;Tested on&quot; install section</h3>
+<p>Once your test passes, put the evidence in the README. Readers trust install steps more when they can see what they were tested on.</p>
+<p>```</p>
+<h3>Install</h3>
+<p>Requirements: [LANGUAGE] [MIN VERSION]+, [SYSTEM PACKAGES OR &quot;nothing else&quot;]</p>
+<p>[INSTALL COMMAND]</p>
+<p>Check it worked:</p>
+<p>[COMMAND] --version</p>
+<p>Tested in a clean [IMAGE NAME] container on [DATE] ([ARCH, e.g. amd64 and arm64]).</p>
+<h3>Quickstart</h3>
+<p>[FIRST COMMAND] [SECOND COMMAND]</p>
+<p>You should see: [ONE LINE DESCRIBING EXPECTED OUTPUT] ```</p>
+<p>The &quot;You should see&quot; line matters. It tells readers whether things worked without making them guess.</p>
+<h3>Worked example: a small Python CLI</h3>
+<p>Say the README says only `pip install .` and then `mytool init demo`. Here&#x27;s how a first run on `python:3.12-slim` could go and what gets fixed after each failure:</p>
+<ol><li><strong>Run 1 fails</strong> at `pip install .` because a dependency needs a C compiler to build. Fix: add &quot;Requirements: build-essential (Debian/Ubuntu)&quot; to the README and `apt-get update &amp;&amp; apt-get install -y build-essential` to the install steps. Better still, pin to a dependency version that ships prebuilt wheels.</li><li><strong>Run 2 fails</strong> at `mytool init demo` with an unset `MYTOOL_HOME` variable. Fix: give it a default value in the code, or add an `export` line to the quickstart.</li><li><strong>Run 3 passes</strong> as root. <strong>Run 4</strong> adds `--user 1000:1000 -e HOME=/tmp` and fails on writing to `/usr/local`. Fix: change the README to install in a virtual environment (`python -m venv .venv &amp;&amp; . .venv/bin/activate`) before `pip install .`.</li><li><strong>Run 5 passes</strong> as non-root on 3.10 and 3.12. Add the &quot;Tested on&quot; line and keep the log.</li></ol>
+<p>Each fix is a problem a real visitor would otherwise have hit in their first five minutes.</p>
+<h3>Before you post your launch</h3>
+<ul><li>[ ] The script passes on the oldest and newest versions you support</li><li>[ ] The script passes as a non-root user</li><li>[ ] The README commands and the script are identical</li><li>[ ] The README states what output to expect</li><li>[ ] `install-log.txt` from the final run is saved</li><li>[ ] `readme-steps.sh` is either deleted or kept in `scripts/`, so you can rerun it before every release</li></ul>
+<p>Rerun the test whenever you change dependencies or the install commands. It&#x27;s quicker than answering &quot;doesn&#x27;t install for me&quot; issues after launch.</p>
+<div class="cta"><strong>More templates and kits</strong><br><a class="btn" href="https://blueflux6.gumroad.com" rel="noopener">Browse the Quillwork shop</a></div></article>
+<footer>Published by ShipReady README by Quillwork Studio. Written with AI assistance and not individually reviewed by a person; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>

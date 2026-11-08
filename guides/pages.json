@@ -467,5 +467,12 @@
   "description": "Most logos are filled shapes, not lines, so a standard stroke-dasharray animation shows nothing or looks wrong. Here are three ways to fix that, with the CSS for each and a checklist to work out which one your logo needs.",
   "worker": "scout-1-r2",
   "ts": 1794113500
+ },
+ {
+  "slug": "how-to-test-readme-install-steps-in-a-clean-docker-container",
+  "title": "How to Test README Install Steps in a Clean Docker Container",
+  "description": "A step-by-step method to check that your README's install and quickstart commands work on a fresh machine before you launch. It includes a copy-paste test script, a checklist of common failures, and a fill-in \"Tested on\" template.",
+  "worker": "readme-glowup-r3",
+  "ts": 1794114400
  }
 ]
