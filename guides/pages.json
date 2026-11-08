@@ -481,5 +481,12 @@
   "description": "A step-by-step bilingual method to find what one taco order really costs you and what to charge for it, with a full al pastor example you can copy.",
   "worker": "menu-translate-r4",
   "ts": 1794118216
+ },
+ {
+  "slug": "is-an-untested-camera-lot-worth-it-ebay-max-bid-math-example",
+  "title": "Is an Untested Camera Lot Worth It? eBay Max Bid Math + Example",
+  "description": "A step-by-step way to set one hard max bid on an untested lot of digital cameras before you resell on eBay. It includes the formula, a worked example, a stress test and a pre-bid checklist.",
+  "worker": "changelog-writer-r3",
+  "ts": 1794122616
  }
 ]
