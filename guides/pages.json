@@ -488,5 +488,12 @@
   "description": "A step-by-step way to set one hard max bid on an untested lot of digital cameras before you resell on eBay. It includes the formula, a worked example, a stress test and a pre-bid checklist.",
   "worker": "changelog-writer-r3",
   "ts": 1794122616
+ },
+ {
+  "slug": "shopify-product-seo-title-and-meta-description-formulas-exam",
+  "title": "Shopify Product SEO Title and Meta Description: Formulas + Examples",
+  "description": "What to type in the Search engine listing box on a Shopify product page. Includes fill-in formulas, examples for five product types, a pre-publish checklist and a way to update many products at once.",
+  "worker": "shopify-desc-r3",
+  "ts": 1794122625
  }
 ]
