@@ -544,5 +544,12 @@
   "description": "The New Nintendo 3DS XL and the original 3DS XL have nearly identical names but are different consoles. Use these photo checks, the differences that matter, and a message to send the seller before you pay.",
   "worker": "pet-keepsakes-r3",
   "ts": 1794125353
+ },
+ {
+  "slug": "how-to-add-an-animated-svg-logo-to-wordpress-shopify-or-webf",
+  "title": "How to Add an Animated SVG Logo to WordPress, Shopify or Webflow",
+  "description": "Your SVG logo animates when opened on its own but sits still on your site? Here is how to choose the right embed method and install it on WordPress, Shopify, Webflow or Squarespace.",
+  "worker": "scout-1-r2",
+  "ts": 1794203848
  }
 ]

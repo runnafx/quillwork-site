@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Add an Animated SVG Logo to WordPress, Shopify or Webflow | Quillwork Studio</title><meta name="description" content="Your SVG logo animates when opened on its own but sits still on your site? Here is how to choose the right embed method and install it on WordPress, Shopify, Webflow or Squarespace.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/how-to-add-an-animated-svg-logo-to-wordpress-shopify-or-webf/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>How to Add an Animated SVG Logo to WordPress, Shopify or Webflow</h1><p class="lead">Your SVG logo animates when opened on its own but sits still on your site? Here is how to choose the right embed method and install it on WordPress, Shopify, Webflow or Squarespace.</p>
+<p>A common problem: the animated logo plays perfectly when you open the file in a browser, then you upload it to your site&#x27;s logo field and it freezes or never appears.</p>
+<p>The cause is usually how the file is embedded, not the animation. This guide covers the three embed methods, the steps for each platform, and the checks to run before you call it done.</p>
+<p>Website builders change their settings often, so menu names may differ slightly on your plan or theme.</p>
+<h3>Pick your embed method first</h3>
+<p><strong>1. Inline SVG (best choice).</strong> You paste the SVG code directly into the page. It is part of the page, so its CSS runs normally, and you can size it with your site&#x27;s CSS. The trade-off is that its styles are global, which can cause the clashes covered below.</p>
+<p><strong>2. Object tag (good fallback).</strong> You upload the file and load it with an object tag whose type is image/svg+xml. The SVG runs as its own small document, so its styles stay separate from your site. One catch: the object can swallow clicks, so a logo that links home may stop working. Adding this rule to the object fixes it:</p>
+<p>pointer-events: none;</p>
+<p><strong>3. Image tag or logo upload field (least reliable).</strong> Most theme logo fields output an image tag. Scripts inside the SVG never run this way. CSS animation inside the file may play in some browsers, but there are WebKit bug reports of it sticking on the first frame in Safari. Only use this method if you have tested it on a real iPhone and a Mac. CSS background images have the same limits.</p>
+<p><strong>Rule of thumb:</strong> use inline if your platform lets you edit the header, the object tag if you can add HTML but want the file kept separate, and the logo field only as a last resort.</p>
+<h3>Prepare the file before pasting</h3>
+<p>Do these once, and every platform below gets easier.</p>
+<ol><li><strong>Check for a viewBox.</strong> Open the SVG in a text editor and look for viewBox in the opening svg tag. Without it, the logo will not scale properly.</li><li><strong>Convert live text to outlines.</strong> Text that relies on a font can display wrongly if that font is missing. Outline it in your vector editor first.</li><li><strong>Give the svg element its own class,</strong> such as lm-logo. The CSS below depends on it.</li><li><strong>Rename generic classes.</strong> Illustrator exports often use names like .cls-1 or .st0. Once inlined, styles are global, so two SVGs using .cls-1 will overwrite each other. Find and replace them with something unique, such as .lm-a and .lm-b.</li><li><strong>Make IDs unique.</strong> Gradients, masks and clip paths are referenced by ID, so a duplicate ID can make part of the logo vanish.</li><li><strong>Remove any script tags.</strong> A logo doesn&#x27;t need them, and many platforms strip them anyway.</li><li><strong>Add an accessible name.</strong> On the svg element, add role=&quot;img&quot; and aria-label=&quot;Your Company home&quot;.</li><li><strong>Set a size.</strong> This keeps the logo from collapsing or filling the header:</li></ol>
+<p>.lm-logo { display: block; width: 160px; height: auto; max-width: 100%; }</p>
+<ol><li><strong>Add a reduced-motion rule.</strong> Some visitors ask their devices to limit motion:</li></ol>
+<p>@media (prefers-reduced-motion: reduce) { .lm-logo, .lm-logo * { animation: none !important; } }</p>
+<p>That rule only works if the logo&#x27;s normal CSS is its finished, visible state, with the hidden starting point set only in the keyframes (the from step). If your default CSS hides the logo and the animation reveals it, reduced-motion visitors get a blank header. Writing it this way also means the logo still shows if the animation fails to run.</p>
+<h3>WordPress</h3>
+<p>WordPress blocks SVG uploads by default, but pasting inline code avoids the upload entirely.</p>
+<p><strong>Block themes (Site Editor):</strong></p>
+<ol><li>Go to Appearance, then Editor, and open the Header template part.</li><li>Add a Custom HTML block next to the Site Logo block.</li><li>Paste your SVG code and wrap it in a link to your homepage.</li><li>Save, check the live site, then remove the Site Logo block.</li></ol>
+<p><strong>Classic themes and header builders:</strong></p>
+<ol><li>See whether your theme&#x27;s header builder has an HTML element. Many do. If so, paste the code there.</li><li>If not, use a child theme and put the code in header.php where the logo is output. Editing the parent theme directly means an update can erase your work.</li></ol>
+<p><strong>WordPress gotchas:</strong></p>
+<ul><li>Pasting raw SVG requires the unfiltered_html capability, which normally means an administrator. On multisite it is limited to super admins. Other roles may see the code stripped when they save.</li><li>SVG upload and sanitizing plugins can remove style blocks or animation. If you use one, confirm the keyframes are still there afterward.</li><li>Optimization and minify plugins can alter inline code. If the animation breaks, turn them off temporarily, purge the cache and test again.</li></ul>
+<h3>Shopify</h3>
+<p>Back up first: in Online Store, then Themes, duplicate your live theme and work on the copy.</p>
+<ol><li>Open the copy and choose Edit code.</li><li>Under Snippets, add a new snippet called animated-logo and paste in your SVG code.</li><li>Find the logo markup. In many themes it is in sections/header.liquid, but file names vary. Searching the theme for settings.logo usually finds it.</li><li>Inside the existing link to your homepage, replace the logo image markup with:</li></ol>
+<p>{% render &#x27;animated-logo&#x27; %}</p>
+<ol><li>Some themes output the logo more than once, so check for a second instance, such as a mobile or sticky version.</li><li>Preview the copy, then publish it.</li></ol>
+<p>Custom code may not carry over when you update your theme, so recheck the logo after any update.</p>
+<h3>Webflow</h3>
+<ol><li>In the Designer, open your Navbar and select the Brand link.</li><li>Remove the Image element inside it.</li><li>Add a Code Embed element in its place and paste your SVG code.</li><li>Publish and test on the live site, since the Designer canvas may not show the animation accurately.</li></ol>
+<p>Check your plan&#x27;s custom code access and the Code Embed character limit. Complex logo exports can be very long, so simplify the paths or use the object tag method if yours won&#x27;t fit. Avoid Webflow&#x27;s Image element here, because it brings back the image tag limits above.</p>
+<h3>Squarespace</h3>
+<p>Squarespace is the trickiest of the four. Guides disagree on whether its logo field accepts SVG, so try it on your own site rather than trusting a blanket answer.</p>
+<p><strong>For a logo inside a page section,</strong> such as a hero, add a Code Block, paste the SVG code and save. Check that your plan includes code blocks.</p>
+<p><strong>For the site header,</strong> you generally can&#x27;t drop a Code Block in. The usual workaround is to upload the SVG as a custom file in the Custom CSS panel and set it as a background image. On many 7.1 sites the CSS looks like this, but use your browser&#x27;s inspector to confirm the class name:</p>
+<p>.header-title-logo img { opacity: 0; } .header-title-logo a { background: url(YOUR-FILE-ADDRESS) left center / contain no-repeat; }</p>
+<p>Keep a normal logo uploaded underneath so the link and layout still work. Because this is a background image, the Safari caveat applies, so test it on an Apple device.</p>
+<h3>Avoid these header mistakes</h3>
+<ul><li><strong>Duplicate logos.</strong> Many themes render separate desktop and mobile headers. If a gradient is defined in the copy that&#x27;s hidden with display: none, the visible copy can lose its color. Give each copy its own IDs.</li><li><strong>Replays you didn&#x27;t plan for.</strong> A CSS animation restarts when its element goes from display: none back to visible, so opening a menu or triggering a sticky header can replay it.</li><li><strong>Long or looping header animations.</strong> The logo plays on every page load. Aim for about 1 to 2.5 seconds, play it once, and save loops for loading screens.</li><li><strong>Layout jumps.</strong> Set the size in CSS so the header doesn&#x27;t shift as the page loads.</li><li><strong>Lost home link.</strong> Keep the logo inside the theme&#x27;s homepage link.</li><li><strong>Over-eager SVG optimizers.</strong> They can merge shapes, rename IDs or remove styles, so re-test after running one.</li></ul>
+<h3>Final test checklist</h3>
+<p>Test the live, published page in a private window after clearing any site cache.</p>
+<ul><li>[ ] Plays in Chrome, Firefox and Safari</li><li>[ ] Plays on a real iPhone and a real Android phone</li><li>[ ] Mobile header and sticky header both look right</li><li>[ ] Clicking the logo goes to the homepage</li><li>[ ] Finished logo stays visible after the animation ends</li><li>[ ] With reduced motion turned on in your device settings, the full logo appears with no animation</li><li>[ ] No sideways scrolling or header jump on a narrow screen</li><li>[ ] Other SVGs and icons on the page still look correct</li><li>[ ] A screen reader announces the logo&#x27;s name</li></ul>
+<p>If the logo still won&#x27;t animate, open the SVG file directly in a browser. If it plays there, the embed method is the problem, so move one step up the list: logo field to object tag, or object tag to inline. If it doesn&#x27;t play there, the problem is in the file&#x27;s CSS or paths.</p>
+<div class="cta"><strong>Want the full done-for-you kit?</strong><br>LoopMark Studio: Your Animated SVG Logo, Done For You (CSS Draw-On, No JavaScript, 48-Hour · $39.00<br><a class="btn" href="https://blueflux6.gumroad.com/l/azpuws" rel="noopener">Get it on Gumroad</a></div></article>
+<footer>Published by LoopMark Studio by Quillwork Studio. Written with AI assistance and not individually reviewed by a person; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>
