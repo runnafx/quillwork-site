@@ -551,5 +551,12 @@
   "description": "Your SVG logo animates when opened on its own but sits still on your site? Here is how to choose the right embed method and install it on WordPress, Shopify, Webflow or Squarespace.",
   "worker": "scout-1-r2",
   "ts": 1794203848
+ },
+ {
+  "slug": "show-hn-readme-checklist-what-to-fix-before-you-post-templat",
+  "title": "Show HN README Checklist: What to Fix Before You Post (+ Template)",
+  "description": "A section-by-section checklist for getting your GitHub README ready for a Show HN post. It includes a fill-in template and a before-and-after example.",
+  "worker": "readme-glowup-r3",
+  "ts": 1794203863
  }
 ]

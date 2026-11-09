@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Show HN README Checklist: What to Fix Before You Post (+ Template) | Quillwork Studio</title><meta name="description" content="A section-by-section checklist for getting your GitHub README ready for a Show HN post. It includes a fill-in template and a before-and-after example.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/show-hn-readme-checklist-what-to-fix-before-you-post-templat/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>Show HN README Checklist: What to Fix Before You Post (+ Template)</h1><p class="lead">A section-by-section checklist for getting your GitHub README ready for a Show HN post. It includes a fill-in template and a before-and-after example.</p>
+<p>When your project is on Show HN, your README may be doing the job of a landing page, a manual and a first impression. You won&#x27;t be there when someone opens it. They have to work out what the project does and get it running on their own.</p>
+<p>The Show HN rules say a post should be something people can try, and they ask you to make that easy, ideally without barriers such as signups or emails. Reading material and sign-up pages are off topic. Those rules can change, so read the current version on Hacker News before you post.</p>
+<p>The rest of this page is editorial advice from a README service, not official Hacker News guidance. No README guarantees votes or stars. A good one simply removes reasons for an interested person to give up.</p>
+<p>Set aside about an hour. Go through the checklist in order, because the top of the page matters most.</p>
+<h3>Part 1: The first screen</h3>
+<p>Open your repo in a private browser window, so you see it as a stranger does. Without scrolling, a reader should be able to answer three questions: what is it, who is it for, and how do I try it?</p>
+<ul><li>[ ] <strong>The first sentence says what the thing is.</strong> Use a plain noun: &quot;A command-line tool that...&quot;, &quot;A Postgres extension that...&quot;, &quot;A self-hosted app that...&quot;</li><li>[ ] <strong>The sentence names the job it does.</strong> &quot;Removes old lines from huge log files&quot; beats &quot;Log management, reimagined.&quot;</li><li>[ ] <strong>Hype is gone.</strong> Search for blazing, revolutionary, seamless, next-generation, powerful and effortless. Replace each one with a fact or delete it.</li><li>[ ] <strong>Badges are few and true.</strong> Keep the ones a user acts on, such as build status, latest version and license. A failing or broken badge is worse than none.</li><li>[ ] <strong>There is one picture of it working,</strong> if it has any visible output: a screenshot, a short GIF or a pasted terminal session. Open the README while logged out to confirm the image loads.</li><li>[ ] <strong>The GitHub &quot;About&quot; box is filled in</strong> with the same one-line description.</li></ul>
+<h3>Part 2: Try it in one copy-paste</h3>
+<p>This section decides whether people get past reading.</p>
+<ul><li>[ ] <strong>Prerequisites come first, with versions.</strong> &quot;Requires Python 3.10 or newer&quot; is usable. &quot;Requires Python&quot; isn&#x27;t.</li><li>[ ] <strong>There is one recommended install path.</strong> Put alternatives below it or under an &quot;Other install options&quot; heading.</li><li>[ ] <strong>Commands can be pasted as they are.</strong> Remove any `$` prompt from the start of a line, and put output in a separate block.</li><li>[ ] <strong>Placeholders are obvious.</strong> Say what to replace, and use a working example value where you can.</li><li>[ ] <strong>Every required environment variable or API key is mentioned before it&#x27;s needed.</strong></li><li>[ ] <strong>There&#x27;s a way to try it without an account,</strong> if the product can support one: a demo mode, sample data, a local run or a public demo.</li><li>[ ] <strong>Expected output is shown,</strong> so people know the command worked.</li><li>[ ] <strong>Your supported platforms are stated.</strong> If you&#x27;ve only tested on Linux and macOS, say so. Don&#x27;t leave Windows users to find out.</li><li>[ ] <strong>You&#x27;ve run every command on a clean machine.</strong> Your laptop has packages, caches and environment variables that a new user won&#x27;t have. Run the commands in a fresh container or virtual machine, exactly as the README shows them.</li></ul>
+<p>Use a stopwatch for the last item. Decide what a fair time to first result is for your kind of project, then time it. If the wait is long because of a large build or download, warn readers and give a rough time.</p>
+<h3>Part 3: Honest answers to the obvious questions</h3>
+<p>Technical readers tend to ask the same things. Answer them before someone has to ask in the thread.</p>
+<ul><li>[ ] <strong>Why this over the existing option?</strong> Name the alternative and give a specific difference. Say where the alternative is the better choice.</li><li>[ ] <strong>What&#x27;s its status?</strong> Experimental, usable or in production? Is the API stable?</li><li>[ ] <strong>What doesn&#x27;t it do?</strong> A short &quot;Limitations&quot; list earns more trust than silence.</li><li>[ ] <strong>Does it send data anywhere?</strong> State what leaves the machine, including telemetry, and how to turn it off. If nothing leaves, say so, once you&#x27;ve checked.</li><li>[ ] <strong>Are performance claims reproducible?</strong> Give the hardware, the data and the command. If you can&#x27;t, remove the number.</li><li>[ ] <strong>What does it cost?</strong> If there&#x27;s a paid tier or hosted version, say what&#x27;s free and what isn&#x27;t.</li><li>[ ] <strong>Did you use AI to build it?</strong> If that&#x27;s relevant to how far people should trust the code, be upfront about it.</li></ul>
+<h3>Part 4: Repo hygiene</h3>
+<ul><li>[ ] <strong>A LICENSE file exists,</strong> and the README names the license. Without a license, people have no clear permission to use your code.</li><li>[ ] <strong>Every link and image works,</strong> including anchor links within the page.</li><li>[ ] <strong>Docs match the current release.</strong> Check flag names, default values and version numbers against the code.</li><li>[ ] <strong>Secrets aren&#x27;t committed,</strong> including in example config files and git history.</li><li>[ ] <strong>Issues are open,</strong> and the README says where to report bugs.</li><li>[ ] <strong>Leftovers are gone.</strong> Search for TODO, lorem ipsum, &quot;coming soon&quot; and the default text from your project generator.</li></ul>
+<h3>Fill-in README template</h3>
+<p>Copy this, replace everything in square brackets, and delete any section that doesn&#x27;t apply.</p>
+<p>```</p>
+<h2>[Project name]</h2>
+<p>[A/An] [type of thing] that [does what] for [whom].</p>
+<p>[Screenshot, GIF or terminal output]</p>
+<h3>Why</h3>
+<p>[The problem, in one or two sentences.] Unlike [existing option], it [specific difference]. Use [existing option] instead if [honest condition].</p>
+<h3>Try it</h3>
+<p>Requires [runtime and minimum version]. Tested on [platforms].</p>
+<p>[one install command] [one command that produces a visible result]</p>
+<p>You should see:</p>
+<p>[real output, copied from a clean run]</p>
+<h3>Usage</h3>
+<p>[the most common real command] [the second most common real command]</p>
+<h3>Configuration</h3>
+<p>| Option | Default | What it does | |--------|---------|--------------| | [name] | [value] | [plain description] |</p>
+<h3>Status and limitations</h3>
+<p>Status: [experimental / usable / production]. It doesn&#x27;t [limitation 1] or [limitation 2]. Data: [what leaves the machine, or &quot;nothing leaves your machine&quot;].</p>
+<h3>Contributing</h3>
+<p>Report bugs in [location]. To work on it locally: [command].</p>
+<h3>License</h3>
+<p>[License name] ```</p>
+<h3>Worked example: before and after</h3>
+<p>This example uses a made-up tool called logtrim.</p>
+<p><strong>Before:</strong></p>
+<p>```</p>
+<h2>logtrim 🚀</h2>
+<p>The next-generation, blazing-fast solution for modern log management.</p>
+<h3>Installation</h3>
+<p>$ git clone [repo] $ make $ ./setup.sh Edit the config, then run it. ```</p>
+<p>The opening doesn&#x27;t say what the tool does. The prompts break copy-paste, &quot;the config&quot; is never explained, and a reader has no sign of what success looks like.</p>
+<p><strong>After:</strong></p>
+<p>```</p>
+<h2>logtrim</h2>
+<p>A command-line tool that removes old lines from large log files without loading the whole file into memory.</p>
+<h3>Why</h3>
+<p>Log rotation works on whole files. logtrim keeps the most recent period inside one file. If you already rotate logs and that&#x27;s enough, you don&#x27;t need this.</p>
+<h3>Try it</h3>
+<p>Requires Python 3.10 or newer. Tested on Linux and macOS.</p>
+<p>pipx install logtrim logtrim --demo</p>
+<p>You should see:</p>
+<p>Created demo.log (1,000 lines) Kept 120 lines from the last hour Removed 880 lines</p>
+<h3>Status and limitations</h3>
+<p>Status: usable, flags may change before 1.0. It doesn&#x27;t handle compressed logs or files being actively written. Data: nothing leaves your machine. ```</p>
+<p>The new version doesn&#x27;t claim to be fast or modern. It says what the tool does, who shouldn&#x27;t bother, and how to get a result with two commands.</p>
+<h3>The final test</h3>
+<p>Ask someone who hasn&#x27;t seen the project to open the README and try it while you watch, without helping. Note each place they pause, scroll back or ask a question. Each one is a line to fix.</p>
+<p>If nobody is available, come back to it after a break, follow the page literally on a clean machine, and do only what it tells you to do. Anything you had to do from memory belongs in the README.</p>
+<p>Once the README holds up, write your post&#x27;s first comment: how you came to work on the project and what&#x27;s different about it. The Show HN rules suggest it, and the README&#x27;s &quot;Why&quot; section gives you most of the material.</p>
+<div class="cta"><strong>More templates and kits</strong><br><a class="btn" href="https://blueflux6.gumroad.com" rel="noopener">Browse the Quillwork shop</a></div></article>
+<footer>Published by ShipReady README by Quillwork Studio. Written with AI assistance and not individually reviewed by a person; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>
