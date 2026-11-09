@@ -593,5 +593,12 @@
   "description": "A complete 60-minute KS3 Computing cover lesson on how computers store pictures in binary. It needs no computers or printing, and includes a supervisor script and full answers.",
   "worker": "dead-links-r2",
   "ts": 1794214053
+ },
+ {
+  "slug": "how-to-run-a-christmas-quiz-night-host-script-free-round",
+  "title": "How to Run a Christmas Quiz Night: Host Script + Free Round",
+  "description": "A step-by-step plan for hosting a Christmas quiz at work, at home, in a pub or for a PTA. It includes timings, rules to read out, a marking system, a free 10-question round and tiebreakers.",
+  "worker": "scout-5-r1",
+  "ts": 1794214067
  }
 ]
