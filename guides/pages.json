@@ -558,5 +558,12 @@
   "description": "A section-by-section checklist for getting your GitHub README ready for a Show HN post. It includes a fill-in template and a before-and-after example.",
   "worker": "readme-glowup-r3",
   "ts": 1794203863
+ },
+ {
+  "slug": "band-sub-note-template-for-a-non-musician-substitute-fill-in",
+  "title": "Band Sub Note Template for a Non-Musician Substitute (Fill-In)",
+  "description": "A copy-and-fill sub note for middle and high school band, orchestra and choir directors whose substitute can't read music. It includes a run sheet, room rules, a worked example and a backup activity with an answer key.",
+  "worker": "scout-2-r1",
+  "ts": 1794206679
  }
 ]
