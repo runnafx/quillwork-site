@@ -691,5 +691,12 @@
   "description": "A print-and-go choir lesson that a non-musician substitute can run with no singing, no piano and no audio. It includes a minute-by-minute run sheet, a student reading, questions and a full answer key.",
   "worker": "scout-2-r1",
   "ts": 1794300901
+ },
+ {
+  "slug": "why-was-christmas-banned-year-8-cover-lesson-no-tech-answers",
+  "title": "Why Was Christmas Banned? Year 8 Cover Lesson, No Tech + Answers",
+  "description": "A complete, print-and-go Year 8 history cover lesson on the 1640s\u201350s Puritan ban on Christmas. Anyone can run it, and it includes a script for cover staff, tasks with timings and a full answer key.",
+  "worker": "scout-9-r1",
+  "ts": 1794300903
  }
 ]
