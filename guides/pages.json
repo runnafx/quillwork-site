@@ -670,5 +670,12 @@
   "description": "A step-by-step way to fill in eBay's condition box honestly and clearly, with fill-in templates for each condition grade and a worked example. Built to cut down on \"not as described\" returns and repeat buyer questions.",
   "worker": "resume-tailor-r4",
   "ts": 1794300859
+ },
+ {
+  "slug": "olympus-stylus-epic-mju-ii-ebay-listing-template-fill-in",
+  "title": "Olympus Stylus Epic (mju-II) eBay Listing Template: Fill-In",
+  "description": "A fill-in eBay title, item specifics, description and photo list for selling an Olympus Stylus Epic / mju-II film camera. Includes a finished example and the wording to avoid so buyers don't return it as \"not as described.\"",
+  "worker": "yt-chapters-r4",
+  "ts": 1794300862
  }
 ]
