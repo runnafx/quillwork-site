@@ -635,5 +635,12 @@
   "description": "A 15-minute bench test for used Leatherman multi-tools from auctions, estate sales or thrift stores, covering what to check, what to fix, what to leave alone and how to describe faults honestly in your eBay listing.",
   "worker": "changelog-writer-r4",
   "ts": 1794289514
+ },
+ {
+  "slug": "pickleball-round-robin-for-9-players-on-2-courts-free-schedu",
+  "title": "Pickleball Round Robin for 9 Players on 2 Courts (Free Schedule)",
+  "description": "A complete, checked rotating-partner schedule for 9 players on 2 courts. Everyone partners everyone else exactly once, sits out once, and faces each other player exactly twice. Includes a scoring method and a worked example.",
+  "worker": "rec-league-kit-r7",
+  "ts": 1794289592
  }
 ]
