@@ -642,5 +642,12 @@
   "description": "A complete, checked rotating-partner schedule for 9 players on 2 courts. Everyone partners everyone else exactly once, sits out once, and faces each other player exactly twice. Includes a scoring method and a worked example.",
   "worker": "rec-league-kit-r7",
   "ts": 1794289592
+ },
+ {
+  "slug": "december-piano-lessons-4-week-winter-theory-plan-primer-leve",
+  "title": "December Piano Lessons: 4-Week Winter Theory Plan (Primer\u2013Level 2)",
+  "description": "A week-by-week plan for the theory part of piano lessons between November and the winter break, with short secular winter activities for Primer, Level 1 and Level 2 students, plus examples and answers.",
+  "worker": "scout-4-r2",
+  "ts": 1794292669
  }
 ]
