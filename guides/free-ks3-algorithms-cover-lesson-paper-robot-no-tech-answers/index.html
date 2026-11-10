@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free KS3 Algorithms Cover Lesson: Paper Robot, No Tech + Answers | Quillwork Studio</title><meta name="description" content="A complete 60-minute KS3 Computing cover lesson on algorithms and debugging that needs no computers, logins or printing. It includes a word-for-word supervisor script, timings and a full answer key.">
+<link rel="canonical" href="https://runnafx.github.io/quillwork-site/guides/free-ks3-algorithms-cover-lesson-paper-robot-no-tech-answers/">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbf8f3;--ink:#1d1a16;--mute:#6b645a;--line:#e7e0d5;--card:#fff;--accent:#2f4bd8;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--ink:#efe9df;--mute:#a59d90;--line:#2c2823;--card:#1c1a17;--accent:#8ea0ff;--accent-ink:#0d0f1a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}nav{display:flex;gap:16px;padding:22px 0;align-items:center}
+.logo{font:600 19px Fraunces,Georgia,serif;color:var(--ink);text-decoration:none}.logo span{color:var(--accent)}
+nav a.l{color:var(--mute);font-size:14px;text-decoration:none}nav .sp{flex:1}
+h1{font:600 clamp(30px,5vw,44px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.015em;margin:28px 0 12px}
+h2{font:600 24px/1.25 Fraunces,Georgia,serif;margin:36px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{color:var(--mute);font-size:19px}a{color:var(--accent)}li{margin:4px 0}
+.cta{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px 20px;margin:36px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:8px}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+.card{display:block;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}
+.card small{color:var(--mute)}</style></head><body><div class="wrap">
+<nav><a class="logo" href="../../">Quill<span>work</span></a><span class="sp"></span><a class="l" href="../">Free guides</a></nav>
+<article><h1>Free KS3 Algorithms Cover Lesson: Paper Robot, No Tech + Answers</h1><p class="lead">A complete 60-minute KS3 Computing cover lesson on algorithms and debugging that needs no computers, logins or printing. It includes a word-for-word supervisor script, timings and a full answer key.</p>
+<p>Your Computing teacher is off, the room may have no working PCs, and the person covering may not be a computing specialist. This lesson is written for that situation. Students write and fix instructions for a &quot;paper robot&quot; on a grid. It covers algorithms, sequencing, tracing and debugging, which are core ideas in KS3 Computing.</p>
+<p><strong>You need:</strong> a whiteboard, exercise books or lined paper, and pens. Printing is optional. Everything students need can be copied from the board.</p>
+<p><strong>Suits:</strong> Years 7 to 9. Year 7 can stop after Task 4. Years 8 and 9 should get as far as the extension.</p>
+<h3>Lesson at a glance (60 minutes)</h3>
+<ol><li>Starter: what is an algorithm? (5 min)</li><li>Set up the grid (5 min)</li><li>Task 1: trace a program (10 min)</li><li>Task 2: write your own program (10 min)</li><li>Task 3: get around a wall (12 min)</li><li>Task 4: find and fix the bugs (10 min)</li><li>Extension and plenary: loops (8 min)</li></ol>
+<h3>Board setup (do this before students arrive)</h3>
+<p>Draw a 6 by 6 grid. Label the columns <strong>A to F</strong> from left to right along the bottom, and the rows <strong>1 to 6</strong> from bottom to top. Write this key next to it:</p>
+<ul><li><strong>F</strong> = move forward one square</li><li><strong>R</strong> = turn right 90 degrees on the spot (do not move)</li><li><strong>L</strong> = turn left 90 degrees on the spot (do not move)</li></ul>
+<p>Write: <strong>The robot always starts on A1 (bottom left), facing up the page (towards row 6).</strong></p>
+<h3>Supervisor script</h3>
+<p>You can read these lines out word for word.</p>
+<p><strong>Starter (5 min):</strong> &quot;Today&#x27;s lesson is about algorithms. An algorithm is a precise set of step-by-step instructions to solve a problem. Computers can&#x27;t guess what you mean. They do exactly what they are told, in order. In your books, write the title &#x27;Paper Robot Algorithms&#x27; and the date. Then write one sentence that answers this: why do instructions for a computer have to be more exact than instructions for a person?&quot;</p>
+<p>Take two or three answers. A good one is: &quot;A computer follows instructions exactly and can&#x27;t fill in missing steps or fix mistakes itself.&quot;</p>
+<p><strong>Grid setup (5 min):</strong> &quot;Copy the 6 by 6 grid and the key from the board into your book. Make each square about the size of two lines of your book. Label the columns A to F along the bottom and the rows 1 to 6 up the side.&quot;</p>
+<p><strong>Before each task:</strong> &quot;Read the task on the board. Work on your own in silence for the first five minutes, then you can check with the person next to you.&quot; When the time is up, read out the answers from the answer key below.</p>
+<p><strong>If a student says they are stuck:</strong> &quot;Put your finger on A1, pointing up. Do one letter at a time and move your finger.&quot; This fixes most problems.</p>
+<h3>The tasks (copy onto the board)</h3>
+<h3>Task 1: Trace the program</h3>
+<p>The robot runs this program:</p>
+<p><strong>F F R F F F L F</strong></p>
+<p>a) Which square does the robot finish on? b) Which way is it facing at the end? c) Draw its path on your grid.</p>
+<h3>Task 2: Write your own program</h3>
+<p>Write a program that moves the robot from A1 to <strong>F6</strong> (top right).</p>
+<p>a) Write your program. b) Count the commands. Can you write a shorter one? c) Swap with a partner and trace each other&#x27;s program. Does it work?</p>
+<h3>Task 3: Get around the wall</h3>
+<p>Shade in squares <strong>A4, B4, C4, D4 and E4</strong>. These are a wall. The robot will crash if it moves onto one of these squares or off the grid. <strong>F4 is the only gap.</strong></p>
+<p>Write a program that gets the robot from A1 to <strong>A6</strong> without crashing.</p>
+<p>Bonus: what is the smallest number of commands that works?</p>
+<h3>Task 4: Debug the programs</h3>
+<p>A <strong>bug</strong> is a mistake in a program. <strong>Debugging</strong> means finding and fixing it. There is no wall in this task.</p>
+<p><strong>Bug hunt 1:</strong> This program is supposed to move the robot to <strong>C2</strong> and finish facing up the page. It doesn&#x27;t work.</p>
+<p><strong>F L F F L</strong></p>
+<p>a) Trace it. What goes wrong? b) Rewrite it so it works.</p>
+<p><strong>Bug hunt 2:</strong> A student wanted to move the robot from A1 to A6. They wrote <strong>F F F F F F</strong>. What goes wrong, and how do you fix it?</p>
+<h3>Extension: Loops</h3>
+<p>Programmers use a <strong>loop</strong> to repeat instructions without writing them out again and again. We will write it like this: <strong>REPEAT 3 [F]</strong> means &quot;do F three times&quot;.</p>
+<p>a) Trace <strong>REPEAT 4 [F F R]</strong>. Where does the robot finish, and what shape does its path make? b) Rewrite your Task 2 program using REPEAT. c) Explain in one sentence why loops are useful.</p>
+<h3>Plenary (last 3 minutes)</h3>
+<p>&quot;In your book, finish these two sentences. An algorithm is... Debugging means...&quot;</p>
+<h3>Answer key</h3>
+<h3>Starter</h3>
+<p>Any answer saying that computers follow instructions exactly and can&#x27;t guess or fill gaps gets the mark.</p>
+<h3>Task 1</h3>
+<ul><li>F moves to A2, then F to A3. R turns to face right.</li><li>F, F, F moves to B3, C3 and then D3. L turns to face up.</li><li>F moves to D4.</li></ul>
+<p><strong>a) D4. b) Facing up (towards row 6).</strong></p>
+<h3>Task 2</h3>
+<p>Many answers are correct. A short one is:</p>
+<p><strong>F F F F F R F F F F F</strong> (11 commands)</p>
+<p>The robot goes up to A6, turns right, then moves along to F6. Going right first also works: <strong>R F F F F F L F F F F F</strong>. That is 12 commands because it needs two turns. <strong>11 commands is the shortest possible.</strong> The robot must move forward 10 times (5 across and 5 up) and needs at least one turn.</p>
+<h3>Task 3</h3>
+<p>One correct answer:</p>
+<p><strong>F F R F F F F F L F F F L F F F F F</strong></p>
+<p>Trace: F, F to A3. R to face right. Five Fs to F3. L to face up. F, F, F to F4 (the gap), F5 and then F6. L to face left. Five Fs to E6, D6, C6, B6 and then A6.</p>
+<p>Another correct answer: <strong>R F F F F F L F F F F F L F F F F F</strong> (right along row 1 to F1, up to F6, then left to A6).</p>
+<p><strong>Bonus: 18 commands is the smallest.</strong> The robot must travel 5 squares right, 5 up and 5 back left, which is 15 forward moves. It also needs at least 3 turns. Accept any answer that reaches A6 without passing through A4 to E4 or leaving the grid.</p>
+<h3>Task 4</h3>
+<p><strong>Bug hunt 1:</strong> a) F moves to A2. Then <strong>L turns the robot to face left</strong>, so the next F moves it off the grid and it crashes. b) Change the first L to R: <strong>F R F F L</strong>. Trace: A2, turn right, B2, C2, then turn left to face up. Finishes on C2 facing up.</p>
+<p><strong>Bug hunt 2:</strong> From A1 the robot only needs <strong>5</strong> moves to reach A6. The sixth F moves it off the top of the grid. Fix: <strong>F F F F F</strong>. This is called an <strong>off-by-one error</strong>, and it is one of the most common bugs in real programming.</p>
+<h3>Extension</h3>
+<p>a) F, F to A3. R to face right. F, F to C3. R to face down. F, F to C2 and then C1. R to face left. F, F to B1 and then A1. R to face up. <strong>It finishes on A1 facing up, and the path is a square.</strong> b) Example: <strong>REPEAT 5 [F] R REPEAT 5 [F]</strong> c) Example: &quot;Loops make programs shorter and easier to read. They also cut down on mistakes, because you don&#x27;t have to write the same instructions many times.&quot;</p>
+<h3>Plenary</h3>
+<ul><li><strong>An algorithm</strong> is a precise, step-by-step set of instructions to solve a problem.</li><li><strong>Debugging</strong> means finding and fixing errors in a program.</li></ul>
+<h3>Tips for the cover supervisor</h3>
+<ul><li><strong>Fast finishers:</strong> ask them to design their own wall on a new grid, write a program that gets around it, and swap with a partner to test it.</li><li><strong>Students who struggle:</strong> let them use a rubber or coin as the robot and move it on the grid square by square.</li><li><strong>Behaviour:</strong> the first five minutes of each task in silence keeps the room calm. Pair checking after that gives students a natural break.</li><li><strong>For the class teacher:</strong> ask students to leave their books open at this page, or collect the Task 3 answers. That makes it easy to see who understood sequencing and who needs to look at it again.</li></ul>
+<h3>Why this works as cover</h3>
+<p>There are no logins or passwords to fail, no slides to load, and no software to learn. Every answer can be checked in a few seconds by tracing it on the grid, so anyone can mark it using the key above. The lesson still covers real computing ideas: precise instructions, tracing, debugging, off-by-one errors and loops. Students will use all of these when they next sit at a computer.</p>
+<div class="cta"><strong>More templates and kits</strong><br><a class="btn" href="https://blueflux6.gumroad.com" rel="noopener">Browse the Quillwork shop</a></div></article>
+<footer>Published by Unplugged Cover Co. by Quillwork Studio. Written with AI assistance and not individually reviewed by a person; general information,
+not professional advice. Quillwork Studio, 2830 Arguello Drive, Burlingame, CA 94010.</footer>
+</div></body></html>
