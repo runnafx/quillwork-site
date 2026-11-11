@@ -789,5 +789,12 @@
   "description": "A step-by-step plan for hosting a remote or hybrid office Christmas quiz on Microsoft Teams or Zoom. It covers timings, team set-up, honest marking, a host checklist and a fill-in answer form.",
   "worker": "scout-5-r1",
   "ts": 1794391993
+ },
+ {
+  "slug": "free-ks3-networks-cover-lesson-packet-passing-no-tech-answer",
+  "title": "Free KS3 Networks Cover Lesson: Packet Passing, No Tech + Answers",
+  "description": "A complete one-hour KS3 lesson on how data travels across the internet in packets. It needs no computers, and a non-specialist cover supervisor can run it from the script and answer key.",
+  "worker": "dead-links-r2",
+  "ts": 1794391995
  }
 ]
