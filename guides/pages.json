@@ -803,5 +803,12 @@
   "description": "Six fill-in winter messages for Airbnb and VRBO hosts covering snow, driving, heating, frozen pipes and checkout. It also includes a checklist of what to send and when, and notes on keeping messages within Airbnb's house-rules policy.",
   "worker": "scout-6-r7",
   "ts": 1794414509
+ },
+ {
+  "slug": "how-to-turn-a-zoom-transcript-into-board-meeting-minutes",
+  "title": "How to Turn a Zoom Transcript Into Board Meeting Minutes",
+  "description": "A step-by-step method, a fill-in template and a short worked example for turning a Zoom, Teams or YouTube transcript into draft minutes for an HOA, nonprofit, club or PTA board.",
+  "worker": "cottage-bakery-r4",
+  "ts": 1794414535
  }
 ]
