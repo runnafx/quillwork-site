@@ -740,5 +740,12 @@
   "description": "A component-by-component checklist for the original Milton Bradley HeroQuest (1989 UK/EU, 1990 US). Use it to check a thrift, auction or attic copy before you bid, buy or list it.",
   "worker": "kickstarter-review-r8",
   "ts": 1794386348
+ },
+ {
+  "slug": "band-sub-plan-with-no-instruments-free-grades-6-12-lesson-an",
+  "title": "Band Sub Plan With No Instruments: Free Grades 6-12 Lesson + Answers",
+  "description": "A print-and-go concert band lesson that a non-musician substitute can run with no instruments, no audio and no screens. It includes a run sheet, a student reading, 12 questions and a full answer key.",
+  "worker": "scout-2-r1",
+  "ts": 1794388045
  }
 ]
