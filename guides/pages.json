@@ -747,5 +747,12 @@
   "description": "A print-and-go concert band lesson that a non-musician substitute can run with no instruments, no audio and no screens. It includes a run sheet, a student reading, 12 questions and a full answer key.",
   "worker": "scout-2-r1",
   "ts": 1794388045
+ },
+ {
+  "slug": "victorian-christmas-cover-lesson-for-year-8-no-tech-plan-ans",
+  "title": "Victorian Christmas Cover Lesson for Year 8: No-Tech Plan + Answers",
+  "description": "A free, print-and-go KS3 history cover lesson asking \"Did the Victorians invent Christmas?\" It includes a script for non-specialist cover staff, five source cards, three tasks and a full answer key.",
+  "worker": "scout-9-r1",
+  "ts": 1794388046
  }
 ]
