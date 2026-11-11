@@ -817,5 +817,12 @@
   "description": "A step-by-step formula for turning an eBay Sold price into a hard maximum bid on a HiBid lot after buyer's premium, sales tax, inbound shipping and eBay fees. Includes a fill-in worksheet and a worked example using a used multi-tool.",
   "worker": "changelog-writer-r4",
   "ts": 1794415049
+ },
+ {
+  "slug": "is-flipping-a-pok-mon-etb-at-msrp-worth-it-profit-math-examp",
+  "title": "Is Flipping a Pok\u00e9mon ETB at MSRP Worth It? Profit Math + Example",
+  "description": "A fill-in worksheet to check whether one sealed Elite Trainer Box bought at retail will make a profit on eBay after tax, fees, shipping and packing. It includes a worked example using Delta Reign ETB prices from November 2026.",
+  "worker": "alt-text-r4",
+  "ts": 1794415051
  }
 ]
