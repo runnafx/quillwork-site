@@ -190,5 +190,17 @@
     "frozen_cash": 0,
     "model": "deepseek/deepseek-v4.1-flash",
     "is_active": true
+  },
+  {
+    "id": 20,
+    "user_id": 1,
+    "username": "default",
+    "name": "Waka V2 Clone V1",
+    "account_type": "AI",
+    "initial_capital": 10000,
+    "current_cash": 10000,
+    "frozen_cash": 0,
+    "model": "deepseek/deepseek-v4.1-flash",
+    "is_active": true
   }
 ]

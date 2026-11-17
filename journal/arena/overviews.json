@@ -7,8 +7,8 @@
       "current_cash": 7624.542797100901,
       "frozen_cash": 0
     },
-    "total_assets": 15594.9485471009,
-    "positions_value": 7970.405749999999,
+    "total_assets": 15632.3795311009,
+    "positions_value": 8007.836733999999,
     "positions_count": 1,
     "pending_orders": 0,
     "account_id": 1,
@@ -22,8 +22,8 @@
       "current_cash": 9529.439631305835,
       "frozen_cash": 0
     },
-    "total_assets": 13725.605630507145,
-    "positions_value": 4196.16599920131,
+    "total_assets": 13735.829024445346,
+    "positions_value": 4206.38939313951,
     "positions_count": 2,
     "pending_orders": 0,
     "account_id": 3,
@@ -52,8 +52,8 @@
       "current_cash": 7422.282136354821,
       "frozen_cash": 0
     },
-    "total_assets": 38270.98310470983,
-    "positions_value": 30848.700968355002,
+    "total_assets": 38370.856931892326,
+    "positions_value": 30948.5747955375,
     "positions_count": 3,
     "pending_orders": 0,
     "account_id": 5,
@@ -142,8 +142,8 @@
       "current_cash": 6777.16997069057,
       "frozen_cash": 0
     },
-    "total_assets": 19545.09382369057,
-    "positions_value": 12767.923853,
+    "total_assets": 19587.164164490572,
+    "positions_value": 12809.994193800001,
     "positions_count": 2,
     "pending_orders": 0,
     "account_id": 13,
@@ -172,8 +172,8 @@
       "current_cash": 9976.86,
       "frozen_cash": 0
     },
-    "total_assets": 20852.2720398024,
-    "positions_value": 10875.412039802399,
+    "total_assets": 20889.8816267862,
+    "positions_value": 10913.0216267862,
     "positions_count": 2,
     "pending_orders": 0,
     "account_id": 15,
@@ -187,8 +187,8 @@
       "current_cash": 7087.38015337431,
       "frozen_cash": 0
     },
-    "total_assets": 33046.83392082231,
-    "positions_value": 25959.453767448,
+    "total_assets": 33128.61021869931,
+    "positions_value": 26041.230065325,
     "positions_count": 3,
     "pending_orders": 0,
     "account_id": 16,
@@ -202,8 +202,8 @@
       "current_cash": 7964.85680171295,
       "frozen_cash": 0
     },
-    "total_assets": 15981.11198871295,
-    "positions_value": 8016.255187,
+    "total_assets": 16000.77043071295,
+    "positions_value": 8035.913629,
     "positions_count": 1,
     "pending_orders": 0,
     "account_id": 17,
@@ -217,8 +217,8 @@
       "current_cash": 8460.916680925651,
       "frozen_cash": 0
     },
-    "total_assets": 22073.27501942565,
-    "positions_value": 13612.358338500002,
+    "total_assets": 22106.656910425652,
+    "positions_value": 13645.740229500001,
     "positions_count": 1,
     "pending_orders": 0,
     "account_id": 18,
@@ -238,5 +238,20 @@
     "pending_orders": 0,
     "account_id": 19,
     "account_name": "RegimeSwitcher"
+  },
+  {
+    "account": {
+      "id": 20,
+      "name": "Waka V2 Clone V1",
+      "account_type": "AI",
+      "current_cash": 10000,
+      "frozen_cash": 0
+    },
+    "total_assets": 10000,
+    "positions_value": 0,
+    "positions_count": 0,
+    "pending_orders": 0,
+    "account_id": 20,
+    "account_name": "Waka V2 Clone V1"
   }
 ]
