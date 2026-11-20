@@ -1,257 +1,340 @@
 [
   {
     "account": {
-      "id": 1,
-      "name": "GPT",
-      "account_type": "AI",
-      "current_cash": 7624.542797100901,
-      "frozen_cash": 0
-    },
-    "total_assets": 15632.3795311009,
-    "positions_value": 8007.836733999999,
-    "positions_count": 1,
-    "pending_orders": 0,
-    "account_id": 1,
-    "account_name": "GPT"
-  },
-  {
-    "account": {
       "id": 3,
       "name": "Grok",
       "account_type": "AI",
-      "current_cash": 9529.439631305835,
+      "current_cash": 9495.969631305836,
       "frozen_cash": 0
     },
-    "total_assets": 13735.829024445346,
-    "positions_value": 4206.38939313951,
+    "total_assets": 13493.739121559127,
+    "positions_value": 3997.7694902532903,
     "positions_count": 2,
-    "pending_orders": 0,
-    "account_id": 3,
-    "account_name": "Grok"
-  },
-  {
-    "account": {
-      "id": 4,
-      "name": "DeepSeek",
-      "account_type": "AI",
-      "current_cash": 10120.474707725076,
-      "frozen_cash": 0
-    },
-    "total_assets": 10120.474707725076,
-    "positions_value": 0,
-    "positions_count": 0,
-    "pending_orders": 0,
-    "account_id": 4,
-    "account_name": "DeepSeek"
-  },
-  {
-    "account": {
-      "id": 5,
-      "name": "Gemini",
-      "account_type": "AI",
-      "current_cash": 7422.282136354821,
-      "frozen_cash": 0
-    },
-    "total_assets": 38370.856931892326,
-    "positions_value": 30948.5747955375,
-    "positions_count": 3,
-    "pending_orders": 0,
-    "account_id": 5,
-    "account_name": "Gemini"
+    "pending_orders": 0
   },
   {
     "account": {
       "id": 6,
       "name": "0DTE",
       "account_type": "AI",
-      "current_cash": 11176.419999999998,
+      "current_cash": 11738.18,
       "frozen_cash": 0
     },
-    "total_assets": 11176.419999999998,
+    "total_assets": 11738.18,
     "positions_value": 0,
     "positions_count": 0,
-    "pending_orders": 0,
-    "account_id": 6,
-    "account_name": "0DTE"
+    "pending_orders": 0
   },
   {
     "account": {
       "id": 7,
-      "name": "Earnings",
+      "name": "0DTE-Momentum",
       "account_type": "AI",
-      "current_cash": 6817.830000000002,
+      "current_cash": 11373.260000000004,
       "frozen_cash": 0
     },
-    "total_assets": 6817.830000000002,
+    "total_assets": 11373.260000000004,
     "positions_value": 0,
     "positions_count": 0,
-    "pending_orders": 0,
-    "account_id": 7,
-    "account_name": "Earnings"
+    "pending_orders": 0
   },
   {
     "account": {
       "id": 8,
-      "name": "AltRotator",
+      "name": "BreakdownHunter",
       "account_type": "AI",
-      "current_cash": 9985,
+      "current_cash": 8556.807404701463,
       "frozen_cash": 0
     },
-    "total_assets": 9985,
-    "positions_value": 0,
-    "positions_count": 0,
-    "pending_orders": 0,
-    "account_id": 8,
-    "account_name": "AltRotator"
+    "total_assets": 20312.83891770146,
+    "positions_value": 11756.031513,
+    "positions_count": 1,
+    "pending_orders": 0
   },
   {
     "account": {
       "id": 11,
       "name": "0DTE-Scalp",
       "account_type": "AI",
-      "current_cash": 10960.310000000003,
+      "current_cash": 12746.950000000008,
       "frozen_cash": 0
     },
-    "total_assets": 10960.310000000003,
+    "total_assets": 12746.950000000008,
     "positions_value": 0,
     "positions_count": 0,
-    "pending_orders": 0,
-    "account_id": 11,
-    "account_name": "0DTE-Scalp"
+    "pending_orders": 0
   },
   {
     "account": {
       "id": 12,
       "name": "0DTE-Event",
       "account_type": "AI",
-      "current_cash": 10849.500000000004,
+      "current_cash": 10528.44000000001,
       "frozen_cash": 0
     },
-    "total_assets": 10849.500000000004,
+    "total_assets": 10528.44000000001,
     "positions_value": 0,
     "positions_count": 0,
-    "pending_orders": 0,
-    "account_id": 12,
-    "account_name": "0DTE-Event"
+    "pending_orders": 0
   },
   {
     "account": {
       "id": 13,
-      "name": "FundingSniper",
+      "name": "MacroBasket",
       "account_type": "AI",
-      "current_cash": 6777.16997069057,
+      "current_cash": 7294.990552878705,
       "frozen_cash": 0
     },
-    "total_assets": 19587.164164490572,
-    "positions_value": 12809.994193800001,
-    "positions_count": 2,
-    "pending_orders": 0,
-    "account_id": 13,
-    "account_name": "FundingSniper"
+    "total_assets": 33578.15989988021,
+    "positions_value": 26283.1693470015,
+    "positions_count": 3,
+    "pending_orders": 0
   },
   {
     "account": {
       "id": 14,
       "name": "0DTE-WSB",
       "account_type": "AI",
-      "current_cash": 9229.689999999999,
+      "current_cash": 10275.349999999995,
       "frozen_cash": 0
     },
-    "total_assets": 9229.689999999999,
+    "total_assets": 10275.349999999995,
     "positions_value": 0,
     "positions_count": 0,
-    "pending_orders": 0,
-    "account_id": 14,
-    "account_name": "0DTE-WSB"
+    "pending_orders": 0
   },
   {
     "account": {
       "id": 15,
       "name": "Waka-v2",
       "account_type": "AI",
-      "current_cash": 9976.86,
+      "current_cash": 11231.156029695896,
       "frozen_cash": 0
     },
-    "total_assets": 20889.8816267862,
-    "positions_value": 10913.0216267862,
+    "total_assets": 16148.637577334397,
+    "positions_value": 4917.4815476385,
     "positions_count": 2,
-    "pending_orders": 0,
-    "account_id": 15,
-    "account_name": "Waka-v2"
-  },
-  {
-    "account": {
-      "id": 16,
-      "name": "Gemini v.1",
-      "account_type": "AI",
-      "current_cash": 7087.38015337431,
-      "frozen_cash": 0
-    },
-    "total_assets": 33128.61021869931,
-    "positions_value": 26041.230065325,
-    "positions_count": 3,
-    "pending_orders": 0,
-    "account_id": 16,
-    "account_name": "Gemini v.1"
-  },
-  {
-    "account": {
-      "id": 17,
-      "name": "GPT v.1",
-      "account_type": "AI",
-      "current_cash": 7964.85680171295,
-      "frozen_cash": 0
-    },
-    "total_assets": 16000.77043071295,
-    "positions_value": 8035.913629,
-    "positions_count": 1,
-    "pending_orders": 0,
-    "account_id": 17,
-    "account_name": "GPT v.1"
+    "pending_orders": 0
   },
   {
     "account": {
       "id": 18,
       "name": "Grok v.1",
       "account_type": "AI",
-      "current_cash": 8460.916680925651,
+      "current_cash": 8422.04668092565,
       "frozen_cash": 0
     },
-    "total_assets": 22106.656910425652,
-    "positions_value": 13645.740229500001,
+    "total_assets": 21351.021024425652,
+    "positions_value": 12928.9743435,
     "positions_count": 1,
-    "pending_orders": 0,
-    "account_id": 18,
-    "account_name": "Grok v.1"
+    "pending_orders": 0
   },
   {
     "account": {
-      "id": 19,
-      "name": "RegimeSwitcher",
+      "id": 22,
+      "name": "0DTE-WSB v1",
       "account_type": "AI",
+      "current_cash": 11174.760000000002,
+      "frozen_cash": 0
+    },
+    "total_assets": 11174.760000000002,
+    "positions_value": 0,
+    "positions_count": 0,
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 23,
+      "name": "0DTE v1",
+      "account_type": "AI",
+      "current_cash": 11308.940000000002,
+      "frozen_cash": 0
+    },
+    "total_assets": 11308.940000000002,
+    "positions_value": 0,
+    "positions_count": 0,
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 24,
+      "name": "0DTE v2",
+      "account_type": "AI",
+      "current_cash": 14488.01000000001,
+      "frozen_cash": 0
+    },
+    "total_assets": 14488.01000000001,
+    "positions_value": 0,
+    "positions_count": 0,
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 25,
+      "name": "0DTE v3",
+      "account_type": "AI",
+      "current_cash": 7644.850000000006,
+      "frozen_cash": 0
+    },
+    "total_assets": 7644.850000000006,
+    "positions_value": 0,
+    "positions_count": 0,
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 26,
+      "name": "0DTE-Scalp v1",
+      "account_type": "AI",
+      "current_cash": 12576.740000000009,
+      "frozen_cash": 0
+    },
+    "total_assets": 12576.740000000009,
+    "positions_value": 0,
+    "positions_count": 0,
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 27,
+      "name": "0DTE-Scalp v2",
+      "account_type": "AI",
+      "current_cash": 11177.780000000002,
+      "frozen_cash": 0
+    },
+    "total_assets": 11177.780000000002,
+    "positions_value": 0,
+    "positions_count": 0,
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 28,
+      "name": "0DTE-Scalp v3",
+      "account_type": "AI",
+      "current_cash": 11071.689999999995,
+      "frozen_cash": 0
+    },
+    "total_assets": 11071.689999999995,
+    "positions_value": 0,
+    "positions_count": 0,
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 29,
+      "name": "0DTE-Event G1",
+      "account_type": "AI",
+      "current_cash": 12105.619999999999,
+      "frozen_cash": 0
+    },
+    "total_assets": 12105.619999999999,
+    "positions_value": 0,
+    "positions_count": 0,
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 30,
+      "name": "0DTE-Event G2",
+      "account_type": "AI",
+      "current_cash": 10403.800000000003,
+      "frozen_cash": 0
+    },
+    "total_assets": 10403.800000000003,
+    "positions_value": 0,
+    "positions_count": 0,
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 32,
+      "name": "Waka V2 Clone V2",
+      "account_type": "AI",
+      "current_cash": 8377.2606588382,
+      "frozen_cash": 0
+    },
+    "total_assets": 19921.2054858382,
+    "positions_value": 11543.944827,
+    "positions_count": 1,
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 34,
+      "name": "RH-Copier (LIVE)",
+      "account_type": "AI",
+      "current_cash": 2000,
+      "frozen_cash": 0
+    },
+    "total_assets": 2000,
+    "positions_value": 0,
+    "positions_count": 0,
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 35,
+      "name": "MacroBasket v2",
+      "account_type": "AI",
+      "current_cash": 6090.594522568044,
+      "frozen_cash": 0
+    },
+    "total_assets": 37114.47198739754,
+    "positions_value": 31023.8774648295,
+    "positions_count": 4,
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 36,
+      "name": "NQ-Momentum",
+      "account_type": "FUTURES",
       "current_cash": 10000,
       "frozen_cash": 0
     },
     "total_assets": 10000,
     "positions_value": 0,
     "positions_count": 0,
-    "pending_orders": 0,
-    "account_id": 19,
-    "account_name": "RegimeSwitcher"
+    "pending_orders": 0
   },
   {
     "account": {
-      "id": 20,
-      "name": "Waka V2 Clone V1",
-      "account_type": "AI",
+      "id": 37,
+      "name": "NQ-Event",
+      "account_type": "FUTURES",
       "current_cash": 10000,
       "frozen_cash": 0
     },
     "total_assets": 10000,
     "positions_value": 0,
     "positions_count": 0,
-    "pending_orders": 0,
-    "account_id": 20,
-    "account_name": "Waka V2 Clone V1"
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 38,
+      "name": "NQ-Trend",
+      "account_type": "FUTURES",
+      "current_cash": 10000,
+      "frozen_cash": 0
+    },
+    "total_assets": 10000,
+    "positions_value": 0,
+    "positions_count": 0,
+    "pending_orders": 0
+  },
+  {
+    "account": {
+      "id": 39,
+      "name": "NQ-Sonnet",
+      "account_type": "FUTURES",
+      "current_cash": 10000,
+      "frozen_cash": 0
+    },
+    "total_assets": 10000,
+    "positions_value": 0,
+    "positions_count": 0,
+    "pending_orders": 0
   }
 ]
